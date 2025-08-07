@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escena 3 Analisis De Sangre.unity
     guid: e2217815e7b03b9449782e9d312f8c28
+  - enabled: 1
+    path: Assets/Scenes/Escena 4 Radiografia.unity
+    guid: 8a6389b07342a544a9604573f21f00fb
+  - enabled: 1
+    path: Assets/Scenes/Escena 1 Inicio.unity
+    guid: d5b96b1d7a5950242b3dc42d6307f5af
   m_configObjects: {}

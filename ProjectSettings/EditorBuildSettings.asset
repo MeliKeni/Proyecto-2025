@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Escena 2 Elecci\xF3n de Estudios.unity"
     guid: 63b84a2d80f5bd04fa4264fdbf2ee237
+  - enabled: 1
+    path: Assets/Scenes/Esena 3 Analisis De Sangre.unity
+    guid: e2217815e7b03b9449782e9d312f8c28
   m_configObjects: {}

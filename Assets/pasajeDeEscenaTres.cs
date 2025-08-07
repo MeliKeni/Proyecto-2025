@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pasajeDeEscenaDos : MonoBehaviour
+public class pasajeDeEscenaTres : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
-
 
     public void OnBotonClick()
     {
-        SceneManager.LoadScene("Escena 3 Analisis De Sangre");
+        SceneManager.LoadScene("Escena 4 Radiografia");
 
     }
 }

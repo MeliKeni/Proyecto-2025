@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78323671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.52, y: -0.32, z: -6.67}
+  m_LocalPosition: {x: 14.52, y: -1.17, z: 0.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648875183}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 479430966}
   m_Layer: 0
   m_Name: Paciente
-  m_TagString: Untagged
+  m_TagString: Paciente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -998,6 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646098b66136450499e90658b8966dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidad: 3
 --- !u!4 &1463273579
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,7 +1027,7 @@ GameObject:
   - component: {fileID: 1468557344}
   m_Layer: 0
   m_Name: Silla
-  m_TagString: Untagged
+  m_TagString: Silla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,13 +9,7 @@ public class gameControllerScript : MonoBehaviour
     public float velocidad = 3f;
 
     Vector3 destino;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()

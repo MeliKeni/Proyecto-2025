@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paso0_MoverPaciente : MonoBehaviour
+public class Paso2_MoverPaciente : MonoBehaviour
 {
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
@@ -12,6 +12,12 @@ public class Paso0_MoverPaciente : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Solo funciona si estamos en el paso PacienteMaquina
+        if (GameManager3.instancia.pasoActual != PasoRadiografia.PacienteMaquina)
+        {
+            return; // No hacemos nada si no es el paso correcto
+        }
+
         // Detectar click con Raycast
         if (Input.GetMouseButtonDown(0))
         {

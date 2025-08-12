@@ -4,23 +4,24 @@ using UnityEngine;
 
 public enum PasoRadiografia //los pasos a seguir
 {
-    PacienteSilla,
     AbrirArmario,
     ColocarChaleco,
+    PacienteMaquina,
     IniciarRadiografia,
     GestoComputadora,
     Escaneo,
     RetirarChaleco,
     ImprimirEstudio,
     EntregarSobre,
-    Completado  
+    Completado
 }
+
 
 public class GameManager3 : MonoBehaviour
 {
 
     public static GameManager3 instancia; //para que todos puedan acceder al gamemanager
-    public PasoRadiografia pasoActual = PasoRadiografia.PacienteSilla; //define el paso inicialmennte
+    public PasoRadiografia pasoActual = PasoRadiografia.AbrirArmario; //define el paso inicial
 
 
     private void Awake() //para que haya solo un gameobject

@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 782370003}
   - component: {fileID: 782370002}
   m_Layer: 0
-  m_Name: 'Paso 0 '
+  m_Name: Paso 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

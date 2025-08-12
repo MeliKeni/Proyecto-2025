@@ -7,8 +7,7 @@ public class Paso0_MoverPaciente : MonoBehaviour
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
 
-    Vector3 destino;
-
+    Vector3 destino = Vector3.zero; // Inicializo en cero para controlar si está seteado
 
     // Update is called once per frame
     void Update()
@@ -25,7 +24,7 @@ public class Paso0_MoverPaciente : MonoBehaviour
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
-                    destino = pacienteSeleccionado.transform.position; // se queda quieto hasta elegir silla
+                    // No actualizamos destino acá para evitar que pase el paso al instante
                 }
                 // Si clickeaste la silla y hay paciente seleccionado
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
@@ -35,15 +34,22 @@ public class Paso0_MoverPaciente : MonoBehaviour
             }
         }
 
-        // Mover paciente hacia el destino
-        if (pacienteSeleccionado != null)
+        // Mover paciente hacia el destino solo si destino fue seteado (distinto de cero)
+        if (pacienteSeleccionado != null && destino != Vector3.zero)
         {
             pacienteSeleccionado.transform.position = Vector3.MoveTowards(
                 pacienteSeleccionado.transform.position,
                 destino,
                 velocidad * Time.deltaTime
             );
-        }
 
+            // Si llegó cerca al destino (distancia menor a 0.1)
+            if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.1f)
+            {
+                GameManager3.instancia.AvanzarPaso();
+                pacienteSeleccionado = null;   // Para que no siga moviéndose ni avanzando pasos
+                destino = Vector3.zero;        // Reseteamos el destino para esperar la próxima acción
+            }
+        }
     }
 }

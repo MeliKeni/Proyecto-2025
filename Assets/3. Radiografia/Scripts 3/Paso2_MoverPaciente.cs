@@ -7,7 +7,7 @@ public class Paso2_MoverPaciente : MonoBehaviour
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
 
-    Vector3 destino = Vector3.zero; // Inicializo en cero para controlar si está seteado
+    Vector3 destino = Vector3.zero; // Inicializar en cero para controlar si está seteado
 
     // Update is called once per frame
     void Update()
@@ -15,7 +15,7 @@ public class Paso2_MoverPaciente : MonoBehaviour
         // Solo funciona si estamos en el paso PacienteMaquina
         if (GameManager3.instancia.pasoActual != PasoRadiografia.PacienteMaquina)
         {
-            return; // No hacemos nada si no es el paso correcto
+            return; // anulamos todo si no estamos en el paso que hay que estar
         }
 
         // Detectar click con Raycast
@@ -30,10 +30,10 @@ public class Paso2_MoverPaciente : MonoBehaviour
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
-                    // No actualizamos destino acá para evitar que pase el paso al instante
+                    // No actualizamos destino acá para evitar que pase al siguiente paso infinitamente
                 }
                 // Si clickeaste la silla y hay paciente seleccionado
-                else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
+                else if (hit.collider.CompareTag("Maquina") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
                 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Paciente
   - Silla
+  - Maquina
+  - Armario
   layers:
   - Default
   - TransparentFX

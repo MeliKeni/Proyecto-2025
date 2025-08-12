@@ -4,12 +4,12 @@ using UnityEngine;
 
 public enum PasoRadiografia //los pasos a seguir
 {
-    AbrirArmario,
-    ColocarChaleco,
-    PacienteMaquina,
-    IniciarRadiografia,
-    GestoComputadora,
-    Escaneo,
+    AbrirArmario, //0
+    ColocarChaleco, //1
+    PacienteMaquina, //2
+    IniciarRadiografia, //3
+    GestoComputadora, //4
+    Escaneo, //5
     RetirarChaleco,
     ImprimirEstudio,
     EntregarSobre,

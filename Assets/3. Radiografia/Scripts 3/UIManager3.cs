@@ -24,7 +24,7 @@ public class UIManager3 : MonoBehaviour
     {
         switch (paso)
         {
-            case PasoRadiografia.MoverPaciente:
+            case PasoRadiografia.PacienteSilla:
                 textoInstruccion.text = "Arrastrá al paciente a la máquina.";
                 break;
             case PasoRadiografia.AbrirArmario:

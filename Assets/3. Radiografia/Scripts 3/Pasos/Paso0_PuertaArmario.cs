@@ -10,11 +10,12 @@ public class Paso0_PuertaArmario : MonoBehaviour
     void Update()
     {
         if (GameManager3.instancia.pasoActual != PasoRadiografia.AbrirArmario){
-            return;}
+            return;
+        }
 
-        if (!abrir)
+        if (!abrir)  //si no esta abieirto 
         {
-            // Detectar click para  abrir
+            // Detectar click y ahi abrir
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -28,7 +29,7 @@ public class Paso0_PuertaArmario : MonoBehaviour
                 }
             }
         }
-        else
+        else //aca es si abrir es true
         {
             // Rotamos la puerta 90 grados
             if (anguloRotado < 90f)
@@ -38,7 +39,7 @@ public class Paso0_PuertaArmario : MonoBehaviour
                 puerta.transform.Rotate(Vector3.up, rotacionReal);
                 anguloRotado += rotacionReal;
 
-                if (anguloRotado >= 90f)
+                if (anguloRotado >= 90f) //proximo 
                 {
                     GameManager3.instancia.AvanzarPaso();
                 }

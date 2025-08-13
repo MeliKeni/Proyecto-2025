@@ -3,19 +3,18 @@
 public class Paso1_PonerChaleco : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject chaleco;               // la esfera
+    public GameObject chaleco;               
     [Tooltip("Si querés, podés dejar esto en null y buscar el paciente por tag cuando haga overlap")]
-    public GameObject paciente;              // opcional: referencia directa al paciente (puede ser null)
+    public GameObject paciente;              
 
     [Header("Ajustes de colocación")]
-    public float alturaSobrePaciente = 1.0f; // altura final sobre el paciente
-    public float overlapRadius = 0.6f;       // radio para detectar colisión (ajustá según escala)
-    public bool autoSoltarAlTocar = true;    // si true, suelta automáticamente al tocar paciente; si false, requiere soltar mouse
+    public float alturaSobrePaciente = 1.0f; // cuan arriba va a estar del paciente, 
+    public float overlapRadius = 0.6f;       // cucando ya detecta la colision
+    public bool autoSoltarAlTocar = true;    // si true, suelta automáticamente al tocar paciente, si false, hay que  soltar mouse
 
-    // Estado interno
     bool arrastrando = false;
-    float zFija;
-    GameObject pacienteEnColision = null;
+    float zFija; // para que no se mueva en el eje z
+    GameObject pacienteEnColision = null;  // esta en colision con el paciente
 
     void Update()
     {
@@ -23,7 +22,7 @@ public class Paso1_PonerChaleco : MonoBehaviour
         {
             return; // anulamos todo si no estamos en el paso que hay que estar
         }
-        // 1) Inicio de arrastre: clic sobre la esfera
+        //detecta si hace click en chaleco 
         if (Input.GetMouseButtonDown(0))
         {
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -32,25 +31,25 @@ public class Paso1_PonerChaleco : MonoBehaviour
             {
                 if (h.collider != null && h.collider.gameObject == chaleco)
                 {
-                    arrastrando = true;
-                    zFija = chaleco.transform.position.z; // guardo Z para mantenerlo fijo durante el drag
+                    arrastrando = true; //lo esta intentando arrastrar
+                    zFija = chaleco.transform.position.z;  //guartda la posicion en z para que no se vaya para atrasc
                 }
             }
         }
 
-        // 2) Mientras arrastramos: mover chaleco X,Y (Z constante)
+        // Arrastrar funcionalidad
         if (arrastrando)
         {
-            Vector3 mouse = Input.mousePosition;
+            Vector3 mouse = Input.mousePosition; 
             // distancia desde la cámara hasta la Z fija del chaleco
             float distanciaCam = Mathf.Abs(Camera.main.transform.position.z - zFija);
             mouse.z = distanciaCam;
-            Vector3 world = Camera.main.ScreenToWorldPoint(mouse);
+            Vector3 world = Camera.main.ScreenToWorldPoint(mouse); //llama world.x, world.y y world.z a las posciones de el mouse
 
             // seguir solo X,Y y mantener Z fijo
-            chaleco.transform.position = new Vector3(world.x, world.y, zFija);
+            chaleco.transform.position = new Vector3(world.x, world.y, zFija); // mueve el chaleco
 
-            // 3) chequeo de overlap: buscamos colliders cercanos al chaleco
+            // se fija si ya esta tocando al paciente
             Collider[] hits = Physics.OverlapSphere(chaleco.transform.position, overlapRadius);
             pacienteEnColision = null;
             foreach (var c in hits)

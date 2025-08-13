@@ -14,7 +14,7 @@ public class pasajeDeEscenaDos : MonoBehaviour
 
     public void OnBotonClick()
     {
-        SceneManager.LoadScene("Escena 3 Analisis De Sangre");
+        SceneManager.LoadScene("Escena 4 Analisis de sangre");
 
     }
 }

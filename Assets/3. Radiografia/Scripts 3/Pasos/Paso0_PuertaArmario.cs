@@ -6,6 +6,7 @@ public class Paso0_PuertaArmario : MonoBehaviour
     public float velocidadRotacion = 90f; // grados por segundo
     private bool abrir = false;
     private float anguloRotado = 0f;
+    public Camera MyCurrentCam;
 
     void Update()
     {
@@ -18,7 +19,7 @@ public class Paso0_PuertaArmario : MonoBehaviour
             // Detectar click y ahi abrir
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {

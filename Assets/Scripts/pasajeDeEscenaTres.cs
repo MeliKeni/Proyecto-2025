@@ -13,7 +13,7 @@ public class pasajeDeEscenaTres : MonoBehaviour
 
     public void OnBotonClick()
     {
-        SceneManager.LoadScene("Escena 4 Radiografia");
+        SceneManager.LoadScene("Escena 3 Radiografia");
 
     }
 }

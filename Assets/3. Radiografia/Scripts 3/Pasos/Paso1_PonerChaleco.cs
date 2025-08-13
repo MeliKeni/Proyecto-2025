@@ -16,6 +16,8 @@ public class Paso1_PonerChaleco : MonoBehaviour
     float zFija; // para que no se mueva en el eje z
     GameObject pacienteEnColision = null;  // esta en colision con el paciente
 
+    public Camera MyCurrentCam;
+
     void Update()
     {
         if (GameManager3.instancia.pasoActual != PasoRadiografia.ColocarChaleco)
@@ -25,7 +27,7 @@ public class Paso1_PonerChaleco : MonoBehaviour
         //detecta si hace click en chaleco 
         if (Input.GetMouseButtonDown(0))
         {
-            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray r = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
@@ -42,9 +44,9 @@ public class Paso1_PonerChaleco : MonoBehaviour
         {
             Vector3 mouse = Input.mousePosition; 
             // distancia desde la cámara hasta la Z fija del chaleco
-            float distanciaCam = Mathf.Abs(Camera.main.transform.position.z - zFija);
+            float distanciaCam = Mathf.Abs(MyCurrentCam.transform.position.z - zFija);
             mouse.z = distanciaCam;
-            Vector3 world = Camera.main.ScreenToWorldPoint(mouse); //llama world.x, world.y y world.z a las posciones de el mouse
+            Vector3 world = MyCurrentCam.ScreenToWorldPoint(mouse); //llama world.x, world.y y world.z a las posciones de el mouse
 
             // seguir solo X,Y y mantener Z fijo
             chaleco.transform.position = new Vector3(world.x, world.y, zFija); // mueve el chaleco

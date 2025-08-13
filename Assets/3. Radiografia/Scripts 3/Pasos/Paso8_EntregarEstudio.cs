@@ -95,10 +95,5 @@ public class Paso8_EntregarEstudio : MonoBehaviour
         arrastrando = false;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (estudioImpreso == null) return;
-        Gizmos.color = new Color(0, 1, 1, 0.5f);
-        Gizmos.DrawWireSphere(estudioImpreso.transform.position, overlapRadius);
-    }
+   
 }

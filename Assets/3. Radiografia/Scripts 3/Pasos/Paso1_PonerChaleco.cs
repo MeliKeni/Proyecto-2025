@@ -92,7 +92,7 @@ public class Paso1_PonerChaleco : MonoBehaviour
         chaleco.transform.position = nuevaPos;
 
         // Opcional: hacer al chaleco hijo del paciente para que se mueva con él
-        // chaleco.transform.SetParent(pacienteEnColision.transform, true);
+        chaleco.transform.SetParent(pacienteEnColision.transform, true);
 
         // Avanzar paso
         if (GameManager3.instancia != null)
@@ -103,11 +103,5 @@ public class Paso1_PonerChaleco : MonoBehaviour
         arrastrando = false;
     }
 
-    // Gizmo para ver el radio de detección en Scene view (solo cuando seleccionás el GameObject)
-    private void OnDrawGizmosSelected()
-    {
-        if (chaleco == null) return;
-        Gizmos.color = new Color(0, 1, 1, 0.5f);
-        Gizmos.DrawWireSphere(chaleco.transform.position, overlapRadius);
-    }
+   
 }

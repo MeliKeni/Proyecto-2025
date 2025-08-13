@@ -65,4 +65,5 @@ public class GameManager3 : MonoBehaviour
         Debug.LogWarning("Intentaste hacer una acción fuera de orden.");
         //  poner sonido o feedback visual
     }
+    //creo que las ultimas dos funciones se pueden ir, probar manana 
 }

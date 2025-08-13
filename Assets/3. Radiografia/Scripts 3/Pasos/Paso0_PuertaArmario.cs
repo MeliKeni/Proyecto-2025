@@ -9,8 +9,8 @@ public class Paso0_PuertaArmario : MonoBehaviour
 
     void Update()
     {
-        if (GameManager3.instancia.pasoActual != PasoRadiografia.AbrirArmario)
-            return;
+        if (GameManager3.instancia.pasoActual != PasoRadiografia.AbrirArmario){
+            return;}
 
         if (!abrir)
         {

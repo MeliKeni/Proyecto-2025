@@ -5,6 +5,7 @@ public class Paso5_HacerEstudio : MonoBehaviour
 {
     public Slider barraCarga;        // Asignar en inspector el Slider UI
     public float duracionCarga = 5f; // Tiempo que tarda en llenarse la barra
+    public GameObject paciente; 
 
     private float tiempoAcumulado = 0f;
 
@@ -36,6 +37,10 @@ public class Paso5_HacerEstudio : MonoBehaviour
                 tiempoAcumulado = 0f;
                 barraCarga.value = 0f;
                 barraCarga.gameObject.SetActive(false);
+
+                //paciente se mueve afuera de la maquina
+                   
+
             }
         }
         else

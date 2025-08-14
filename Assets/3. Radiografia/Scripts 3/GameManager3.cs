@@ -10,6 +10,7 @@ public enum PasoRadiografia //los pasos a seguir
     IniciarRadiografia, //3
     GestoComputadora, //4
     Escaneo, //5
+    SalirDeMaquina, //5.5
     RetirarChaleco, //6
     ImprimirEstudio, //7
     EntregarSobre, //8

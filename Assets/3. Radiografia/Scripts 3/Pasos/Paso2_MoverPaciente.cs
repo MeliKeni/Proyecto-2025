@@ -6,6 +6,7 @@ public class Paso2_MoverPaciente : MonoBehaviour
 {
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
+    public Camera MyCurrentCam;
 
     Vector3 destino = Vector3.zero; // Inicializar en cero para controlar si está seteado
 
@@ -21,7 +22,7 @@ public class Paso2_MoverPaciente : MonoBehaviour
         // Detectar click con Raycast
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))

@@ -16,6 +16,7 @@ public class Paso8_EntregarEstudio : MonoBehaviour
     float zFija;
     GameObject pacienteEnColision = null;
 
+public Camera MyCurrentCam;
     void Update()
     {
         if (GameManager3.instancia.pasoActual != PasoRadiografia.EntregarSobre)
@@ -24,7 +25,7 @@ public class Paso8_EntregarEstudio : MonoBehaviour
         // 1) Inicio de arrastre: clic sobre el estudio impreso
         if (Input.GetMouseButtonDown(0))
         {
-            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray r = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
@@ -40,9 +41,9 @@ public class Paso8_EntregarEstudio : MonoBehaviour
         if (arrastrando)
         {
             Vector3 mouse = Input.mousePosition;
-            float distanciaCam = Mathf.Abs(Camera.main.transform.position.z - zFija);
+            float distanciaCam = Mathf.Abs(MyCurrentCam.transform.position.z - zFija);
             mouse.z = distanciaCam;
-            Vector3 world = Camera.main.ScreenToWorldPoint(mouse);
+            Vector3 world = MyCurrentCam.ScreenToWorldPoint(mouse);
 
             estudioImpreso.transform.position = new Vector3(world.x, world.y, zFija);
 

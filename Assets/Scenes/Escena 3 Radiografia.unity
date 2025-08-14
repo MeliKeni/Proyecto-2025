@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,37 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1329588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1329589}
-  m_Layer: 0
-  m_Name: Paso 9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1329589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329588}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.037733, y: -2.227459, z: 5.505833}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 486447186}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &30199642
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +141,7 @@ Transform:
   m_Children:
   - {fileID: 375878114}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &52785638
 GameObject:
@@ -544,9 +513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1d1d311e326694db7d5536c8f3fece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EstudioImpreso: {fileID: 1687352299}
-  Impresora: {fileID: 1615862932}
+  EstudioImpreso: {fileID: 277403682}
+  Impresora: {fileID: 1065284180}
   velocidadMovimiento: 1
+  MyCurrentCam: {fileID: 818202625}
 --- !u!1 &172346849
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +897,7 @@ Transform:
   m_Children:
   - {fileID: 106289554}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249162821
 GameObject:
@@ -974,6 +944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImagenGesto: {fileID: 83478355}
   Maquina: {fileID: 1468557343}
+  MyCurrentCam: {fileID: 52785641}
 --- !u!1 &277403682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaleco: {fileID: 483821095}
   paciente: {fileID: 479430965}
-  alturaSobrePaciente: 1
+  alturaSobrePaciente: 2
   overlapRadius: 0.6
   autoSoltarAlTocar: 1
   MyCurrentCam: {fileID: 818202625}
@@ -1444,7 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraCarga: {fileID: 1042861607}
   duracionCarga: 5
-  paciente: {fileID: 479430965}
+  paciente: {fileID: 732662242}
 --- !u!1 &358318517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1556,7 @@ MonoBehaviour:
   alturaSobreArmario: 1
   overlapRadius: 0.6
   autoSoltarAlTocar: 1
+  MyCurrentCam: {fileID: 818202625}
 --- !u!1 &428778446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1844,7 @@ GameObject:
   - component: {fileID: 483821100}
   m_Layer: 0
   m_Name: Chaleco
-  m_TagString: Untagged
+  m_TagString: Chaleco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1965,7 +1937,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &486447185
+--- !u!1 &492495204
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1973,27 +1945,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 486447186}
+  - component: {fileID: 492495205}
   m_Layer: 0
-  m_Name: GestoRadiografia
+  m_Name: Paso 5.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &486447186
+--- !u!4 &492495205
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486447185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 492495204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.037733, y: -2.227459, z: 5.505833}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1329589}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1513961725}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493075397
 GameObject:
@@ -2470,7 +2443,7 @@ GameObject:
   - component: {fileID: 732662244}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Paciente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2963,7 +2936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818202622}
   m_LocalRotation: {x: -0.0464454, y: -0.70199937, z: 0.045975562, w: -0.7091728}
-  m_LocalPosition: {x: -5.364469, y: 2.9713733, z: -8.4214325}
+  m_LocalPosition: {x: -0.47, y: 2.33, z: -8.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 903227204}
@@ -3033,7 +3006,7 @@ GameObject:
   - component: {fileID: 831239454}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Maquina
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3263,7 +3236,7 @@ Transform:
   m_Children:
   - {fileID: 1156971115}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042861605
 GameObject:
@@ -3724,11 +3697,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0488e0cf887364c97ae869bc98b001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estudioImpreso: {fileID: 1687352299}
+  estudioImpreso: {fileID: 277403682}
   tagPaciente: Paciente
   alturaSobrePaciente: 1
   overlapRadius: 0.6
   autoSoltarAlTocar: 1
+  MyCurrentCam: {fileID: 818202625}
 --- !u!1 &1186603895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,9 +4144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6a25655c04b744bbb3254359c9b1bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  esfera: {fileID: 839326072}
-  objetoACambiar: {fileID: 1468557343}
+  esfera: {fileID: 1204850586}
+  objetoACambiar: {fileID: 831239452}
   nuevoMaterial: {fileID: 2100000, guid: 1e0208baf3b0f324ea2a9a839b62d6ea, type: 2}
+  MyCurrentCam: {fileID: 52785641}
 --- !u!1 &1328159929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,6 +4675,52 @@ Transform:
   m_Father: {fileID: 1328159930}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1513961724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513961725}
+  - component: {fileID: 1513961726}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1513961725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513961724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492495205}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513961726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513961724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ae8e00d052ebe49a62586348c177fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Paciente: {fileID: 732662242}
+  velocidadMovimiento: 1
+  MyCurrentCam: {fileID: 818202625}
 --- !u!1 &1519000492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,6 +5001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
+  MyCurrentCam: {fileID: 818202625}
 --- !u!1 &1615862932
 GameObject:
   m_ObjectHideFlags: 0

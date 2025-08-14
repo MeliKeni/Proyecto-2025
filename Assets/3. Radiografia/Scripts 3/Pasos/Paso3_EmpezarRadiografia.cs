@@ -7,6 +7,7 @@ public class Paso3_EmpezarRadiografia : MonoBehaviour
     public GameObject esfera;           // La esfera a la que se le hace click
     public GameObject objetoACambiar;   // El cubo u objeto cuyo material cambiará
     public Material nuevoMaterial;      // El material nuevo que queremos asignar
+    public Camera MyCurrentCam;
 
     private bool cambioHecho = false;  // Para que solo cambie una vez
 
@@ -20,7 +21,7 @@ public class Paso3_EmpezarRadiografia : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !cambioHecho)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))

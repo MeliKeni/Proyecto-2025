@@ -39,7 +39,7 @@ public class Paso5_HacerEstudio : MonoBehaviour
                 barraCarga.gameObject.SetActive(false);
 
                 //paciente se mueve afuera de la maquina
-                   
+                    
 
             }
         }

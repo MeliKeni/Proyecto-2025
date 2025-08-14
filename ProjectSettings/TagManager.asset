@@ -8,6 +8,7 @@ TagManager:
   - Silla
   - Maquina
   - Armario
+  - Chaleco
   layers:
   - Default
   - TransparentFX

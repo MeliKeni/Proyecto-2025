@@ -20,11 +20,13 @@ public class CamaraManager : MonoBehaviour
     {
         if (GameManager3.instancia.pasoActual == PasoRadiografia.IniciarRadiografia)
         {
+
             Camara1.gameObject.SetActive(false);
             Camara2.gameObject.SetActive(true);
         }
-        if (GameManager3.instancia.pasoActual == PasoRadiografia.IniciarRadiografia)
+        if (GameManager3.instancia.pasoActual == PasoRadiografia.SalirDeMaquina)
         {
+
             Camara1.gameObject.SetActive(true);
             Camara2.gameObject.SetActive(false);
         }

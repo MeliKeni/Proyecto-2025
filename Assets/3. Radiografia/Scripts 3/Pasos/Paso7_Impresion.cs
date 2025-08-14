@@ -12,6 +12,7 @@ public class Paso7_Impresion : MonoBehaviour
     private bool listoParaMover = false;
     private Vector3 posicionObjetivo;
 
+public Camera MyCurrentCam;
     void Update()
     {
         if (GameManager3.instancia.pasoActual != PasoRadiografia.ImprimirEstudio)
@@ -24,7 +25,7 @@ public class Paso7_Impresion : MonoBehaviour
             // Detectar click en la impresora para empezar la impresión
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {

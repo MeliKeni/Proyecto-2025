@@ -42,6 +42,9 @@ public class UIManager3 : MonoBehaviour
             case PasoRadiografia.Escaneo:
                 textoInstruccion.text = "Esperá mientras se realiza el escaneo.";
                 break;
+            case PasoRadiografia.SalirDeMaquina:
+                textoInstruccion.text = "Hace click en cualquier lado para avisarle al paciente que ya puede salir";
+                break;
             case PasoRadiografia.RetirarChaleco:
                 textoInstruccion.text = "Retirá el chaleco del paciente.";
                 break;

@@ -14,6 +14,8 @@ public class Paso6_SacarChaleco : MonoBehaviour
     bool arrastrando = false;
     float zFija;
     GameObject armarioEnColision = null;
+        public Camera MyCurrentCam;
+
 
     void Update()
     {
@@ -21,11 +23,12 @@ public class Paso6_SacarChaleco : MonoBehaviour
         {
             return; // solo funciona en paso RetirarChaleco
         }
+  
 
         // 1) Inicio de arrastre: clic sobre la esfera
         if (Input.GetMouseButtonDown(0))
         {
-            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray r = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
@@ -41,9 +44,9 @@ public class Paso6_SacarChaleco : MonoBehaviour
         if (arrastrando)
         {
             Vector3 mouse = Input.mousePosition;
-            float distanciaCam = Mathf.Abs(Camera.main.transform.position.z - zFija);
+            float distanciaCam = Mathf.Abs(MyCurrentCam.transform.position.z - zFija);
             mouse.z = distanciaCam;
-            Vector3 world = Camera.main.ScreenToWorldPoint(mouse);
+            Vector3 world = MyCurrentCam.ScreenToWorldPoint(mouse);
 
             chaleco.transform.position = new Vector3(world.x, world.y, zFija);
 

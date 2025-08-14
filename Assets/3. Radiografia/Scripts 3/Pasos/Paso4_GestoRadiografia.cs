@@ -6,6 +6,7 @@ public class Paso4_GestoRadiografia : MonoBehaviour
 {
     public GameObject ImagenGesto; // La imagen en el Canvas que queremos mostrar/ocultar
     public GameObject Maquina;     // El objeto que se clickea para mostrar la imagen
+    public Camera MyCurrentCam;
 
     private bool imagenVisible = false;
 
@@ -30,7 +31,7 @@ public class Paso4_GestoRadiografia : MonoBehaviour
         // Detectar click en la máquina para mostrar la imagen
         if (Input.GetMouseButtonDown(0) && !imagenVisible)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))

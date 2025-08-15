@@ -30,7 +30,7 @@ public class paso0_MoverPaciente : MonoBehaviour
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
                 }
-                else if (hit.collider.CompareTag("Maquina") && pacienteSeleccionado != null)
+                else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
                 }

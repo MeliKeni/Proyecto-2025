@@ -9,6 +9,7 @@ TagManager:
   - Maquina
   - Armario
   - Chaleco
+  - Jeringa
   layers:
   - Default
   - TransparentFX

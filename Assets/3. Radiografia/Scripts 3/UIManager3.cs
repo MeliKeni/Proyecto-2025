@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TMPro;  // Importante
+using TMPro;
 
 public class UIManager3 : MonoBehaviour
 {
@@ -9,10 +9,10 @@ public class UIManager3 : MonoBehaviour
 
     private void Awake()
     {
-        if (instancia == null) //solo va a haber un uimanger
+        // Singleton simple
+        if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -61,5 +61,11 @@ public class UIManager3 : MonoBehaviour
                 textoInstruccion.text = "";
                 break;
         }
+    }
+    public void ResetUI()
+    {
+        // Vuelve a buscar el texto en la nueva escena
+        textoInstruccion = GameObject.Find("TextoInstruccion").GetComponent<TextMeshProUGUI>();
+        textoInstruccion.text = "";
     }
 }

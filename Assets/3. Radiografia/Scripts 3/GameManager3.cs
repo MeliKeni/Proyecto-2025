@@ -1,48 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public enum PasoRadiografia //los pasos a seguir
+public enum PasoRadiografia
 {
-    AbrirArmario, //0
-    ColocarChaleco, //1
-    PacienteMaquina, //2
-    IniciarRadiografia, //3
-    GestoComputadora, //4
-    Escaneo, //5
-    SalirDeMaquina, //5.5
-    RetirarChaleco, //6
-    ImprimirEstudio, //7
-    EntregarSobre, //8
+    AbrirArmario,
+    ColocarChaleco,
+    PacienteMaquina,
+    IniciarRadiografia,
+    GestoComputadora,
+    Escaneo,
+    SalirDeMaquina,
+    RetirarChaleco,
+    ImprimirEstudio,
+    EntregarSobre,
     Completado
 }
 
-
 public class GameManager3 : MonoBehaviour
 {
+    public static GameManager3 instancia;
+    public PasoRadiografia pasoActual = PasoRadiografia.AbrirArmario;
 
-    public static GameManager3 instancia; //para que todos puedan acceder al gamemanager
-    public PasoRadiografia pasoActual = PasoRadiografia.AbrirArmario; //define el paso inicial
-
-
-    private void Awake() //para que haya solo un gameobject
+    private void Awake()
     {
         if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
+        // Siempre arranca en el primer paso
+        pasoActual = PasoRadiografia.AbrirArmario;
         UIManager3.instancia.ActualizarInstruccion(pasoActual);
     }
 
-    public void AvanzarPaso() //avanzar de paso
+    public void AvanzarPaso()
     {
         if (pasoActual == PasoRadiografia.Completado)
         {
@@ -51,20 +48,23 @@ public class GameManager3 : MonoBehaviour
         }
 
         pasoActual++;
-        Debug.Log("Avanzando al paso: " + pasoActual.ToString());
-
+        Debug.Log("Avanzando al paso: " + pasoActual);
         UIManager3.instancia.ActualizarInstruccion(pasoActual);
     }
 
-    public bool EsPaso(PasoRadiografia paso) //es lo que van a usar otros codigos para saber si ya estan en el paso en el que realizan cierta accion
+    public bool EsPaso(PasoRadiografia paso)
     {
         return pasoActual == paso;
     }
 
-    public void ErrorPaso() //errores
+    public void ErrorPaso()
     {
         Debug.LogWarning("Intentaste hacer una acción fuera de orden.");
-        //  poner sonido o feedback visual
+        // Acá podés poner sonido o feedback visual
     }
-    //creo que las ultimas dos funciones se pueden ir, probar manana 
+    public void ResetGame()
+    {
+        pasoActual = PasoRadiografia.AbrirArmario;
+        UIManager3.instancia.ActualizarInstruccion(pasoActual);
+    }
 }

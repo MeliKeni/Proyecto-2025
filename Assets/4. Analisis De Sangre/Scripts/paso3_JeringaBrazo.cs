@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class paso3_JeringaBrazo : MonoBehaviour
 {
-    [Header("Referencias")]
+ 
     public GameObject jeringa;
     public Camera MyCurrentCam;
 
-    [Tooltip("Si querés, podés dejar esto en null y buscar el paciente por tag cuando haga overlap")]
     public GameObject paciente;
 
-    [Header("Ajustes de colocación")]
     public float alturaSobrePaciente = 1.0f; // cuan arriba va a estar del paciente
     public float overlapRadius = 0.6f;       // radio de detección con el paciente
     public bool autoSoltarAlTocar = true;    // si true, suelta automáticamente al tocar paciente
@@ -103,13 +101,4 @@ public class paso3_JeringaBrazo : MonoBehaviour
         arrastrando = false;
     }
 
-    // Opcional: para ver el área de detección en el editor
-    private void OnDrawGizmosSelected()
-    {
-        if (jeringa != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(jeringa.transform.position, overlapRadius);
-        }
-    }
 }

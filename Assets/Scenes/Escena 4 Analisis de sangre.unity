@@ -603,7 +603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628080004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -612.31, y: -2.57, z: 846.03}
+  m_LocalPosition: {x: -612.31, y: 0.1, z: 846.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 906220668}
@@ -1082,20 +1082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d764cd2dc1a43854f9b5a68f781287e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  jeringa: {fileID: 0}
-  MyCurrentCam: {fileID: 1902110549}
-  paciente: {fileID: 637878526}
-  alturaSobrePaciente: 1
-  overlapRadius: 0.6
-  autoSoltarAlTocar: 1
-  arrastrando: 0
-  zFija: 0
-  pacienteEnColision: {fileID: 0}
 --- !u!114 &905059931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,6 +2375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7108a5fe33105cb47964414a2d65b44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camara1: {fileID: 1902110549}
+  Camara2: {fileID: 628080007}
+  GameManager: {fileID: 7220362}
 --- !u!4 &1792917573
 Transform:
   m_ObjectHideFlags: 0

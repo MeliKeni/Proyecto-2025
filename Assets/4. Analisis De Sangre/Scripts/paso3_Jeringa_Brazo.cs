@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class paso2_ColocarGuante : MonoBehaviour
+public class paso3_Jeringa_Brazo : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject chaleco;
+    public GameObject jeringa;
     [Tooltip("Si querés, podés dejar esto en null y buscar el paciente por tag cuando haga overlap")]
     public GameObject paciente;
 
@@ -19,10 +19,15 @@ public class paso2_ColocarGuante : MonoBehaviour
     private GameObject pacienteEnColision = null;  // esta en colision con el paciente
 
     public Camera MyCurrentCam;
+    void Start()
+    {
+        
+    }
 
+    // Update is called once per frame
     void Update()
     {
-        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.ColocarGuante)
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.JeringaBrazo)
         {
             return; // anulamos todo si no estamos en el paso que hay que estar
         }
@@ -33,10 +38,10 @@ public class paso2_ColocarGuante : MonoBehaviour
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
-                if (h.collider != null && h.collider.gameObject == chaleco)
+                if (h.collider != null && h.collider.gameObject == jeringa)
                 {
                     arrastrando = true; //lo esta intentando arrastrar
-                    zFija = chaleco.transform.position.z;  //guartda la posicion en z para que no se vaya para atrasc
+                    zFija = jeringa.transform.position.z;  //guartda la posicion en z para que no se vaya para atrasc
                 }
             }
         }
@@ -51,14 +56,14 @@ public class paso2_ColocarGuante : MonoBehaviour
             Vector3 world = MyCurrentCam.ScreenToWorldPoint(mouse); //llama world.x, world.y y world.z a las posciones de el mouse
 
             // seguir solo X,Y y mantener Z fijo
-            chaleco.transform.position = new Vector3(world.x, world.y, zFija); // mueve el chaleco
+            jeringa.transform.position = new Vector3(world.x, world.y, zFija); // mueve el chaleco
 
             // se fija si ya esta tocando al paciente
-            Collider[] hits = Physics.OverlapSphere(chaleco.transform.position, overlapRadius);
+            Collider[] hits = Physics.OverlapSphere(jeringa.transform.position, overlapRadius);
             pacienteEnColision = null;
             foreach (var c in hits)
             {
-                if (c.gameObject == chaleco) continue;           // ignorar a sí mismo
+                if (c.gameObject == jeringa) continue;           // ignorar a sí mismo
                 if (c.CompareTag("Paciente"))
                 {
                     pacienteEnColision = c.gameObject;
@@ -72,8 +77,6 @@ public class paso2_ColocarGuante : MonoBehaviour
                 SoltarYColocar();
             }
         }
-
-        // 5) Al soltar el botón del mouse
         if (Input.GetMouseButtonUp(0) && arrastrando)
         {
             arrastrando = false;
@@ -83,28 +86,31 @@ public class paso2_ColocarGuante : MonoBehaviour
                 SoltarYColocar();
             }
         }
+
+        void SoltarYColocar()
+        {
+            if (pacienteEnColision == null) return;
+
+            // Colocar sobre el paciente
+            Vector3 nuevaPos = pacienteEnColision.transform.position;
+            nuevaPos.y += alturaSobrePaciente;
+            jeringa.transform.position = nuevaPos;
+
+            // Opcional: hacer al chaleco hijo del paciente para que se mueva con él
+            jeringa.transform.SetParent(pacienteEnColision.transform, true);
+
+            // Avanzar paso
+            if (gameManagerCuatro.instancia != null)
+                gameManagerCuatro.instancia.AvanzarPaso();
+
+            // reset
+            pacienteEnColision = null;
+            arrastrando = false;
+        }
+
+
+
+
+
     }
-
-    void SoltarYColocar()
-    {
-        if (pacienteEnColision == null) return;
-
-        // Colocar sobre el paciente
-        Vector3 nuevaPos = pacienteEnColision.transform.position;
-        nuevaPos.y += alturaSobrePaciente;
-        chaleco.transform.position = nuevaPos;
-
-        // Opcional: hacer al chaleco hijo del paciente para que se mueva con él
-        chaleco.transform.SetParent(pacienteEnColision.transform, true);
-
-        // Avanzar paso
-        if (gameManagerCuatro.instancia != null)
-            gameManagerCuatro.instancia.AvanzarPaso();
-
-        // reset
-        pacienteEnColision = null;
-        arrastrando = false;
-    }
-
-
 }

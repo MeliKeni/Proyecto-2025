@@ -35,8 +35,22 @@ public class paso1_PuertaArmario : MonoBehaviour
         }
         else //aca es si abrir es true
         {
-            
+            // Rotamos la puerta 90 grados
+            if (anguloRotado < 90f)
+            {
+                float rotacionFrame = velocidadRotacion * Time.deltaTime;
+                float rotacionReal = Mathf.Min(rotacionFrame, 90f - anguloRotado);
+                puerta.transform.Rotate(Vector3.up, rotacionReal);
+                anguloRotado += rotacionReal;
+
+                if (anguloRotado >= 90f) //proximo 
+                {
+                    gameManagerCuatro.instancia.AvanzarPaso();
+                }
+            }
         }
+
     }
 }
+
 

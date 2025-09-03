@@ -9,10 +9,9 @@ public class uIManagerCuatro : MonoBehaviour
 
     private void Awake()
     {
-        if (instancia == null) //solo va a haber un uimanger
+        if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -55,5 +54,11 @@ public class uIManagerCuatro : MonoBehaviour
                 textoInstruccion.text = "";
                 break;
         }
+    }
+    public void ResetUI()
+    {
+        // Vuelve a buscar el texto en la nueva escena
+        textoInstruccion = GameObject.Find("TextoInstruccion").GetComponent<TextMeshProUGUI>();
+        textoInstruccion.text = "";
     }
 }

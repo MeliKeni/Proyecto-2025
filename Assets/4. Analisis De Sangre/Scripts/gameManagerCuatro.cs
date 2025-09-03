@@ -25,7 +25,6 @@ public class gameManagerCuatro : MonoBehaviour
         if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -45,6 +44,7 @@ public class gameManagerCuatro : MonoBehaviour
         {
             Debug.LogWarning("UIManagerCuatro no está listo aún. Se actualizará más tarde.");
         }
+        pasoActual = PasoAnalisisDeSangre.PacienteSilla;
     }
 
     // Llamado por UIManagerCuatro cuando se inicializa

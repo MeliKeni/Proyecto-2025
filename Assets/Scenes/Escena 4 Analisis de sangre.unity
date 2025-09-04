@@ -892,6 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777489397}
+  - component: {fileID: 777489398}
   m_Layer: 0
   m_Name: PonerAlgodon
   m_TagString: Untagged
@@ -913,6 +914,18 @@ Transform:
   m_Father: {fileID: 1065612381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777489398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777489396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4551fc7ffa4954a4c9975e9413b4f868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &806305715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,6 +1608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1287395333}
+  - component: {fileID: 1287395334}
   m_Layer: 0
   m_Name: GuardarSangre
   m_TagString: Untagged
@@ -1616,6 +1630,18 @@ Transform:
   m_Father: {fileID: 1470664269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287395334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287395332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e8de8a46f2fa84a986f0438ab81379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1311487201
 GameObject:
   m_ObjectHideFlags: 0

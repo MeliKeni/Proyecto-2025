@@ -19,12 +19,11 @@ public class Paso4_GestoRadiografia : MonoBehaviour
 
     void Update()
     {
+
         // Solo funciona si estamos en el paso GestoComputadora
         if (GameManager3.instancia.pasoActual != PasoRadiografia.GestoComputadora)
         {
-            // Aseguramos que la imagen esté oculta si no estamos en el paso
-            if (ImagenGesto != null && ImagenGesto.activeSelf)
-                ImagenGesto.SetActive(false);
+            
             return;
         }
 

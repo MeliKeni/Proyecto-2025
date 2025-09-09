@@ -22,7 +22,7 @@ public class Paso5_5_SalirMaquina2 : MonoBehaviour
             if (Paciente != null)
             {
                 // Mover 1 unidad a la derecha
-                posicionObjetivo = Paciente.transform.position + Vector3.right*3f;
+                posicionObjetivo = Paciente.transform.position + Vector3.left*3f;
                 moviendo = true;
             }
             else

@@ -34,7 +34,7 @@ public Camera MyCurrentCam;
                         // Preparar para mover el estudio impreso hacia abajo
                         if (EstudioImpreso != null)
                         {
-                            posicionObjetivo = EstudioImpreso.transform.position + Vector3.down; // 1 unidad abajo
+                            posicionObjetivo = EstudioImpreso.transform.position + Vector3.up; // 1 unidad abajo
                             listoParaMover = true;
                             moviendo = true;
                         }

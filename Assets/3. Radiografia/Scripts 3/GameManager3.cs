@@ -2,14 +2,14 @@
 
 public enum PasoRadiografia
 {
-    AbrirArmario,
-    ColocarChaleco,
+   // AbrirArmario,
+   // ColocarChaleco,
     PacienteMaquina,
     IniciarRadiografia,
     GestoComputadora,
     Escaneo,
     SalirDeMaquina,
-    RetirarChaleco,
+   // RetirarChaleco,
     ImprimirEstudio,
     EntregarSobre,
     Completado
@@ -18,7 +18,7 @@ public enum PasoRadiografia
 public class GameManager3 : MonoBehaviour
 {
     public static GameManager3 instancia;
-    public PasoRadiografia pasoActual = PasoRadiografia.AbrirArmario;
+    public PasoRadiografia pasoActual = PasoRadiografia.PacienteMaquina;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class GameManager3 : MonoBehaviour
     private void Start()
     {
         // Siempre arranca en el primer paso
-        pasoActual = PasoRadiografia.AbrirArmario;
+        pasoActual = PasoRadiografia.PacienteMaquina;
         UIManager3.instancia.ActualizarInstruccion(pasoActual);
     }
 
@@ -64,7 +64,7 @@ public class GameManager3 : MonoBehaviour
     }
     public void ResetGame()
     {
-        pasoActual = PasoRadiografia.AbrirArmario;
+        pasoActual = PasoRadiografia.PacienteMaquina;
         UIManager3.instancia.ActualizarInstruccion(pasoActual);
     }
 }

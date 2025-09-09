@@ -27,12 +27,12 @@ public class UIManager3 : MonoBehaviour
             case PasoRadiografia.PacienteMaquina:
                 textoInstruccion.text = "Hace click en el paciente y luego en la maquina para que entre a hacerse el estudio .";
                 break;
-            case PasoRadiografia.AbrirArmario:
+           /* case PasoRadiografia.AbrirArmario:
                 textoInstruccion.text = "Abrí el armario.";
                 break;
             case PasoRadiografia.ColocarChaleco:
                 textoInstruccion.text = "Colocá el chaleco al paciente.";
-                break;
+                break;*/
             case PasoRadiografia.IniciarRadiografia:
                 textoInstruccion.text = "Tocá el botón para iniciar la radiografía.";
                 break;
@@ -45,9 +45,9 @@ public class UIManager3 : MonoBehaviour
             case PasoRadiografia.SalirDeMaquina:
                 textoInstruccion.text = "Hace click en cualquier lado para avisarle al paciente que ya puede salir";
                 break;
-            case PasoRadiografia.RetirarChaleco:
+         /*  case PasoRadiografia.RetirarChaleco:
                 textoInstruccion.text = "Retirá el chaleco del paciente.";
-                break;
+                break;*/
             case PasoRadiografia.ImprimirEstudio:
                 textoInstruccion.text = "Imprimí el estudio.";
                 break;

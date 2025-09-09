@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 public class Paso6_SacarChaleco : MonoBehaviour
 {
@@ -111,3 +111,4 @@ public class Paso6_SacarChaleco : MonoBehaviour
         Gizmos.DrawWireSphere(chaleco.transform.position, overlapRadius);
     }
 }
+*/

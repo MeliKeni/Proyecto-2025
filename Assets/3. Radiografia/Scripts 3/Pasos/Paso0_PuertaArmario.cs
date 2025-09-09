@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 public class Paso0_PuertaArmario : MonoBehaviour
 {
@@ -48,3 +48,4 @@ public class Paso0_PuertaArmario : MonoBehaviour
         }
     }
 }
+*/

@@ -7,10 +7,11 @@ public class Paso2_MoverPaciente : MonoBehaviour
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
     public Camera MyCurrentCam;
+    public GameObject target;
 
     Vector3 destino = Vector3.zero; // Inicializar en cero para controlar si está seteado
+    bool esperando = false; // Para no iniciar corrutina múltiples veces
 
-    // Update is called once per frame
     void Update()
     {
         // Solo funciona si estamos en el paso PacienteMaquina
@@ -31,18 +32,17 @@ public class Paso2_MoverPaciente : MonoBehaviour
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
-                    // No actualizamos destino acá para evitar que pase al siguiente paso infinitamente
                 }
                 // Si clickeaste la silla y hay paciente seleccionado
                 else if (hit.collider.CompareTag("Maquina") && pacienteSeleccionado != null)
                 {
-                    destino = hit.collider.transform.position;
+                    destino = target.transform.position;
                 }
             }
         }
 
         // Mover paciente hacia el destino solo si destino fue seteado (distinto de cero)
-        if (pacienteSeleccionado != null && destino != Vector3.zero)
+        if (pacienteSeleccionado != null && destino != Vector3.zero && !esperando)
         {
             pacienteSeleccionado.transform.position = Vector3.MoveTowards(
                 pacienteSeleccionado.transform.position,
@@ -53,10 +53,18 @@ public class Paso2_MoverPaciente : MonoBehaviour
             // Si llegó cerca al destino (distancia menor a 0.1)
             if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.1f)
             {
-                GameManager3.instancia.AvanzarPaso();
-                pacienteSeleccionado = null;   // Para que no siga moviéndose ni avanzando pasos
-                destino = Vector3.zero;        // Reseteamos el destino para esperar la próxima acción
+                esperando = true; // Para evitar entrar otra vez mientras esperamos
+                StartCoroutine(EsperarYAvanzar());
             }
         }
+    }
+
+    IEnumerator EsperarYAvanzar()
+    {
+        yield return new WaitForSeconds(0.6f);  // Espera 1 segundo
+        GameManager3.instancia.AvanzarPaso();
+        pacienteSeleccionado = null;   // Para que no siga moviéndose ni avanzando pasos
+        destino = Vector3.zero;        // Reseteamos el destino para esperar la próxima acción
+        esperando = false;             // Ya no estamos esperando
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 public class Paso1_PonerChaleco : MonoBehaviour
 {
@@ -106,3 +106,4 @@ public class Paso1_PonerChaleco : MonoBehaviour
 
    
 }
+*/

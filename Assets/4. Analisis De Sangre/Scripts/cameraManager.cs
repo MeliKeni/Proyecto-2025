@@ -20,12 +20,6 @@ public class cameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario)
-        {
-
-            Camara1.gameObject.SetActive(false);
-            Camara3.gameObject.SetActive(true);
-        }
 
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.ColocarGuante)
         {

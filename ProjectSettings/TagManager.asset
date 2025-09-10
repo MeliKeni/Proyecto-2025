@@ -10,6 +10,7 @@ TagManager:
   - Armario
   - Chaleco
   - Jeringa
+  - Frasco
   layers:
   - Default
   - TransparentFX

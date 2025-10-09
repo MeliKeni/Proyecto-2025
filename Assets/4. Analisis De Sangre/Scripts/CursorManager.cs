@@ -15,9 +15,11 @@ public class CursorManager : MonoBehaviour
     [Header("scripts")]
     public gameManagerCuatro gameManager;
     public paso1_PuertaArmario paso1script;
+    public paso2_ColocarGuante paso2script;
 
     [Header("bools chequeadores")]
     bool cambioGuante = false;
+    bool normal = true;
 
     void Start()
     {
@@ -47,11 +49,21 @@ public class CursorManager : MonoBehaviour
         {
             if (paso1script.pasoTerminado1 == true)
             {
-                Debug.Log("si");
                 Cursor.SetCursor(imagenGuante, hotspot2, CursorMode.Auto);
                 cambioGuante = true;
+                normal=false;
             }
         }
-           
+
+        if (normal == false)
+        {
+            if (paso2script.pasoTerminado2 == true)
+            {
+                Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
+                normal = true;
+            }
+        }
+
+
     }
 }

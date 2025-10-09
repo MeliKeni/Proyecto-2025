@@ -12,6 +12,8 @@ TagManager:
   - Jeringa
   - Frasco
   - ApoyaBrazo
+  - Curita
+  - Brazo
   layers:
   - Default
   - TransparentFX

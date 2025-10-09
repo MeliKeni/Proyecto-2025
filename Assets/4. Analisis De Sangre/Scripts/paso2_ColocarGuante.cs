@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -107,4 +107,40 @@ public class paso2_ColocarGuante : MonoBehaviour
     }
 
 
+}
+*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class paso2_ColocarGuante : MonoBehaviour
+{
+    public GameObject Brazo;
+    public Camera MyCurrentCam;
+    public bool pasoTerminado2 = false;
+
+    void Update()
+    {
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.ColocarGuante)
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null && hit.collider.CompareTag("Brazo"))
+                {
+                    // Al hacer clic en la puerta, avanzar de paso
+                    pasoTerminado2 = true;
+                    gameManagerCuatro.instancia.AvanzarPaso();
+
+                }
+            }
+        }
+    }
 }

@@ -6,6 +6,7 @@ public class paso1_PuertaArmario : MonoBehaviour
 {
     public GameObject puerta;
     public Camera MyCurrentCam;
+    public bool pasoTerminado1=false;
 
     void Update()
     {
@@ -23,7 +24,9 @@ public class paso1_PuertaArmario : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject == puerta)
                 {
                     // Al hacer clic en la puerta, avanzar de paso
+                    pasoTerminado1= true;
                     gameManagerCuatro.instancia.AvanzarPaso();
+
                 }
             }
         }

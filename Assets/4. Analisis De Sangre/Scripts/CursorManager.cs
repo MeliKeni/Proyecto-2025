@@ -5,9 +5,19 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    [Header("Imagenes")]
     public Texture2D imagenCursor2;
+    public Texture2D imagenGuante;
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspot2;
+    
+
+    [Header("scripts")]
+    public gameManagerCuatro gameManager;
+    public paso1_PuertaArmario paso1script;
+
+    [Header("bools chequeadores")]
+    bool cambioGuante = false;
 
     void Start()
     {
@@ -32,5 +42,16 @@ public class CursorManager : MonoBehaviour
         {
             Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
         }
+
+        if (cambioGuante == false)
+        {
+            if (paso1script.pasoTerminado1 == true)
+            {
+                Debug.Log("si");
+                Cursor.SetCursor(imagenGuante, hotspot2, CursorMode.Auto);
+                cambioGuante = true;
+            }
+        }
+           
     }
 }

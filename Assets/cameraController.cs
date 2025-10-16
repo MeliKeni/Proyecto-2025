@@ -28,35 +28,43 @@ public class cameraController : MonoBehaviour
                 {
                     currentView = views[0];
                 }
-               
-               if (hit.collider.CompareTag("Armario"))
+
+                if (hit.collider.CompareTag("Armario"))
                 {
-                    currentView = views[1];
-                }
-               
-               if (hit.collider.CompareTag("ApoyaBrazo"))
-                {
-                    currentView = views[2];
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarGuante))
+                    {
+                        currentView = views[1];
+                    }
+                    else
+                    {
+                        gameManagerCuatro.instancia.ErrorPaso();
+                    }
+
+                    if (hit.collider.CompareTag("ApoyaBrazo"))
+                    {
+                        currentView = views[2];
+                    }
                 }
             }
         }
     }
 
-   private void LateUpdate()
+    private void LateUpdate()
     {
         // Movimiento suave
         transform.position = Vector3.Lerp(
-            transform.position, 
-            currentView.position, 
+            transform.position,
+            currentView.position,
             Time.deltaTime * transitionSpeed
         );
 
-        // Rotación suave y correcta
+        // Rotación suave
         transform.rotation = Quaternion.Slerp(
-            transform.rotation, 
-            currentView.rotation, 
+            transform.rotation,
+            currentView.rotation,
             Time.deltaTime * transitionSpeed
-        );
+        );
+    }
 }
 
-}
+

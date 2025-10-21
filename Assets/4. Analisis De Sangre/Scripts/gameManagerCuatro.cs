@@ -8,6 +8,7 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     AbrirArmario,   //1 
     AgarrarGuante, // acá tendria que ir la función de meli, de tocar y que se ponga directo en el mouse
     ColocarGuante,  //2
+    AbrirArmario2, //2.5
     JeringaBrazo,   //3
     SacarSangre,    //4
     SacarAlgodon,   //4.5

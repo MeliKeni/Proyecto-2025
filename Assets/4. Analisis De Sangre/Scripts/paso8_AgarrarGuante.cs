@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class paso8_AgarrarGuante : MonoBehaviour
 {
+    public Camera MyCurrentCam;
+    public bool cursorGuante = false;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (gameManagerCuatro.instancia?.pasoActual != PasoAnalisisDeSangre.AgarrarGuante)
         {
-            // Verifica que estemos en el paso correcto antes de avanzar
-            if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarGuante))
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                gameManagerCuatro.instancia.AvanzarPaso();
+
+                if (hit.collider.CompareTag("Guante"))
+                {
+                    cursorGuante = true;
+                    gameManagerCuatro.instancia.AvanzarPaso();
+                }
             }
-            else
-            {
-                gameManagerCuatro.instancia.ErrorPaso();
-            }
+           
         }
     }
 }
+

@@ -16,14 +16,14 @@ public class CursorManager : MonoBehaviour
     public gameManagerCuatro gameManager;
     public paso1_PuertaArmario paso1script;
     public paso2_ColocarGuante paso2script;
+    public paso8_AgarrarGuante paso8script;
 
     [Header("bools chequeadores")]
-    bool cambioGuante = false;
     bool normal = true;
 
     void Start()
     {
-        hotspot2 = new Vector2(imagenCursor2.width / 2f, imagenCursor2.height / 2f);
+        hotspot2 = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
         Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto); 
         //La funcion SetCursor,tiene 3 parametros necesarios,
         //la imagen que voy a usar, pongo null si es la default
@@ -36,34 +36,16 @@ public class CursorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (paso8script.cursorGuante)
         {
-            Cursor.SetCursor(imagenCursor2, hotspot2, CursorMode.Auto);
+
+            Cursor.SetCursor(imagenGuante, Vector2.zero, CursorMode.Auto);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (paso8script.cursorGuante==false)
         {
-            Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
+
+            Cursor.SetCursor(null, default, CursorMode.Auto);
         }
-
-        if (cambioGuante == false)
-        {
-            if (paso1script.pasoTerminado1 == true)
-            {
-                Cursor.SetCursor(imagenGuante, hotspot2, CursorMode.Auto);
-                cambioGuante = true;
-                normal=false;
-            }
-        }
-
-        if (normal == false)
-        {
-            if (paso2script.pasoTerminado2 == true)
-            {
-                Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
-                normal = true;
-            }
-        }
-
-
     }
+
 }

@@ -17,8 +17,10 @@ public class paso3_Jeringa_Brazo : MonoBehaviour
     bool arrastrando = false;
     float zFija; // para que no se mueva en el eje z
     private GameObject pacienteEnColision = null;  // esta en colision con el paciente
-
     public Camera MyCurrentCam;
+    public paso8_AgarrarGuante paso8script;
+
+
     void Start()
     {
         
@@ -30,6 +32,10 @@ public class paso3_Jeringa_Brazo : MonoBehaviour
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.JeringaBrazo)
         {
             return; // anulamos todo si no estamos en el paso que hay que estar
+        }
+        else
+        {
+            paso8script.cursorGuante = false;
         }
         //detecta si hace click en chaleco 
         if (Input.GetMouseButtonDown(0))

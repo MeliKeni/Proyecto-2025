@@ -14,6 +14,7 @@ TagManager:
   - ApoyaBrazo
   - Curita
   - Brazo
+  - Guante
   layers:
   - Default
   - TransparentFX

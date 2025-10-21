@@ -29,6 +29,11 @@ public class paso8_AgarrarGuante : MonoBehaviour
             }
            
         }
+
+         if (Input.GetKeyDown(KeyCode.F))
+        {
+            gameManagerCuatro.instancia.AvanzarPaso();
+        }
     }
 }
 

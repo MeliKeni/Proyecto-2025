@@ -142,5 +142,10 @@ public class paso2_ColocarGuante : MonoBehaviour
                 }
             }
         }
+
+         if (Input.GetKeyDown(KeyCode.F))
+        {
+            gameManagerCuatro.instancia.AvanzarPaso();
+        }
     }
 }

@@ -6,8 +6,10 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
 {
     PacienteSilla,  //0
     AbrirArmario,   //1 
-    AgarrarGuante, // acá tendria que ir la función de meli, de tocar y que se ponga directo en el mouse
+    AgarrarGuante, // 
     ColocarGuante,  //2
+    AbrirArmario2,
+    AgarrarJeringa,
     JeringaBrazo,   //3
     SacarSangre,    //4
     SacarAlgodon,   //4.5

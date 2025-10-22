@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
-  public Transform[] views; // distintas perspectivas
+    public Transform[] views; // distintas perspectivas
     public float transitionSpeed;
     Transform currentView;
 
@@ -23,27 +23,69 @@ public class cameraController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                // según el objeto clickeado, cambio la cámara
-                if (hit.collider.CompareTag("Silla"))
+                // --- GUANTE ---
+                if (hit.collider.CompareTag("Guante"))
                 {
-                    currentView = views[0];
-                }
-
-                if (hit.collider.CompareTag("Armario"))
-                {
-                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarGuante))
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.ColocarGuante))
                     {
-                        currentView = views[1];
+                        currentView = views[0];
                     }
                     else
                     {
                         gameManagerCuatro.instancia.ErrorPaso();
                     }
+                }
 
-                    if (hit.collider.CompareTag("ApoyaBrazo"))
+                // --- JERINGA ---
+                else if (hit.collider.CompareTag("Jeringa"))
+                {
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarJeringa))
+                    {
+                        currentView = views[0];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
+                    else
+                    {
+                        gameManagerCuatro.instancia.ErrorPaso();
+                    }
+                }
+
+                // --- BRAZO ---
+                else if (hit.collider.CompareTag("Brazo"))
+                {
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.JeringaBrazo))
                     {
                         currentView = views[2];
+                        gameManagerCuatro.instancia.AvanzarPaso();
                     }
+                    else
+                    {
+                        gameManagerCuatro.instancia.ErrorPaso();
+                    }
+                }
+
+                // --- ARMARIO ---
+                else if (hit.collider.CompareTag("Armario"))
+                {
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarGuante))
+                    {
+                        currentView = views[1];
+                    }
+                    else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario2))
+                    {
+                        currentView = views[1];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
+                    else
+                    {
+                        gameManagerCuatro.instancia.ErrorPaso();
+                    }
+                }
+
+                // --- APOYA BRAZO ---
+                else if (hit.collider.CompareTag("ApoyaBrazo"))
+                {
+                    currentView = views[2];
                 }
             }
         }
@@ -66,5 +108,3 @@ public class cameraController : MonoBehaviour
         );
     }
 }
-
-

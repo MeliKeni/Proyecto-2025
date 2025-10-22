@@ -35,7 +35,10 @@ public class paso3_Jeringa_Brazo : MonoBehaviour
         }
         else
         {
-            paso8script.cursorGuante = false;
+            if (paso8script != null)
+            {
+                paso8script.cursorGuante = false;
+            }
         }
         //detecta si hace click en chaleco 
         if (Input.GetMouseButtonDown(0))

@@ -85,6 +85,11 @@ public class cameraController : MonoBehaviour
                         currentView = views[1];
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
+                      else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario3))
+                    {
+                        currentView = views[1];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
                     else
                     {
                         gameManagerCuatro.instancia.ErrorPaso();

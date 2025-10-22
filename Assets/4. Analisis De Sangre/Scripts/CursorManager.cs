@@ -18,8 +18,8 @@ public class CursorManager : MonoBehaviour
     public paso2_ColocarGuante paso2script;
     public paso8_AgarrarGuante paso8script;
 
-    [Header("bools chequeadores")]
-    bool normal = true;
+    [Header("Objetos")]
+    public GameObject guante;
 
     void Start()
     {
@@ -30,7 +30,8 @@ public class CursorManager : MonoBehaviour
         //donde va a ser el lugar de interaccion, donde marca el click,
         //generalmente se usa el 0,0 que es la esquina superior izquierda, para que sea el medio hacemos lo de arriba de poner la altura y el ancho sobre 2 de la imagen,
         //y despues esta cursor mode que es algo que no voy a tocar y pones auto y unity te lo resuelve, es para animaciones mas avanzadas
-
+        
+        guante.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class CursorManager : MonoBehaviour
         {
 
             Cursor.SetCursor(imagenGuante, Vector2.zero, CursorMode.Auto);
+            guante.SetActive(false);
         }
         if (paso8script.cursorGuante==false)
         {

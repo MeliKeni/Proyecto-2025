@@ -15,6 +15,7 @@ TagManager:
   - Curita
   - Brazo
   - Guante
+  - Algodon
   layers:
   - Default
   - TransparentFX

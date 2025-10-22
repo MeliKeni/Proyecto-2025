@@ -8,8 +8,10 @@ public class CursorManager : MonoBehaviour
     [Header("Imagenes")]
     public Texture2D imagenCursor2;
     public Texture2D imagenGuante;
+    public Texture2D imagenJeringa;
     public Vector2 hotspotDefault = Vector2.zero;
-    public Vector2 hotspot2;
+    public Vector2 hotspotGuante;
+    public Vector2 hotspotJeringa;
     
 
     [Header("scripts")]
@@ -17,13 +19,16 @@ public class CursorManager : MonoBehaviour
     public paso1_PuertaArmario paso1script;
     public paso2_ColocarGuante paso2script;
     public paso8_AgarrarGuante paso8script;
+    public cameraController camaraController;
 
     [Header("Objetos")]
     public GameObject guante;
+    public GameObject jeringa;
 
     void Start()
     {
-        hotspot2 = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
+        hotspotGuante = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
+        hotspotJeringa = new Vector2(imagenJeringa.width / 2f, imagenJeringa.height / 2f);
         Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto); 
         //La funcion SetCursor,tiene 3 parametros necesarios,
         //la imagen que voy a usar, pongo null si es la default
@@ -32,6 +37,7 @@ public class CursorManager : MonoBehaviour
         //y despues esta cursor mode que es algo que no voy a tocar y pones auto y unity te lo resuelve, es para animaciones mas avanzadas
         
         guante.SetActive(true);
+        jeringa.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,6 +55,13 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(null, default, CursorMode.Auto);
             paso8script.cursorGuante = false;
         }
+
+        if (camaraController.cursorJeringa)
+        {
+            Cursor.SetCursor(imagenJeringa, Vector2.zero, CursorMode.Auto);
+            jeringa.SetActive(false);
+        }
+       
     }
 
 }

@@ -7,6 +7,8 @@ public class cameraController : MonoBehaviour
     public Transform[] views; // distintas perspectivas
     public float transitionSpeed;
     Transform currentView;
+    public bool cursorJeringa = false;
+
 
     void Start()
     {
@@ -43,7 +45,9 @@ public class cameraController : MonoBehaviour
                     {
                         currentView = views[0];
                         gameManagerCuatro.instancia.AvanzarPaso();
-                    }
+                        cursorJeringa = true;
+
+}
                     else
                     {
                         gameManagerCuatro.instancia.ErrorPaso();

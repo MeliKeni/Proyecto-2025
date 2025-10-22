@@ -47,6 +47,14 @@ public class uIManagerCuatro : MonoBehaviour
                 textoInstruccion.text = "Ata el guante alrededor del brazo del paciente.";
                 imagenes[2].enabled = true;
                 break;
+            case PasoAnalisisDeSangre.AbrirArmario2:
+                textoInstruccion.text = "Abri el armario.";
+                imagenes[2].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AgarrarJeringa:
+                textoInstruccion.text = "Hace click en la jeringa";
+                imagenes[2].enabled = true;
+                break;
             case PasoAnalisisDeSangre.JeringaBrazo:
                 textoInstruccion.text = "Arrastra la jeringa al brazo del paciente para extraer la sangre";
                 imagenes[3].enabled = true;

@@ -12,6 +12,7 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     AgarrarJeringa,
     JeringaBrazo,   //3
     SacarSangre,    //4
+    SangreSacada,
     AbrirArmario3, //4,1
     AgarrarAlgodon,   //4.5
     PonerAlgodon,   //5

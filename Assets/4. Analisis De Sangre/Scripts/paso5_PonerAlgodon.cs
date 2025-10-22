@@ -21,6 +21,7 @@ public class paso5_PonerAlgodon : MonoBehaviour
 
     void Update()
     {
+
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PonerAlgodon)
         {
             return;

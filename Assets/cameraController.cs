@@ -101,7 +101,22 @@ public class cameraController : MonoBehaviour
                 {
                     currentView = views[2];
                 }
+
+                if (hit.collider.CompareTag("Algodon"))
+                {
+                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarAlgodon))
+                    {
+                        currentView = views[0];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
+                    else
+                    {
+                        gameManagerCuatro.instancia.ErrorPaso();
+                    }
+                }
             }
+
+
         }
     }
 

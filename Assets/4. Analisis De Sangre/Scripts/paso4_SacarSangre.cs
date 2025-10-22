@@ -22,7 +22,7 @@ public class paso4_SacarSangre : MonoBehaviour
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
-                if (h.collider != null && h.collider.gameObject == jeringa)
+                if (h.collider.CompareTag("Brazo"))
                 {
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }

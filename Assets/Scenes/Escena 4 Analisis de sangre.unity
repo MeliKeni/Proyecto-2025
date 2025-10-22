@@ -3274,7 +3274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jeringa: {fileID: 2122208501}
-  MyCurrentCam: {fileID: 0}
+  MyCurrentCam: {fileID: 1902110549}
 --- !u!1 &1520930480
 GameObject:
   m_ObjectHideFlags: 0

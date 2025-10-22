@@ -61,7 +61,14 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenJeringa, Vector2.zero, CursorMode.Auto);
             jeringa.SetActive(false);
         }
-       
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
+        {
+
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+            camaraController.cursorJeringa = false;
+        }
+
+
     }
 
 }

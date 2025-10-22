@@ -15,6 +15,7 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     SangreSacada,
     AbrirArmario3, //4,1
     AgarrarAlgodon,   //4.5
+    LlevarAlgodon,
     PonerAlgodon,   //5
     GuardarSangre,  //6
     PonerCurita,    //7

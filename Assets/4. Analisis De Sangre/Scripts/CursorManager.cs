@@ -43,10 +43,11 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenGuante, Vector2.zero, CursorMode.Auto);
             guante.SetActive(false);
         }
-        if (paso8script.cursorGuante==false)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2)
         {
 
             Cursor.SetCursor(null, default, CursorMode.Auto);
+            paso8script.cursorGuante = false;
         }
     }
 

@@ -9,6 +9,7 @@ public class CursorManager : MonoBehaviour
     public Texture2D imagenCursor2;
     public Texture2D imagenGuante;
     public Texture2D imagenJeringa;
+    public Texture2D imagenAlgodon;
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
@@ -19,11 +20,13 @@ public class CursorManager : MonoBehaviour
     public paso1_PuertaArmario paso1script;
     public paso2_ColocarGuante paso2script;
     public paso8_AgarrarGuante paso8script;
+    public Paso2_1_2_AgarrarAlgodon1 paso2_1_2script;
     public cameraController camaraController;
 
     [Header("Objetos")]
     public GameObject guante;
     public GameObject jeringa;
+    public GameObject algodon;
 
     void Start()
     {
@@ -38,6 +41,7 @@ public class CursorManager : MonoBehaviour
         
         guante.SetActive(true);
         jeringa.SetActive(true);
+        algodon.SetActive(true);
     }
 
     // Update is called once per frame
@@ -66,6 +70,17 @@ public class CursorManager : MonoBehaviour
 
             Cursor.SetCursor(null, default, CursorMode.Auto);
             camaraController.cursorJeringa = false;
+        }
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerAlgodon1)
+        {
+            Cursor.SetCursor(imagenAlgodon, Vector2.zero, CursorMode.Auto);
+            algodon.SetActive(false);
+        }
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
+        {
+
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+            //camaraController.cursorAlgodon = false;
         }
 
 

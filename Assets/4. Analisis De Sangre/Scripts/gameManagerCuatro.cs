@@ -13,16 +13,18 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     AgarrarAlgodon1, //2.2
     PonerAlgodon1, //2.3
     TirarAlgodon, //2.4
-    AgarrarJeringa, //2.5
-    AbrirArmario2_5,// 2.6
+    AbrirArmario2_5,// 2.5
+    AgarrarJeringa, //2.6
     JeringaBrazo,   //3
     SacarSangre,    //4
     SangreSacada,
     AbrirArmario3, //4,1
-    AgarrarAlgodon,   //4.5
-    LlevarAlgodon,
-    PonerAlgodon,   //5
+      AgarrarAlgodon,   //4.5
+    LlevarAlgodon, 
+    PonerAlgodon,   //5 
     GuardarSangre,  //6
+    AbrirArmario4,   //6.1 
+    AgarrarCurita,  //6.2
     PonerCurita,    //7
     Completado
 }
@@ -91,6 +93,14 @@ public class gameManagerCuatro : MonoBehaviour
     {
         Debug.LogWarning("Intentaste hacer una acción fuera de orden.");
         //  poner sonido o feedback visual
+    }
+    private void Update()
+    {
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.AgarrarAlgodon)
+        {
+            gameManagerCuatro.instancia.AvanzarPaso();
+
+        }
     }
 }
 

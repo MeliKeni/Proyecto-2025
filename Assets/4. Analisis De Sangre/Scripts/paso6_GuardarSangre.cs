@@ -27,6 +27,10 @@ public class paso6_GuardarSangre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            gameManagerCuatro.instancia.AvanzarPaso();
+        }
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.GuardarSangre)
         {
             return; // anulamos todo si no estamos en el paso que hay que estar

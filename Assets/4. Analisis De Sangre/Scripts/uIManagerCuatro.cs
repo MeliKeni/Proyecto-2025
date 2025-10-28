@@ -45,47 +45,39 @@ public class uIManagerCuatro : MonoBehaviour
                 break;
             case PasoAnalisisDeSangre.ColocarGuante:
                 textoInstruccion.text = "Ata el guante alrededor del brazo del paciente.";
-                imagenes[2].enabled = true;
+                imagenes[3].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario2:
                 textoInstruccion.text = "Abri el armario.";
-                imagenes[2].enabled = true;
+                imagenes[4].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarJeringa:
                 textoInstruccion.text = "Hace click en la jeringa";
-                imagenes[2].enabled = true;
+                imagenes[5].enabled = true;
                 break;
             case PasoAnalisisDeSangre.JeringaBrazo:
                 textoInstruccion.text = "Arrastra la jeringa al brazo del paciente para extraer la sangre";
-                imagenes[3].enabled = true;
+                imagenes[6].enabled = true;
                 break;
             case PasoAnalisisDeSangre.SacarSangre:
                 textoInstruccion.text = "Interactuá con la jeringa para seguir el estudio.";
-                imagenes[4].enabled = true;
+                imagenes[7].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario3:
                 textoInstruccion.text = "Abri el armario.";
-                imagenes[4].enabled = true;
-                break;
-            case PasoAnalisisDeSangre.AgarrarAlgodon:
-                textoInstruccion.text = "Hace click en el algodon.";
-                imagenes[4].enabled = true;
-                break;
-            case PasoAnalisisDeSangre.PonerAlgodon:
-                textoInstruccion.text = "Aplicá algodón en el brazo.";
-                imagenes[5].enabled = true;
+                imagenes[8].enabled = true;
                 break;
             case PasoAnalisisDeSangre.GuardarSangre:
                 textoInstruccion.text = "Colocá la sangre en el recipiente";
-                imagenes[6].enabled = true;
+                imagenes[9].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerCurita:
                 textoInstruccion.text = "Aplicá la curita al brazo del paciente";
-                imagenes[7].enabled = true;
+                imagenes[10].enabled = true;
                 break;
             case PasoAnalisisDeSangre.Completado:
                 textoInstruccion.text = "Estudio completado. ¡Buen trabajo!";
-                imagenes[8].enabled = true;
+                imagenes[11].enabled = true;
                 break;
             default:
                 textoInstruccion.text = "";

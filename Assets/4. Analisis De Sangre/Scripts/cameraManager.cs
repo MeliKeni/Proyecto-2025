@@ -34,12 +34,5 @@ public class cameraManager : MonoBehaviour
             Camara1.gameObject.SetActive(false);
             Camara2.gameObject.SetActive(true);
         }
-
-        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerAlgodon)
-        {
-
-            Camara1.gameObject.SetActive(true);
-            Camara2.gameObject.SetActive(false);
-        }
     }
 }

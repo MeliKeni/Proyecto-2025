@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +78,7 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2_5)
         {
-
+       
             Cursor.SetCursor(null, default, CursorMode.Auto);
             
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class paso5_PonerAlgodon : MonoBehaviour
 {
-    [Header("Referencias")]
+/*    [Header("Referencias")]
     public GameObject algodon;
     public GameObject paciente;
 
@@ -98,5 +98,5 @@ public class paso5_PonerAlgodon : MonoBehaviour
 
         pacienteEnColision = null;
         arrastrando = false;
-    }
+    }*/
 }

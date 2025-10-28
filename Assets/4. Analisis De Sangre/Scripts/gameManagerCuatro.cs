@@ -8,12 +8,13 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     AbrirArmario,   //1 
     AgarrarGuante, // 
     ColocarGuante,  //2
-    AbrirArmario2, //2.1
-    PonerAlcohol, //2.2
-    AgarrarAlgodon1, //2.3
-    PonerAlgodon1, //2.4
-    TirarAlgodon, //2.5
-    AgarrarJeringa, //2.6
+    AbrirArmario2, //2.0
+    PonerAlcohol, //2.1
+    AgarrarAlgodon1, //2.2
+    PonerAlgodon1, //2.3
+    TirarAlgodon, //2.4
+    AgarrarJeringa, //2.5
+    AbrirArmario2_5,// 2.6
     JeringaBrazo,   //3
     SacarSangre,    //4
     SangreSacada,

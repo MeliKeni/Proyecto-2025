@@ -8,6 +8,8 @@ public class cameraController : MonoBehaviour
     public float transitionSpeed;
     Transform currentView;
     public bool cursorJeringa = false;
+    public Paso2_1_2_AgarrarAlgodon1 paso2_1_2script;
+
 
 
     void Start()
@@ -123,6 +125,14 @@ public class cameraController : MonoBehaviour
                     {
                         gameManagerCuatro.instancia.ErrorPaso();
                     }
+                }
+
+                if (paso2_1_2script.cambiarCamara == true)
+                    
+                    {
+                        currentView = views[0];
+                         paso2_1_2script.cambiarCamara = false;
+                    
                 }
             }
 

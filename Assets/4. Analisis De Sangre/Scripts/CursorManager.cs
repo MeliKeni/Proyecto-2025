@@ -76,11 +76,11 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenAlgodon, Vector2.zero, CursorMode.Auto);
             algodon.SetActive(false);
         }
-        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2_5)
         {
 
             Cursor.SetCursor(null, default, CursorMode.Auto);
-            //camaraController.cursorAlgodon = false;
+            
         }
 
 

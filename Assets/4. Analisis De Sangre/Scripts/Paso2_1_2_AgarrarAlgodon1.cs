@@ -5,7 +5,7 @@ using UnityEngine;
 public class Paso2_1_2_AgarrarAlgodon1 : MonoBehaviour
 {
     public Camera MyCurrentCam;
-
+    public bool cambiarCamara=false;
     void Start()
     {
         
@@ -14,6 +14,10 @@ public class Paso2_1_2_AgarrarAlgodon1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.AgarrarAlgodon1)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
@@ -24,6 +28,8 @@ public class Paso2_1_2_AgarrarAlgodon1 : MonoBehaviour
                 if (hit.collider.CompareTag("Algodon"))
                 {
                     gameManagerCuatro.instancia.AvanzarPaso();
+                    cambiarCamara = true;
+
 
                 }
             }

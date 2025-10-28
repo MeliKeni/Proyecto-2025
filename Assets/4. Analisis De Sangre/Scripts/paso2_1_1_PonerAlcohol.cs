@@ -9,14 +9,15 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
 
     void Start()
     {
-        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PonerAlcohol)
-        {
-            return;
-        }
+        
     }
 
     void Update()
     {
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PonerAlcohol)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);

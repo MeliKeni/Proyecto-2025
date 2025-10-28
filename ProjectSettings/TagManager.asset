@@ -16,6 +16,7 @@ TagManager:
   - Brazo
   - Guante
   - Algodon
+  - Botella
   layers:
   - Default
   - TransparentFX

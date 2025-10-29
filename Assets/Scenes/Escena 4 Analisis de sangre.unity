@@ -1157,7 +1157,7 @@ MonoBehaviour:
   imagenGuante: {fileID: 2800000, guid: 9adb5814f8b8efe44a9b55464ac901c8, type: 3}
   imagenJeringa: {fileID: 2800000, guid: 3379d2208c3750c4bbb95ea7c1401150, type: 3}
   imagenAlgodon: {fileID: 2800000, guid: 45a9bf52496c79c4da37e02459c5d928, type: 3}
-  imagenCurita: {fileID: 2800000, guid: ebe7a39d539b5254d9c345df749610ee, type: 3}
+  imagenCurita: {fileID: 2800000, guid: 10bd340c911ff034c915f52f64df7cde, type: 3}
   hotspotDefault: {x: 0, y: 0}
   hotspotGuante: {x: 0, y: 0}
   hotspotJeringa: {x: 0, y: 0}

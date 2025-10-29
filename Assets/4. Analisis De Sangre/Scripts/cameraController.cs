@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -107,6 +107,11 @@ public class cameraController : MonoBehaviour
                         currentView = views[1];
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
+                     else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario4))
+                    {
+                        currentView = views[1];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
                     else
                     {
                         gameManagerCuatro.instancia.ErrorPaso();
@@ -138,6 +143,13 @@ public class cameraController : MonoBehaviour
                         currentView = views[0];
                          paso2_1_2script.cambiarCamara = false;
                     
+                }
+
+                if( hit.collider.CompareTag("Curita")){
+                    if(gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarCurita)){
+                        currentView = views[0];
+                        gameManagerCuatro.instancia.AvanzarPaso();
+                    }
                 }
             }
 

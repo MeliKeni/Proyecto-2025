@@ -19,7 +19,7 @@ public enum PasoAnalisisDeSangre // Los pasos a seguir
     SacarSangre,    //4
     SangreSacada,
     AbrirArmario3, //4,1
-      AgarrarAlgodon,   //4.5
+    AgarrarAlgodon,   //4.5
     LlevarAlgodon, 
     PonerAlgodon,   //5 
     GuardarSangre,  //6
@@ -96,7 +96,7 @@ public class gameManagerCuatro : MonoBehaviour
     }
     private void Update()
     {
-        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.AgarrarAlgodon)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AgarrarAlgodon || gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.LlevarAlgodon || gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerAlgodon || gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
         {
             gameManagerCuatro.instancia.AvanzarPaso();
 

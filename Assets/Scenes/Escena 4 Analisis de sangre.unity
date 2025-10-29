@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -850,6 +850,7 @@ MonoBehaviour:
   imagenGuante: {fileID: 2800000, guid: 9adb5814f8b8efe44a9b55464ac901c8, type: 3}
   imagenJeringa: {fileID: 2800000, guid: 3379d2208c3750c4bbb95ea7c1401150, type: 3}
   imagenAlgodon: {fileID: 2800000, guid: 45a9bf52496c79c4da37e02459c5d928, type: 3}
+  imagenCurita: {fileID: 2800000, guid: ebe7a39d539b5254d9c345df749610ee, type: 3}
   hotspotDefault: {x: 0, y: 0}
   hotspotGuante: {x: 0, y: 0}
   hotspotJeringa: {x: 0, y: 0}
@@ -862,6 +863,7 @@ MonoBehaviour:
   guante: {fileID: 1601143788}
   jeringa: {fileID: 2122208501}
   algodon: {fileID: 1237571585}
+  curita: {fileID: 505534421}
 --- !u!4 &446350989
 Transform:
   m_ObjectHideFlags: 0
@@ -907,6 +909,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &505534421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1ccc00004ee6c7546aeb25bdab24ef46,
+    type: 3}
+  m_PrefabInstance: {fileID: 647311842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &505534424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505534421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 3.0497742, z: 59.87194}
+  m_Center: {x: 0.000015238621, y: 0.5248879, z: 28.936232}
 --- !u!1 &508847815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,12 +1700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4551fc7ffa4954a4c9975e9413b4f868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  algodon: {fileID: 1237571585}
-  paciente: {fileID: 1099166758}
-  alturaSobrePaciente: 1
-  overlapRadius: 0.6
-  autoSoltarAlTocar: 1
-  MyCurrentCam: {fileID: 1902110549}
 --- !u!1 &905059928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,6 +3438,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1282378447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282378448}
+  - component: {fileID: 1282378449}
+  m_Layer: 0
+  m_Name: AgarrarCurita
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282378448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282378447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1470664269}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282378449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282378447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fb45751fdd2e2499503e7d1708a5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyCurrentCam: {fileID: 1902110549}
 --- !u!1 &1287395332
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8905f32d55a0dd342bcfefdf37eedbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyCurrentCam: {fileID: 1902110549}
 --- !u!1 &1470664268
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,6 +4120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1287395333}
+  - {fileID: 1282378448}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

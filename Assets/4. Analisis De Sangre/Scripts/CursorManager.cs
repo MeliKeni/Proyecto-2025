@@ -10,6 +10,7 @@ public class CursorManager : MonoBehaviour
     public Texture2D imagenGuante;
     public Texture2D imagenJeringa;
     public Texture2D imagenAlgodon;
+    public Texture2D imagenCurita;
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
@@ -27,6 +28,7 @@ public class CursorManager : MonoBehaviour
     public GameObject guante;
     public GameObject jeringa;
     public GameObject algodon;
+    public GameObject curita;
 
     void Start()
     {
@@ -42,6 +44,7 @@ public class CursorManager : MonoBehaviour
         guante.SetActive(true);
         jeringa.SetActive(true);
         algodon.SetActive(true);
+        curita.SetActive(true);
     }
 
     // Update is called once per frame
@@ -67,7 +70,6 @@ public class CursorManager : MonoBehaviour
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
         {
-
             Cursor.SetCursor(null, default, CursorMode.Auto);
             camaraController.cursorJeringa = false;
         }
@@ -81,6 +83,21 @@ public class CursorManager : MonoBehaviour
        
             Cursor.SetCursor(null, default, CursorMode.Auto);
             
+        }
+         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario4)
+        {
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+            camaraController.cursorJeringa = false;
+
+        }
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerCurita)
+        {
+            Cursor.SetCursor(imagenCurita, Vector2.zero, CursorMode.Auto);
+            curita.SetActive(false);
+        }
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado){
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+
         }
 
 

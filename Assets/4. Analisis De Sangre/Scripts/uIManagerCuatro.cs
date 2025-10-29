@@ -33,51 +33,83 @@ public class uIManagerCuatro : MonoBehaviour
         {
             case PasoAnalisisDeSangre.PacienteSilla:
                 textoInstruccion.text = "Dirige al paciente a la silla.";
-                imagenes[0].enabled = true;
-                break;
-            case PasoAnalisisDeSangre.AbrirArmario:
-                textoInstruccion.text = "Abrí el armario.";
                 imagenes[1].enabled = true;
                 break;
+            case PasoAnalisisDeSangre.AbrirArmario:
+                textoInstruccion.text = "Hace click en el carrito.";
+                imagenes[0].enabled = true;
+                break;
             case PasoAnalisisDeSangre.AgarrarGuante:
-                textoInstruccion.text = "Toca el guante.";
+                textoInstruccion.text = "Toca la liga.";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.ColocarGuante:
-                textoInstruccion.text = "Ata el guante alrededor del brazo del paciente.";
+                textoInstruccion.text = "Ata la liga alrededor del brazo del paciente.";
                 imagenes[3].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario2:
-                textoInstruccion.text = "Abri el armario.";
+                textoInstruccion.text = "Hace click en el carrito";
+                imagenes[0].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.PonerAlcohol:
+                textoInstruccion.text = "Ponele al algodon alcohol";
                 imagenes[4].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AgarrarAlgodon1:
+                textoInstruccion.text = "Agarra el algodon";
+                imagenes[5].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.PonerAlgodon1:
+                textoInstruccion.text = "Desinfecta el brazo con el algodon";
+                imagenes[6].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.TirarAlgodon:
+                textoInstruccion.text = "Tira el algodon a la basura";
+                imagenes[7].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AbrirArmario2_5:
+                textoInstruccion.text = "Hace click en el carrito";
+                imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarJeringa:
                 textoInstruccion.text = "Hace click en la jeringa";
-                imagenes[5].enabled = true;
+                imagenes[8].enabled = true;
                 break;
             case PasoAnalisisDeSangre.JeringaBrazo:
-                textoInstruccion.text = "Arrastra la jeringa al brazo del paciente para extraer la sangre";
-                imagenes[6].enabled = true;
+                textoInstruccion.text = "Lleva la jeringa al brazo";
+                imagenes[9].enabled = true;
                 break;
             case PasoAnalisisDeSangre.SacarSangre:
                 textoInstruccion.text = "Interactuá con la jeringa para seguir el estudio.";
-                imagenes[7].enabled = true;
+                imagenes[10].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.SangreSacada:
+                textoInstruccion.text = "----------------";
+                imagenes[11].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario3:
-                textoInstruccion.text = "Abri el armario.";
-                imagenes[8].enabled = true;
+                textoInstruccion.text = "Hace click en el carrito";
+                imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.GuardarSangre:
                 textoInstruccion.text = "Colocá la sangre en el recipiente";
-                imagenes[9].enabled = true;
+                imagenes[12].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AbrirArmario4:
+                textoInstruccion.text = "Hace click en el carrito";
+                imagenes[0].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AgarrarCurita:
+                textoInstruccion.text = "Agarra la curita";
+                imagenes[13].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerCurita:
                 textoInstruccion.text = "Aplicá la curita al brazo del paciente";
-                imagenes[10].enabled = true;
+                imagenes[14].enabled = true;
                 break;
             case PasoAnalisisDeSangre.Completado:
                 textoInstruccion.text = "Estudio completado. ¡Buen trabajo!";
-                imagenes[11].enabled = true;
+                imagenes[15].enabled = true;
                 break;
             default:
                 textoInstruccion.text = "";

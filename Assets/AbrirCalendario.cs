@@ -10,7 +10,6 @@ public class AbrirCalendario : MonoBehaviour
         calendario.SetActive(false);
 
         // Buscar el script UIUsuarios que viene de la escena anterior
-        logeoUI = FindObjectOfType<UIUsuarios>();
 
         // Si existe y está logeado, mostramos el calendario
         if (logeoUI != null && logeoUI.logeado)
@@ -22,15 +21,8 @@ public class AbrirCalendario : MonoBehaviour
     void Update()
     {
         // Por si la escena carga antes de detectar el login
-        if (logeoUI == null)
-        {
-            logeoUI = FindObjectOfType<UIUsuarios>();
-            return;
-        }
-
-        if (logeoUI.logeado && !calendario.activeSelf)
-        {
-            calendario.SetActive(true);
+        if (logeoUI.logeado == true)
+        { calendario.SetActive(true);
         }
     }
 }

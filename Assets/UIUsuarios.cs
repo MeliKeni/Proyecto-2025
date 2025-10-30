@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography;
+
 
 
 public class UIUsuarios : MonoBehaviour
@@ -14,11 +16,9 @@ public class UIUsuarios : MonoBehaviour
     void Start()
     {
         sistema = FindObjectOfType<SistemaGuardado>();
+        //System.Security.Cryptography.Aes
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+   
     public void Registrar()
     {
         string user = usuarioInput.text;
@@ -51,5 +51,18 @@ public class UIUsuarios : MonoBehaviour
         {
             mensajeTexto.text = "❌ Usuario o contraseña incorrectos";
         }
+    }
+
+    public void Logout()
+    {
+        // Marcar como no logueado
+        logeado = false;
+
+        // Limpiar campos por si volvemos al login
+        if (usuarioInput != null) usuarioInput.text = "";
+        if (passwordInput != null) passwordInput.text = "";
+
+        mensajeTexto.text = "👋Sesión cerrada";
+
     }
 }

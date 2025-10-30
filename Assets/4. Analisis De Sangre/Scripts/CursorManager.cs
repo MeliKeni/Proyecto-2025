@@ -14,6 +14,8 @@ public class CursorManager : MonoBehaviour
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
+    public Vector2 hotspotAlgodon;
+    public Vector2 hotspotCurita;
     
 
     [Header("scripts")]
@@ -33,7 +35,9 @@ public class CursorManager : MonoBehaviour
     void Start()
     {
         hotspotGuante = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
-        hotspotJeringa = new Vector2(imagenJeringa.width / 2f, imagenJeringa.height / 2f);
+        hotspotJeringa = new Vector2(0, imagenJeringa.height); //abajo izquierda
+        hotspotAlgodon = new Vector2(imagenAlgodon.width / 2f, imagenAlgodon.height / 2f);
+        hotspotCurita = new Vector2(imagenCurita.width / 2f, imagenCurita.height / 2f);
         Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto); 
         //La funcion SetCursor,tiene 3 parametros necesarios,
         //la imagen que voy a usar, pongo null si es la default
@@ -53,7 +57,7 @@ public class CursorManager : MonoBehaviour
         if (paso8script.cursorGuante)
         {
 
-            Cursor.SetCursor(imagenGuante, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(imagenGuante, hotspotGuante, CursorMode.Auto);
             guante.SetActive(false);
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2)
@@ -65,7 +69,7 @@ public class CursorManager : MonoBehaviour
 
         if (camaraController.cursorJeringa)
         {
-            Cursor.SetCursor(imagenJeringa, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
             jeringa.SetActive(false);
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
@@ -75,7 +79,7 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerAlgodon1)
         {
-            Cursor.SetCursor(imagenAlgodon, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(imagenAlgodon, hotspotAlgodon, CursorMode.Auto);
             algodon.SetActive(false);
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2_5)
@@ -92,7 +96,7 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerCurita)
         {
-            Cursor.SetCursor(imagenCurita, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(imagenCurita, hotspotCurita, CursorMode.Auto);
             curita.SetActive(false);
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado){

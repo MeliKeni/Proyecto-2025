@@ -45,7 +45,7 @@ public class UIUsuarios : MonoBehaviour
             // Acá podés cargar otra escena si querés
             logeado = true;
 
-            SceneManager.LoadScene("Escena 2 Elección de Estudios");
+            SceneManager.LoadScene("Escena 4 Analisis de sangre");
         }
         else
         {

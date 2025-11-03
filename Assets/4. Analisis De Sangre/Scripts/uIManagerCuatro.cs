@@ -32,7 +32,7 @@ public class uIManagerCuatro : MonoBehaviour
         switch (paso)
         {
             case PasoAnalisisDeSangre.PacienteSilla:
-                textoInstruccion.text = ""; //Dirige al paciente a la silla.
+                textoInstruccion.text = "Hace click en el paciente y luego en la silla para indicarle que se siente"; //Dirige al paciente a la silla.
                 imagenes[1].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario:

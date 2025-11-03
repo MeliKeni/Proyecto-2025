@@ -8,6 +8,7 @@ public class uIManagerCuatro : MonoBehaviour
     public static uIManagerCuatro instancia;
 
     [SerializeField] private Image[] imagenes;
+    [SerializeField] Text[] indicaciones;
 
     public TextMeshProUGUI textoInstruccion;   // Texto principal
     public TextMeshProUGUI textoSecundario;    // Texto secundario
@@ -151,27 +152,27 @@ public class uIManagerCuatro : MonoBehaviour
             case PasoAnalisisDeSangre.PonerAlcohol:
                 return "Le ponemos alcohol al algodon para usarlo para desinfectar";
             case PasoAnalisisDeSangre.AgarrarAlgodon1:
-                boton.se;
+                return "Le ponemos alcohol al algodon para usarlo para desinfectar"; //
             case PasoAnalisisDeSangre.PonerAlgodon1:
-                return "Una vez humedo lo frotamos ";
+                return "Una vez humedo lo frotamos en el brazo para limpiarlo y evitar infecciones ";
             case PasoAnalisisDeSangre.TirarAlgodon:
-                return "Texto secundario: deposita el algodón usado en la basura correctamente.";
+                return "Tiramos el algodon que nos quedo al tacho de basura"; //
             case PasoAnalisisDeSangre.AgarrarJeringa:
-                return "Texto secundario: asegúrate de que la jeringa esté lista y limpia.";
+                return ""; //
             case PasoAnalisisDeSangre.JeringaBrazo:
-                return "Texto secundario: coloca la jeringa suavemente en el brazo del paciente.";
+                return "Colocamos la jeringa en el brazo, tranquilo que duele poquito!"; //
             case PasoAnalisisDeSangre.SacarSangre:
-                return "Texto secundario: realiza la extracción con cuidado y atención.";
+                return "Esperamos unos segundos mientras sacamos la sangre";
             case PasoAnalisisDeSangre.SangreSacada:
-                return "Texto secundario: verifica que la sangre esté completa y segura.";
+                return "Guardamos la sangre en frascos para luego poder analizarla";
             case PasoAnalisisDeSangre.GuardarSangre:
-                return "Texto secundario: coloca la sangre en el recipiente adecuado.";
+                return ""; //
             case PasoAnalisisDeSangre.AgarrarCurita:
-                return "Texto secundario: toma la curita sin tocar la parte adhesiva.";
+                return "La curita sirve para tapar la herida, puede ser de personajes animados!";
             case PasoAnalisisDeSangre.PonerCurita:
-                return "Texto secundario: coloca la curita sobre la zona pinchada con cuidado.";
+                return "En unos dias se va a despegar y podes cambiarla por una nueva!";
             case PasoAnalisisDeSangre.Completado:
-                return "Texto secundario: el procedimiento ha finalizado correctamente.";
+                return "Felicidades! Estudio terminado";
             default:
                 return "";
         }
@@ -181,5 +182,10 @@ public class uIManagerCuatro : MonoBehaviour
     {
         textoInstruccion = GameObject.Find("TextoInstruccion").GetComponent<TextMeshProUGUI>();
         textoInstruccion.text = "";
+    }
+
+    void Update(){
+               
+
     }
 }

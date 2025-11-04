@@ -113,7 +113,7 @@ public class CursorManager : MonoBehaviour
       
         
 
-        Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+        /*Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
@@ -128,7 +128,7 @@ public class CursorManager : MonoBehaviour
             {
                 Cursor.SetCursor(null, default, CursorMode.Auto);
             }
-        } 
+        } */
 
     }
 

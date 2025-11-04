@@ -34,7 +34,7 @@ public class uIManagerCuatro : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void start()
+    void Start()
     {
         comentarista.SetActive(false);
     }
@@ -193,6 +193,7 @@ public class uIManagerCuatro : MonoBehaviour
         textoInstruccion = GameObject.Find("TextoInstruccion").GetComponent<TextMeshProUGUI>();
         textoInstruccion.text = "";
     }
+    float timer;
 
     void Update(){
 
@@ -200,7 +201,6 @@ public class uIManagerCuatro : MonoBehaviour
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            float timer = 3f;
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -211,17 +211,17 @@ public class uIManagerCuatro : MonoBehaviour
                     timer = 3f;
                 }
             }
-
+        }
             if (comentarista.activeSelf)
             {
                 timer -= Time.deltaTime;
-
+                Debug.Log(timer);
                 if (timer <= 0f)
                 {
                     comentarista.SetActive(false);
                 }
             }
 
-        }
+        
     }
 }

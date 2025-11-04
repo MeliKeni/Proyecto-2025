@@ -25,6 +25,8 @@ public class paso0_MoverPaciente : MonoBehaviour
         {
             return;
         }
+       
+        
 
         // Detectar click
         if (Input.GetMouseButtonDown(0))
@@ -37,6 +39,7 @@ public class paso0_MoverPaciente : MonoBehaviour
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
+                    gameManagerCuatro.instancia.TagDeseada = "Silla";
                 }
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {

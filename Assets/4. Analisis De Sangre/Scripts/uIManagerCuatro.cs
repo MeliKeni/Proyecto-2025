@@ -230,20 +230,22 @@ public class uIManagerCuatro : MonoBehaviour
             {
                 if (!hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada))
                 {
+                    Debug.Log("target :"+gameManagerCuatro.instancia.TagDeseada);
+                    Debug.Log("Hit: "+hit.collider.gameObject.tag);
                     comentarista.SetActive(true);
                     textoIndicaciones.text = "mmm, creo que eso no es!";
                     timer = 3f;
                 }
             }
         }
-            if (comentarista.activeSelf)
+        if (comentarista.activeSelf)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
             {
-                timer -= Time.deltaTime;
-                if (timer <= 0f)
-                {
-                    comentarista.SetActive(false);
-                }
+                comentarista.SetActive(false);
             }
+        }
 
         
     }

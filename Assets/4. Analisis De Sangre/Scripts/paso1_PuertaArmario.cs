@@ -22,6 +22,7 @@ public class paso1_PuertaArmario : MonoBehaviour
                 if (hit.collider.CompareTag("Armario"))
                 {
                     // Al hacer clic en la puerta, avanzar de paso
+                    gameManagerCuatro.instancia.TagDeseada = "Guante";
                     gameManagerCuatro.instancia.AvanzarPaso();
 
                 }

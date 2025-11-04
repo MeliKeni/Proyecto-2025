@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.5645233, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1957,9 +1957,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_TagString
-      value: Brazo
+      value: Paciente
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_Name
@@ -1967,11 +1975,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_TagString
-      value: Paciente
+      value: Brazo
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_TagString
+      value: Paciente
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6818,6 +6842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 691833274}
     m_Modifications:
+    - target: {fileID: 100000, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_Name
       value: Paciente
@@ -6830,6 +6858,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.39
@@ -6840,15 +6880,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.264
+      value: 14.61
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.580839
+      value: 16.07
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67.213
+      value: -71.01
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalRotation.x

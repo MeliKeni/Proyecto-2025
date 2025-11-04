@@ -26,8 +26,8 @@ public class paso0_MoverPaciente : MonoBehaviour
         {
             return;
         }
-       
-        
+
+
 
         // Detectar click
         if (Input.GetMouseButtonDown(0))
@@ -37,15 +37,15 @@ public class paso0_MoverPaciente : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                //Debug.Log(hit.collider.tag);
+
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
-                    gameManagerCuatro.instancia.TagDeseada = "Silla";
                 }
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
-                    gameManagerCuatro.instancia.TagDeseada = "Armario";
                     listoparaanim = true;
 
 
@@ -55,13 +55,13 @@ public class paso0_MoverPaciente : MonoBehaviour
 
         // Mover paciente hacia el destino
 
-       /* if (pacienteSeleccionado != null && destino != Vector3.zero)
+        if (pacienteSeleccionado != null && destino != Vector3.zero)
         {
             pacienteSeleccionado.transform.position = Vector3.MoveTowards(
                 pacienteSeleccionado.transform.position,
                 destino,
                 velocidad * Time.deltaTime
-            );*/
+            );
 
             if (listoparaanim == true)
             {
@@ -72,6 +72,6 @@ public class paso0_MoverPaciente : MonoBehaviour
             }
         }
 
-
+    }
     }
 

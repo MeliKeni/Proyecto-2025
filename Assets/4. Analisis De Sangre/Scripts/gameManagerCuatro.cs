@@ -35,6 +35,7 @@ public class gameManagerCuatro : MonoBehaviour
     public PasoAnalisisDeSangre pasoActual = PasoAnalisisDeSangre.PacienteSilla; // Paso inicial
 
     public string TagDeseada = "Paciente";
+
     private void Awake()
     {
         if (instancia == null)
@@ -45,6 +46,7 @@ public class gameManagerCuatro : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        TagDeseada = "Paciente";
 
     }
 

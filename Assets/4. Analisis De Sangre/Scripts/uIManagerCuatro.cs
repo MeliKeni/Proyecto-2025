@@ -239,7 +239,6 @@ public class uIManagerCuatro : MonoBehaviour
             if (comentarista.activeSelf)
             {
                 timer -= Time.deltaTime;
-                Debug.Log(timer);
                 if (timer <= 0f)
                 {
                     comentarista.SetActive(false);

@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: e3115379438bb43439a04d365290f370
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone.001
+    100004: Bone.002
+    100006: Bone.003
+    100008: Bone.003_end
+    100010: Bone.004.L
+    100012: Bone.004.L.001
+    100014: Bone.004.R
+    100016: Bone.004.R.001
+    100018: Bone.005.L
+    100020: Bone.005.L.001
+    100022: Bone.005.R
+    100024: Bone.005.R.001
+    100026: Bone.006.L
+    100028: Bone.006.L.001
+    100030: Bone.006.R
+    100032: Bone.006.R.001
+    100034: Bone.007.L
+    100036: Bone.007.L.001
+    100038: Bone.007.L_end
+    100040: Bone.007.R
+    100042: Bone.007.R.001
+    100044: Bone.007.R_end
+    100046: Bone.008.L
+    100048: Bone.008.L_end
+    100050: Bone.008.R
+    100052: Bone.008.R_end
+    100054: Cuerpo
+    100056: //RootNode
+    100058: Paciente_Armature
+    400000: Bone
+    400002: Bone.001
+    400004: Bone.002
+    400006: Bone.003
+    400008: Bone.003_end
+    400010: Bone.004.L
+    400012: Bone.004.L.001
+    400014: Bone.004.R
+    400016: Bone.004.R.001
+    400018: Bone.005.L
+    400020: Bone.005.L.001
+    400022: Bone.005.R
+    400024: Bone.005.R.001
+    400026: Bone.006.L
+    400028: Bone.006.L.001
+    400030: Bone.006.R
+    400032: Bone.006.R.001
+    400034: Bone.007.L
+    400036: Bone.007.L.001
+    400038: Bone.007.L_end
+    400040: Bone.007.R
+    400042: Bone.007.R.001
+    400044: Bone.007.R_end
+    400046: Bone.008.L
+    400048: Bone.008.L_end
+    400050: Bone.008.R
+    400052: Bone.008.R_end
+    400054: Cuerpo
+    400056: //RootNode
+    400058: Paciente_Armature
+    2100000: remera.002
+    2100002: Pantalon.002
+    2100004: Piel.002
+    2100006: Zapatos.002
+    2100008: Pelo.002
+    2100010: Negrini.002
+    2100012: Negro.002
+    4300000: Cuerpo
+    7400000: Paciente_Armature|Idle
+    7400002: Paciente_Armature|Sentarse
+    9500000: //RootNode
+    13700000: Cuerpo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Paciente_Armature|Idle
+      takeName: Paciente_Armature|Idle
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Paciente_Armature|Sentarse
+      takeName: Paciente_Armature|Sentarse
+      firstFrame: 0
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

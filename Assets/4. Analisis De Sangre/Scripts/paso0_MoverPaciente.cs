@@ -7,15 +7,15 @@ public class paso0_MoverPaciente : MonoBehaviour
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
     public Camera MyCurrentCam;
-    bool clickensilla = false;
+    public Animator anim;
     bool listoparaanim=false;
 
     Vector3 destino = Vector3.zero;
 
     void Start()
     {
-        clickensilla = false;
 
+        anim.SetBool("Click en silla", false);
     }
 
 
@@ -65,7 +65,7 @@ public class paso0_MoverPaciente : MonoBehaviour
 
             if (listoparaanim == true)
             {
-                clickensilla = true;
+                anim.SetBool("Click en silla", true);
                 gameManagerCuatro.instancia.AvanzarPaso();
                 pacienteSeleccionado = null;
                 destino = Vector3.zero;

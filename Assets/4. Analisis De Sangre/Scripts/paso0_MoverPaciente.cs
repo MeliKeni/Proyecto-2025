@@ -8,6 +8,7 @@ public class paso0_MoverPaciente : MonoBehaviour
     public float velocidad = 3f;
     public Camera MyCurrentCam;
     bool clickensilla = false;
+    bool listoparaanim=false;
 
     Vector3 destino = Vector3.zero;
 
@@ -45,6 +46,8 @@ public class paso0_MoverPaciente : MonoBehaviour
                 {
                     destino = hit.collider.transform.position;
                     gameManagerCuatro.instancia.TagDeseada = "Armario";
+                    listoparaanim = true;
+
 
                 }
             }
@@ -52,15 +55,15 @@ public class paso0_MoverPaciente : MonoBehaviour
 
         // Mover paciente hacia el destino
 
-        if (pacienteSeleccionado != null && destino != Vector3.zero)
+       /* if (pacienteSeleccionado != null && destino != Vector3.zero)
         {
             pacienteSeleccionado.transform.position = Vector3.MoveTowards(
                 pacienteSeleccionado.transform.position,
                 destino,
                 velocidad * Time.deltaTime
-            );
+            );*/
 
-            if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.1f)
+            if (listoparaanim == true)
             {
                 clickensilla = true;
                 gameManagerCuatro.instancia.AvanzarPaso();
@@ -71,4 +74,4 @@ public class paso0_MoverPaciente : MonoBehaviour
 
 
     }
-}
+

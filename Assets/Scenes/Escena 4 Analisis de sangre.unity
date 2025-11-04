@@ -1969,13 +1969,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Paciente
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.74
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.78
+      value: 10.67
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4ad6b5c4aa54ef143bf3e95b8adb9cd9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4915,7 +4919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyCurrentCam: {fileID: 1902110549}
-  pasoTerminado1: 0
 --- !u!1 &1321443143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5319,7 +5322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1376619172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6825,7 +6828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7490,7 +7493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2027200738
 RectTransform:
   m_ObjectHideFlags: 0

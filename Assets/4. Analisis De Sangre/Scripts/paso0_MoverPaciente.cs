@@ -46,14 +46,14 @@ public class paso0_MoverPaciente : MonoBehaviour
         }
 
         // Mover paciente hacia el destino
-    
-        /* if (pacienteSeleccionado != null && destino != Vector3.zero)
+
+        if (pacienteSeleccionado != null && destino != Vector3.zero)
         {
             pacienteSeleccionado.transform.position = Vector3.MoveTowards(
                 pacienteSeleccionado.transform.position,
                 destino,
                 velocidad * Time.deltaTime
-            ); */
+            );
 
             if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.1f)
             {
@@ -66,3 +66,4 @@ public class paso0_MoverPaciente : MonoBehaviour
 
 
     }
+}

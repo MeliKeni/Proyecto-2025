@@ -11,11 +11,13 @@ public class CursorManager : MonoBehaviour
     public Texture2D imagenJeringa;
     public Texture2D imagenAlgodon;
     public Texture2D imagenCurita;
+    public Texture2D hoverMano;
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
     public Vector2 hotspotAlgodon;
     public Vector2 hotspotCurita;
+    public Vector2 hotspotMano;
     
 
     [Header("scripts")]
@@ -32,12 +34,16 @@ public class CursorManager : MonoBehaviour
     public GameObject algodon;
     public GameObject curita;
 
+    public Camera MyCurrentCam;
+
+
     void Start()
     {
         hotspotGuante = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
         hotspotJeringa = new Vector2(0, imagenJeringa.height); //abajo izquierda
         hotspotAlgodon = new Vector2(imagenAlgodon.width / 2f, imagenAlgodon.height / 2f);
         hotspotCurita = new Vector2(imagenCurita.width / 2f, imagenCurita.height / 2f);
+        hotspotMano = new Vector2(hoverMano.width / 2f, hoverMano.height / 2f);
         Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto); 
         //La funcion SetCursor,tiene 3 parametros necesarios,
         //la imagen que voy a usar, pongo null si es la default
@@ -72,7 +78,7 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
             jeringa.SetActive(false);
         }
-        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
         {
             Cursor.SetCursor(null, default, CursorMode.Auto);
             camaraController.cursorJeringa = false;
@@ -84,11 +90,11 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2_5)
         {
-       
+
             Cursor.SetCursor(null, default, CursorMode.Auto);
-            
+
         }
-         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario4)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario4)
         {
             Cursor.SetCursor(null, default, CursorMode.Auto);
             camaraController.cursorJeringa = false;
@@ -99,11 +105,30 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenCurita, hotspotCurita, CursorMode.Auto);
             curita.SetActive(false);
         }
-        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado){
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
+        {
             Cursor.SetCursor(null, default, CursorMode.Auto);
 
         }
+      
+        
 
+        Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            string tagName = hit.collider.tag;
+
+            if (tagName != "Untagged")
+            {
+                Cursor.SetCursor(hoverMano, hotspotMano, CursorMode.Auto);
+            }
+            else
+            {
+                Cursor.SetCursor(null, default, CursorMode.Auto);
+            }
+        } 
 
     }
 

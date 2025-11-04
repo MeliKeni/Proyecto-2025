@@ -12,10 +12,16 @@ public class uIManagerCuatro : MonoBehaviour
 
     public TextMeshProUGUI textoInstruccion;   // Texto principal
     public TextMeshProUGUI textoSecundario;    // Texto secundario
+    public TextMeshProUGUI textoIndicaciones;
+    public GameObject comentarista;
+
     public Button boton;
 
     private bool usandoTextoPrincipal = true;
     private PasoAnalisisDeSangre pasoActual;
+
+    public Camera MyCurrentCam;
+
 
     private void Awake()
     {
@@ -27,6 +33,10 @@ public class uIManagerCuatro : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void start()
+    {
+        comentarista.SetActive(false);
     }
 
     public void ActualizarInstruccion(PasoAnalisisDeSangre paso)
@@ -185,7 +195,33 @@ public class uIManagerCuatro : MonoBehaviour
     }
 
     void Update(){
-               
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            float timer = 3f;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (!hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada))
+                {
+                    comentarista.SetActive(true);
+                    textoIndicaciones.text = "mmm, creo que eso no es!";
+                    timer = 3f;
+                }
+            }
+
+            if (comentarista.activeSelf)
+            {
+                timer -= Time.deltaTime;
+
+                if (timer <= 0f)
+                {
+                    comentarista.SetActive(false);
+                }
+            }
+
+        }
     }
 }

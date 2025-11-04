@@ -44,6 +44,8 @@ public class paso0_MoverPaciente : MonoBehaviour
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
+                    gameManagerCuatro.instancia.TagDeseada = "Armario";
+
                 }
             }
         }

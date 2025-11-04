@@ -34,7 +34,7 @@ public class gameManagerCuatro : MonoBehaviour
     public static gameManagerCuatro instancia; // Singleton
     public PasoAnalisisDeSangre pasoActual = PasoAnalisisDeSangre.PacienteSilla; // Paso inicial
 
-    public string TagDeseada = "Paciente";
+    public string TagDeseada;
     private void Awake()
     {
         if (instancia == null)
@@ -45,6 +45,8 @@ public class gameManagerCuatro : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        gameManagerCuatro.instancia.TagDeseada = "Paciente";
+
     }
 
     private void Start()

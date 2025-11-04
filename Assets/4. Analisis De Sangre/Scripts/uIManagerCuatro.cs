@@ -65,6 +65,22 @@ public class uIManagerCuatro : MonoBehaviour
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
                 imagenes[0].enabled = true;
                 break;
+            case PasoAnalisisDeSangre.AbrirArmario2:
+                textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                imagenes[0].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AbrirArmario2_5:
+                textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                imagenes[0].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AbrirArmario3:
+                textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                imagenes[0].enabled = true;
+                break;
+            case PasoAnalisisDeSangre.AbrirArmario4:
+                textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                imagenes[0].enabled = true;
+                break;
             case PasoAnalisisDeSangre.AgarrarGuante:
                 textoInstruccion.text = "Haz click en la liga para agarrarla";
                 imagenes[3].enabled = true;
@@ -159,6 +175,14 @@ public class uIManagerCuatro : MonoBehaviour
                 return "Esta es un elastico y se ata en el brazo";
             case PasoAnalisisDeSangre.ColocarGuante:
                 return "Se ata en el brazo para que se marquen las venas y poder sacar sangre mas facil";
+            case PasoAnalisisDeSangre.AbrirArmario2:
+                return "En el carrito guardamos todo lo necesario para el procedimiento";
+            case PasoAnalisisDeSangre.AbrirArmario2_5:
+                return "En el carrito guardamos todo lo necesario para el procedimiento";
+            case PasoAnalisisDeSangre.AbrirArmario3:
+                return "En el carrito guardamos todo lo necesario para el procedimiento";
+            case PasoAnalisisDeSangre.AbrirArmario4:
+                return "En el carrito guardamos todo lo necesario para el procedimiento";
             case PasoAnalisisDeSangre.PonerAlcohol:
                 return "Le ponemos alcohol al algodon para usarlo para desinfectar";
             case PasoAnalisisDeSangre.AgarrarAlgodon1:

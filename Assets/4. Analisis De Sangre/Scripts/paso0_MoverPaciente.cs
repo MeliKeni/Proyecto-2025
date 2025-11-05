@@ -15,7 +15,7 @@ public class paso0_MoverPaciente : MonoBehaviour
     void Start()
     {
 
-        anim.SetBool("Click en silla", false);
+        anim.SetBool("Sentarse", false);
     }
 
 
@@ -42,6 +42,7 @@ public class paso0_MoverPaciente : MonoBehaviour
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
+                     anim = pacienteSeleccionado.GetComponent<Animator>();
                 }
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
@@ -65,13 +66,27 @@ public class paso0_MoverPaciente : MonoBehaviour
 
             if (listoparaanim == true)
             {
-                anim.SetBool("Click en silla", true);
+                anim.SetBool("Sentarse", true);
                 gameManagerCuatro.instancia.AvanzarPaso();
                 pacienteSeleccionado = null;
                 destino = Vector3.zero;
             }
         }
 
+        if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.05f)
+    {
+        if (listoparaanim)
+        {
+            anim.SetBool("Sentarse", true);
+            gameManagerCuatro.instancia.AvanzarPaso();
+
+            // ✅ Reset
+            listoparaanim = false;
+            pacienteSeleccionado = null;
+            destino = Vector3.zero;
+        }
+
     }
     }
+}
 

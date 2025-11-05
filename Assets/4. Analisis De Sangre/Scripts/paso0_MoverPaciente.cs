@@ -73,7 +73,9 @@ public class paso0_MoverPaciente : MonoBehaviour
             }
         }
 
-        if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.05f)
+    if (pacienteSeleccionado != null && destino != Vector3.zero)
+{
+    if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.05f)
     {
         if (listoparaanim)
         {
@@ -85,8 +87,8 @@ public class paso0_MoverPaciente : MonoBehaviour
             pacienteSeleccionado = null;
             destino = Vector3.zero;
         }
-
     }
+}
     }
 }
 

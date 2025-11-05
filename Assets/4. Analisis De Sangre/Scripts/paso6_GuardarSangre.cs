@@ -19,6 +19,9 @@ public class paso6_GuardarSangre : MonoBehaviour
     private GameObject frascoEnColision = null;  // esta en colision con el paciente
 
     public Camera MyCurrentCam;
+
+    public uIManagerCuatro uiManager;
+
     void Start()
     {
 
@@ -29,6 +32,10 @@ public class paso6_GuardarSangre : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+
+
+
+    uiManager.avanzarTag = true;
             gameManagerCuatro.instancia.AvanzarPaso();
         }
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.GuardarSangre)
@@ -105,7 +112,9 @@ public class paso6_GuardarSangre : MonoBehaviour
 
             // Avanzar paso
             if (gameManagerCuatro.instancia != null)
-                gameManagerCuatro.instancia.AvanzarPaso();
+
+
+               gameManagerCuatro.instancia.AvanzarPaso();
 
             // reset
             frascoEnColision = null;

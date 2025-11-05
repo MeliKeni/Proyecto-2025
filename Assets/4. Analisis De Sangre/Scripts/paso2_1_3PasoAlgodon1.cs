@@ -5,6 +5,9 @@ using UnityEngine;
 public class paso2_1_3PasoAlgodon1 : MonoBehaviour
 {
     public Camera MyCurrentCam;
+
+    public uIManagerCuatro uiManager;
+
     void Start()
     {
         
@@ -28,6 +31,7 @@ public class paso2_1_3PasoAlgodon1 : MonoBehaviour
                 if (h.collider.CompareTag("Brazo"))
                 {
                     gameManagerCuatro.instancia.AvanzarPaso();
+
                 }
             }
         }

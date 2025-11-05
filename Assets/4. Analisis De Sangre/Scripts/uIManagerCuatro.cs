@@ -218,9 +218,33 @@ public class uIManagerCuatro : MonoBehaviour
         textoInstruccion.text = "";
     }
     float timer;
+    public bool avanzarTag;
+    public int numeroTag;
+    string[] tagsDeseadas = {
+    "Paciente",
+    "Silla",
+    "Armario",
+    "Guante",
+    "Brazo", 
+    "Armario",
+    "Algodon",
+    "Botella",
+    "Algodon",
+    "Brazo",
+    "Tacho",
+    "Armario",
+    "Jeringa",
+    "Brazo",
+    "Nose", //ARREGLAR
+    "Nose", //ARREGLAR
+    "Armario",
+    "Curita",
+    "Brazo",
+    };
+
 
     void Update(){
-
+        gameManagerCuatro.instancia.TagDeseada = tagsDeseadas[numeroTag];
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
@@ -247,6 +271,16 @@ public class uIManagerCuatro : MonoBehaviour
             }
         }
 
+        if(avanzarTag == true)
+        {
+            numeroTag++;
+            avanzarTag = false;
+        }
+
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.TirarAlgodon)
+        {
+            gameManagerCuatro.instancia.TagDeseada = tagsDeseadas[10];
+        }
         
     }
 }

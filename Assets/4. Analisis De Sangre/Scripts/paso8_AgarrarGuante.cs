@@ -7,6 +7,8 @@ public class paso8_AgarrarGuante : MonoBehaviour
     public Camera MyCurrentCam;
     public bool cursorGuante = false;
 
+    public uIManagerCuatro uiManager;
+
     void Update()
     {
         if (gameManagerCuatro.instancia?.pasoActual != PasoAnalisisDeSangre.AgarrarGuante)
@@ -24,6 +26,10 @@ public class paso8_AgarrarGuante : MonoBehaviour
                 if (hit.collider.CompareTag("Guante"))
                 {
                     cursorGuante = true;
+
+
+    
+    uiManager.avanzarTag = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }
             }

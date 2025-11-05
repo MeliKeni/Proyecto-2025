@@ -9,6 +9,7 @@ public class paso0_MoverPaciente : MonoBehaviour
     public Camera MyCurrentCam;
     public Animator anim;
     bool listoparaanim=false;
+    public uIManagerCuatro uiManager;
 
     Vector3 destino = Vector3.zero;
 
@@ -43,11 +44,14 @@ public class paso0_MoverPaciente : MonoBehaviour
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
                      anim = pacienteSeleccionado.GetComponent<Animator>();
+                    uiManager.avanzarTag=true;
                 }
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
                     listoparaanim = true;
+                    gameManagerCuatro.instancia.AvanzarPaso();
+                    uiManager.avanzarTag = true;
 
 
                 }

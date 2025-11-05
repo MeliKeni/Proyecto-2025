@@ -7,6 +7,8 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
     public Camera MyCurrentCam;
     GameObject algodonSeleccionado;
 
+    public uIManagerCuatro uiManager;
+
     void Start()
     {
         
@@ -28,11 +30,19 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
                 if (hit.collider.CompareTag("Algodon"))
                 {
                     algodonSeleccionado = hit.collider.gameObject;
+
+
+    
+    uiManager.avanzarTag = true;
                 }
                 else if (hit.collider.CompareTag("Botella") && algodonSeleccionado != null)
                 {
                     //animacion
                     gameManagerCuatro.instancia.AvanzarPaso();
+
+
+    
+    uiManager.avanzarTag = true;
     
                 }
             }

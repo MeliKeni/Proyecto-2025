@@ -6,6 +6,8 @@ public class paso7_PonerCurita : MonoBehaviour
 {
         public Camera MyCurrentCam;
 
+    public uIManagerCuatro uiManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class paso7_PonerCurita : MonoBehaviour
             {
                 if (h.collider.CompareTag("Brazo"))
                 {
+
+    uiManager.avanzarTag = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }
             }

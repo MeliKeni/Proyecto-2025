@@ -21,6 +21,8 @@ public class paso3_Jeringa_Brazo : MonoBehaviour
     public paso8_AgarrarGuante paso8script;
 
 
+    public uIManagerCuatro uiManager;
+
     void Start()
     {
         
@@ -110,6 +112,8 @@ public class paso3_Jeringa_Brazo : MonoBehaviour
 
             // Avanzar paso
             if (gameManagerCuatro.instancia != null)
+
+    uiManager.avanzarTag = true;
                 gameManagerCuatro.instancia.AvanzarPaso();
 
             // reset

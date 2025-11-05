@@ -5,7 +5,7 @@ using UnityEngine;
 public class paso1_PuertaArmario : MonoBehaviour
 {
     public Camera MyCurrentCam;
-
+    public uIManagerCuatro uiManager;
     void Update()
     {
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.AbrirArmario)
@@ -23,6 +23,8 @@ public class paso1_PuertaArmario : MonoBehaviour
                 {
                     // Al hacer clic en la puerta, avanzar de paso
                     gameManagerCuatro.instancia.TagDeseada = "Guante";
+
+                  uiManager.avanzarTag = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
 
                 }

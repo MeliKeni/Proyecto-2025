@@ -8,6 +8,8 @@ public class paso4_SacarSangre : MonoBehaviour
     public GameObject jeringa;
     public Camera MyCurrentCam;
 
+    public uIManagerCuatro uiManager;
+
     void Update()
     {
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarSangre)
@@ -24,6 +26,8 @@ public class paso4_SacarSangre : MonoBehaviour
             {
                 if (h.collider.CompareTag("Brazo"))
                 {
+
+    uiManager.avanzarTag = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }
             }

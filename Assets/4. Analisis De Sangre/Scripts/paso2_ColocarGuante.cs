@@ -116,6 +116,7 @@ using UnityEngine;
 
 public class paso2_ColocarGuante : MonoBehaviour
 {
+    public uIManagerCuatro uiManager;
     public GameObject Brazo;
     public Camera MyCurrentCam;
     public bool pasoTerminado2 = false;
@@ -138,14 +139,10 @@ public class paso2_ColocarGuante : MonoBehaviour
                     // Al hacer clic en la puerta, avanzar de paso
                     pasoTerminado2 = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
-
                 }
             }
         }
 
-         if (Input.GetKeyDown(KeyCode.F))
-        {
-            gameManagerCuatro.instancia.AvanzarPaso();
-        }
+         
     }
 }

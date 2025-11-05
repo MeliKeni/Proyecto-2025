@@ -6,6 +6,9 @@ public class Paso2_1_2_AgarrarAlgodon1 : MonoBehaviour
 {
     public Camera MyCurrentCam;
     public bool cambiarCamara=false;
+
+    public uIManagerCuatro uiManager;
+
     void Start()
     {
         
@@ -30,6 +33,9 @@ public class Paso2_1_2_AgarrarAlgodon1 : MonoBehaviour
                     gameManagerCuatro.instancia.AvanzarPaso();
                     cambiarCamara = true;
 
+
+
+    uiManager.avanzarTag = true;
 
                 }
             }

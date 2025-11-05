@@ -5,6 +5,10 @@ using UnityEngine;
 public class paso2_1_4TirarBasura : MonoBehaviour
 {
     public Camera MyCurrentCam;
+
+    public uIManagerCuatro uiManager;
+
+
     void Start()
     {
         
@@ -29,6 +33,8 @@ public class paso2_1_4TirarBasura : MonoBehaviour
                 if (h.collider.CompareTag("Tacho"))
                 {
                     gameManagerCuatro.instancia.AvanzarPaso();
+
+                    uiManager.avanzarTag = true;
                 }
             }
         }

@@ -10,6 +10,8 @@ public class cameraController : MonoBehaviour
     public bool cursorJeringa = false;
     public Paso2_1_2_AgarrarAlgodon1 paso2_1_2script;
 
+    public uIManagerCuatro uiManager;
+
 
 
     void Start()
@@ -47,6 +49,8 @@ public class cameraController : MonoBehaviour
                     {
                         currentView = views[0];
                         gameManagerCuatro.instancia.AvanzarPaso();
+                        uiManager.avanzarTag = true;
+
                         cursorJeringa = true;
 
 }
@@ -62,25 +66,36 @@ public class cameraController : MonoBehaviour
                     if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.JeringaBrazo))
                     {
                         currentView = views[2];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.SangreSacada))
                     {
                         currentView = views[0];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                      if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.LlevarAlgodon))
                     {
                         currentView = views[2];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.PonerAlgodon))
                     {
                         currentView = views[0];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     else
                     {
+
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.ErrorPaso();
                     }
                 }
@@ -95,21 +110,29 @@ public class cameraController : MonoBehaviour
                     else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario2))
                     {
                         currentView = views[1];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                       else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario3))
                     {
                         currentView = views[1];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario2_5))
                     {
                         currentView = views[1];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                      else if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AbrirArmario4))
                     {
                         currentView = views[1];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     else
@@ -129,6 +152,8 @@ public class cameraController : MonoBehaviour
                     if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarAlgodon))
                     {
                         currentView = views[0];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                     else
@@ -148,6 +173,8 @@ public class cameraController : MonoBehaviour
                 if( hit.collider.CompareTag("Curita")){
                     if(gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.AgarrarCurita)){
                         currentView = views[0];
+                        uiManager.avanzarTag = true;
+
                         gameManagerCuatro.instancia.AvanzarPaso();
                     }
                 }

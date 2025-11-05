@@ -16,4 +16,6 @@ public class paso2_2_AgarrarJeringa : MonoBehaviour
     {
         
     }
+    //ABRIR ARMARIO 2.5
+
 }

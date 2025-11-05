@@ -35,7 +35,7 @@ public class gameManagerCuatro : MonoBehaviour
     public PasoAnalisisDeSangre pasoActual = PasoAnalisisDeSangre.PacienteSilla; // Paso inicial
 
     public string TagDeseada = "Paciente";
-
+    public GameObject panel;
     private void Awake()
     {
         if (instancia == null)
@@ -104,6 +104,14 @@ public class gameManagerCuatro : MonoBehaviour
         {
             gameManagerCuatro.instancia.AvanzarPaso();
 
+        }
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PacienteSilla)
+        {
+            panel.SetActive(false);
+        }
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
+        {
+            panel.SetActive(true);
         }
     }
 }

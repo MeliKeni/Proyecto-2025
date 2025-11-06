@@ -3433,6 +3433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walking (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: ec86dcffebe9ecd4c9eb9f6f04d6e56e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400084, guid: ec86dcffebe9ecd4c9eb9f6f04d6e56e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.345028
@@ -6715,6 +6719,10 @@ PrefabInstance:
     - target: {fileID: 100056, guid: e3115379438bb43439a04d365290f370, type: 3}
       propertyPath: m_TagString
       value: Paciente
+      objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: e3115379438bb43439a04d365290f370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: e3115379438bb43439a04d365290f370, type: 3}
       propertyPath: m_TagString

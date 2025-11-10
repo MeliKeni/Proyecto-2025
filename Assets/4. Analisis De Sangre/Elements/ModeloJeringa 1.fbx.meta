@@ -1,23 +1,34 @@
 fileFormatVersion: 2
-guid: f97551a193232544d8d506aa6339251b
+guid: 3a31a9c72fe45e64bbb018547f3b3f73
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cylinder
-    100002: Cylinder.002
-    100004: //RootNode
-    400000: Cylinder
-    400002: Cylinder.002
-    400004: //RootNode
-    2100000: No Name
-    2300000: Cylinder
-    2300002: Cylinder.002
-    3300000: Cylinder
-    3300002: Cylinder.002
-    4300000: Cylinder
-    4300002: Cylinder.002
-    7400000: Cylinder.002|Cylinder.002Action
+    100000: Armature.001
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_end
+    100008: Cylinder.011
+    100010: //RootNode
+    400000: Armature.001
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_end
+    400008: Cylinder.011
+    400010: //RootNode
+    2100000: Color jeringa.001
+    2100002: Material.026
+    2100004: Material.025
+    2100006: Punta jeringa.001
+    4300000: Cylinder.011
+    7400000: Armature.001|Action
+    7400002: Armature.001|LlenarSangre
+    7400004: Armature.001|SacarSangre
+    7400006: Armature.001|sacarsangre1
+    7400008: Armature.001|sacarsangre2
+    7400010: Armature.001|Sentarse.002
     9500000: //RootNode
+    13700000: Cylinder.011
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

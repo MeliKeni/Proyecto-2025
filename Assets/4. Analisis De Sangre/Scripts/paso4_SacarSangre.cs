@@ -7,6 +7,7 @@ public class paso4_SacarSangre : MonoBehaviour
     [Header("Referencias")]
     public GameObject jeringa;
     public Camera MyCurrentCam;
+    public Animator anim;
 
     public uIManagerCuatro uiManager;
 
@@ -26,8 +27,8 @@ public class paso4_SacarSangre : MonoBehaviour
             {
                 if (h.collider.CompareTag("Brazo"))
                 {
-
-    uiManager.avanzarTag = true;
+                    anim.SetBool("SacarSangre", true);
+                    uiManager.avanzarTag = true;
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }
             }

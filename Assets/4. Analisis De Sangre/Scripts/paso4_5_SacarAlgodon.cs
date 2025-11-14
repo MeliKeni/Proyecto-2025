@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class paso4_5_SacarAlgodon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject armario;
+    public Camera MyCurrentCam;
+    public bool pasoTerminado4_5 = false;
+   
     void Update()
     {
-        
+       // if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarAlgodon) 
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null && hit.collider.gameObject == armario)
+                {
+                    pasoTerminado4_5 = true;
+                    gameManagerCuatro.instancia.AvanzarPaso();
+
+                }
+            }
+        }
     }
 }

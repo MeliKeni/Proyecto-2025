@@ -260,6 +260,10 @@ public class uIManagerCuatro : MonoBehaviour
                     textoIndicaciones.text = "mmm, creo que eso no es!";
                     timer = 3f;
                 }
+                if(hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada)){
+                    comentarista.SetActive(true);
+                    textoIndicaciones.text = "Buen trabajo! Hiciste el click correcto!";
+                }
             }
         }
         if (comentarista.activeSelf)

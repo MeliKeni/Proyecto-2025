@@ -7,30 +7,31 @@ public class paso0_MoverPaciente : MonoBehaviour
     GameObject pacienteSeleccionado;
     public float velocidad = 3f;
     public Camera MyCurrentCam;
-    public Animator anim;
-    bool listoparaanim=false;
     public uIManagerCuatro uiManager;
 
+    public Animator anim;
     Vector3 destino = Vector3.zero;
 
-    void Start()
-    {
-
-        anim.SetBool("Sentarse", false);
-    }
-
-
+    public GameObject paciente1;
+    public GameObject paciente2;
+void Start(){
+                anim.SetBool("Sentarse", false);
+                
+                    anim.SetBool("Caminar", false);
+                paciente1.SetActive(false);
+                paciente2.SetActive(true);
+}
     void Update()
     {
-        // Si el GameManager no existe o no estamos en el paso correcto, no hacer nada
-        if (gameManagerCuatro.instancia == null || gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PacienteSilla)
+        if(paciente1.activeSelf){
+            anim.SetBool("Sentarse", true);
+        }
+        if (gameManagerCuatro.instancia == null ||
+            gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PacienteSilla)
         {
             return;
         }
 
-
-
-        // Detectar click
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
@@ -38,61 +39,35 @@ public class paso0_MoverPaciente : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                //Debug.Log(hit.collider.tag);
-
                 if (hit.collider.CompareTag("Paciente"))
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
-                     anim = pacienteSeleccionado.GetComponent<Animator>();
-                    uiManager.avanzarTag=true;
+                    uiManager.avanzarTag = true;
                 }
                 else if (hit.collider.CompareTag("Silla") && pacienteSeleccionado != null)
                 {
                     destino = hit.collider.transform.position;
-                    listoparaanim = true;
-                    gameManagerCuatro.instancia.AvanzarPaso();
                     uiManager.avanzarTag = true;
+                    anim.SetBool("Caminar", true); //* no funciona
+                StartCoroutine(EsperarYAvanzar());
 
-
+               
                 }
             }
         }
 
-        // Mover paciente hacia el destino
-
-        if (pacienteSeleccionado != null && destino != Vector3.zero)
-        {
-            pacienteSeleccionado.transform.position = Vector3.MoveTowards(
-                pacienteSeleccionado.transform.position,
-                destino,
-                velocidad * Time.deltaTime
-            );
-
-            if (listoparaanim == true)
-            {
-                anim.SetBool("Sentarse", true);
-                gameManagerCuatro.instancia.AvanzarPaso();
-                pacienteSeleccionado = null;
-                destino = Vector3.zero;
-            }
-        }
-
-    if (pacienteSeleccionado != null && destino != Vector3.zero)
-{
-    if (Vector3.Distance(pacienteSeleccionado.transform.position, destino) < 0.05f)
+          IEnumerator EsperarYAvanzar()
     {
-        if (listoparaanim)
-        {
-            anim.SetBool("Sentarse", true);
-            gameManagerCuatro.instancia.AvanzarPaso();
+        yield return new WaitForSeconds(3f);
 
-            // ✅ Reset
-            listoparaanim = false;
-            pacienteSeleccionado = null;
-            destino = Vector3.zero;
-        }
+        paciente1.SetActive(true);
+        paciente2.SetActive(false);
+
+        anim.SetBool("Caminar", false);
+        anim.SetBool("Sentarse", true);
+        yield return new WaitForSeconds(3f);
+
+        gameManagerCuatro.instancia.AvanzarPaso();
+    }
     }
 }
-    }
-}
-

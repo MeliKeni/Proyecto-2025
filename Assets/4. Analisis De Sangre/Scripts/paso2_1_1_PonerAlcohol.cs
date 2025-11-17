@@ -6,12 +6,16 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
 {
     public Camera MyCurrentCam;
     GameObject algodonSeleccionado;
+    public Animator anim;
+ 
 
     public uIManagerCuatro uiManager;
 
     void Start()
     {
-        
+        anim.SetBool("Mojar", false);
+        anim.SetBool("Frenar", false);
+
     }
 
     void Update()
@@ -37,6 +41,12 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
                 }
                 else if (hit.collider.CompareTag("Botella") && algodonSeleccionado != null)
                 {
+                    anim.SetBool("Mojar", true);
+                    StartCoroutine(Esperar());
+
+                    anim.SetBool("Mojar", false);
+                    anim.SetBool("Frenar", true);
+
                     //animacion
                     gameManagerCuatro.instancia.AvanzarPaso();
 
@@ -48,4 +58,10 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
             }
         }
     }
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(2.31f);
+
+    }
+
 }

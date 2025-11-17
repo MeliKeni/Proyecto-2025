@@ -10,6 +10,7 @@ public class paso0_MoverPaciente : MonoBehaviour
     public uIManagerCuatro uiManager;
 
     public Animator anim;
+    public Animator anim2;
     Vector3 destino = Vector3.zero;
 
     public GameObject paciente1;
@@ -17,7 +18,7 @@ public class paso0_MoverPaciente : MonoBehaviour
 void Start(){
                 anim.SetBool("Sentarse", false);
                 
-                    anim.SetBool("Caminar", false);
+                    anim2.SetBool("Caminar", false);
                 paciente1.SetActive(false);
                 paciente2.SetActive(true);
 }
@@ -48,7 +49,7 @@ void Start(){
                 {
                     destino = hit.collider.transform.position;
                     uiManager.avanzarTag = true;
-                    anim.SetBool("Caminar", true); //* no funciona
+                    anim2.SetBool("Caminar", true); //* no funciona
                 StartCoroutine(EsperarYAvanzar());
 
                
@@ -63,7 +64,7 @@ void Start(){
         paciente1.SetActive(true);
         paciente2.SetActive(false);
 
-        anim.SetBool("Caminar", false);
+        anim2.SetBool("Caminar", false);
         anim.SetBool("Sentarse", true);
         yield return new WaitForSeconds(3f);
 

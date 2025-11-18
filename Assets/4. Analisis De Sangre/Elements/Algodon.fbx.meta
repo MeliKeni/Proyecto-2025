@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 32ab59f45025b8f46bcc0bffa35bb719
+labels:
+- Wall
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

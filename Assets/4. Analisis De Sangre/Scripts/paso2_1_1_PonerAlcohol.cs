@@ -7,7 +7,10 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
     public Camera MyCurrentCam;
     GameObject algodonSeleccionado;
     public Animator anim;
- 
+
+    public GameObject algodon1;
+    public GameObject algodon2;
+    public Material nuevoMaterial;
 
     public uIManagerCuatro uiManager;
 
@@ -15,15 +18,16 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
     {
         anim.SetBool("Mojar", false);
         anim.SetBool("Frenar", false);
-
+        algodon1.SetActive(true);
+        algodon2.SetActive(false);
+        
     }
 
     void Update()
     {
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PonerAlcohol)
-        {
             return;
-        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
@@ -34,34 +38,29 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
                 if (hit.collider.CompareTag("Algodon"))
                 {
                     algodonSeleccionado = hit.collider.gameObject;
-
-
-    
-    uiManager.avanzarTag = true;
+                    uiManager.avanzarTag = true;
                 }
                 else if (hit.collider.CompareTag("Botella") && algodonSeleccionado != null)
                 {
-                    anim.SetBool("Mojar", true);
-                    StartCoroutine(Esperar());
-
-                    anim.SetBool("Mojar", false);
-                    anim.SetBool("Frenar", true);
-
-                    //animacion
-                    gameManagerCuatro.instancia.AvanzarPaso();
-
-
-    
-    uiManager.avanzarTag = true;
-    
+                    StartCoroutine(MojarAlgodon());
+                    uiManager.avanzarTag = true;
                 }
             }
         }
     }
-    IEnumerator Esperar()
+
+    IEnumerator MojarAlgodon()
     {
-        yield return new WaitForSeconds(2.31f);
+        anim.SetBool("Mojar", true);
 
+        // Esperar la duración REAL de la animación
+        yield return new WaitForSeconds(3f);
+        Debug.Log("panchito");
+
+        anim.SetBool("Mojar", false);
+        anim.SetBool("Frenar", true);
+algodon1.SetActive(false);
+algodon2.SetActive(true);
+    gameManagerCuatro.instancia.AvanzarPaso();
     }
-
 }

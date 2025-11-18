@@ -54,8 +54,7 @@ public class paso2_1_1_PonerAlcohol : MonoBehaviour
         anim.SetBool("Mojar", true);
 
         // Esperar la duración REAL de la animación
-        yield return new WaitForSeconds(3f);
-        Debug.Log("panchito");
+        yield return new WaitForSeconds(2.5f);
 
         anim.SetBool("Mojar", false);
         anim.SetBool("Frenar", true);

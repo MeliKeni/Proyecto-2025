@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1465,9 +1465,7 @@ MonoBehaviour:
   MyCurrentCam: {fileID: 1902110549}
   uiManager: {fileID: 1786561254}
   anim: {fileID: 1563373885}
-  anim2: {fileID: 1621215085}
   paciente1: {fileID: 1572749957}
-  paciente2: {fileID: 1621215083}
 --- !u!1 &247021392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,10 +3507,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.9248178
+  m_Height: 6.5861564
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.4248178, y: 2.4552214, z: -0.0000000027452876}
 --- !u!1 &863818279
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,7 +5400,7 @@ GameObject:
   - component: {fileID: 1220401760}
   - component: {fileID: 1220401759}
   m_Layer: 5
-  m_Name: New Sprite
+  m_Name: Papel de pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7129,7 +7127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568025672}
   m_LocalRotation: {x: 0.0000000037252907, y: 0.24426661, z: 9.313227e-10, w: 0.96970814}
-  m_LocalPosition: {x: -1.4263241, y: -0.7347369, z: 3.017935}
+  m_LocalPosition: {x: -2, y: 0.08, z: 2.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821626216}
@@ -7402,7 +7400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572749959}
   m_LocalRotation: {x: -0.7071067, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.5900009, y: 1.2993016, z: 0.94999933}
+  m_LocalPosition: {x: 0.1, y: 1.2993016, z: 0.95}
   m_LocalScale: {x: 50.563465, y: 50.563457, z: 50.56345}
   m_Children:
   - {fileID: 1572462301}
@@ -7603,7 +7601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1572749959
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,7 +8365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100084, guid: ec86dcffebe9ecd4c9eb9f6f04d6e56e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400084, guid: ec86dcffebe9ecd4c9eb9f6f04d6e56e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8447,12 +8445,6 @@ CapsuleCollider:
   m_Height: 5.5796857
   m_Direction: 1
   m_Center: {x: -0.0000000030431604, y: 2.2898428, z: 0.22273628}
---- !u!95 &1621215085 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: ec86dcffebe9ecd4c9eb9f6f04d6e56e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1621215082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1621339087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9074,6 +9066,36 @@ Transform:
   m_Father: {fileID: 1255158811}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1793884794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793884795}
+  m_Layer: 0
+  m_Name: View4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793884795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793884794}
+  m_LocalRotation: {x: 0.0000000037252907, y: 0.24426661, z: 9.313227e-10, w: 0.96970814}
+  m_LocalPosition: {x: 1.76, y: -0.18, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1821626216}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 4.42, y: 27.613, z: 2.3830001}
 --- !u!1 &1821626215
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,6 +9126,7 @@ Transform:
   - {fileID: 1965755342}
   - {fileID: 968098529}
   - {fileID: 1568025673}
+  - {fileID: 1793884795}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9452,7 +9475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 325f32cc5ec963e41a91dc7d859a607e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9678,6 +9701,7 @@ MonoBehaviour:
   - {fileID: 1965755342}
   - {fileID: 968098529}
   - {fileID: 1568025673}
+  - {fileID: 1793884795}
   transitionSpeed: 1
   cursorJeringa: 0
   paso2_1_2script: {fileID: 304018783}

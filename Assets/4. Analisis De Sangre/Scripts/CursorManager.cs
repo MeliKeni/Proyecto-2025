@@ -1,6 +1,7 @@
 ﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CursorManager : MonoBehaviour
 {
@@ -59,7 +60,8 @@ public class CursorManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        
         if (paso8script.cursorGuante)
         {
 

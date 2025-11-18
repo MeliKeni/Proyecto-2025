@@ -1,6 +1,7 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Video;
 
 public class cameraController : MonoBehaviour
 {
@@ -21,6 +22,18 @@ public class cameraController : MonoBehaviour
 
     void Update()
     {
+        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.PonerAlgodon1))
+        {
+            currentView = views[2];
+        }
+        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.TirarAlgodon))
+        {
+            currentView = views[0];
+        }
+        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.PonerAlcohol))
+        {
+            currentView = views[3];
+        }
         if (Input.GetMouseButtonDown(0)) // click izquierdo
         {
             // Lanza un rayo desde la cámara hacia la posición del mouse

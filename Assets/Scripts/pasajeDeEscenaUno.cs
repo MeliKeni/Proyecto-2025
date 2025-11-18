@@ -14,6 +14,8 @@ public class pasajeDeEscenaUno : MonoBehaviour
     // Update is called once per frame
     public void OnBotonClick()
     {
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+
         SceneManager.LoadScene("Escena 2 Elección de Estudios");
 
     }

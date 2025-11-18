@@ -58,7 +58,7 @@ public class uIManagerCuatro : MonoBehaviour
         switch (paso)
         {
             case PasoAnalisisDeSangre.PacienteSilla:
-                textoInstruccion.text = "Haz click en el paciente y luego en la silla para indicarle que se siente";
+                textoInstruccion.text = "Haz click en el paciente para indicarle que se siente";
                 imagenes[1].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario:
@@ -222,7 +222,6 @@ public class uIManagerCuatro : MonoBehaviour
     public int numeroTag;
     string[] tagsDeseadas = {
     "Paciente",
-    "Silla",
     "Armario",
     "Guante",
     "Brazo", 

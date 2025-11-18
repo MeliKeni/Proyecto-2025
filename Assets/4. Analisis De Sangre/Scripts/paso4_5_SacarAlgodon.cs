@@ -10,12 +10,8 @@ public class paso4_5_SacarAlgodon : MonoBehaviour
    
     void Update()
     {
-       // if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarAlgodon) 
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
+        return;
+        if(Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 public class uIManagerCuatro : MonoBehaviour
 {
@@ -262,6 +261,8 @@ public class uIManagerCuatro : MonoBehaviour
                 if(hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada)){
                     comentarista.SetActive(true);
                     textoIndicaciones.text = "Buen trabajo! Hiciste el click correcto!";
+                    timer = 1.5f;
+
                 }
             }
         }

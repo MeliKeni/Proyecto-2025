@@ -32,8 +32,7 @@ void Start(){
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
                     uiManager.avanzarTag = true;
-                      uiManager.avanzarTag = true;
-                    anim.SetBool("Sentarse", true); //* no funciona
+                    anim.SetBool("Sentarse", true); 
                 StartCoroutine(EsperarYAvanzar());
                 }
                        }

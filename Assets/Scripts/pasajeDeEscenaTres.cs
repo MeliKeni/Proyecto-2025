@@ -7,6 +7,8 @@ public class pasajeDeEscenaTres : MonoBehaviour
     {
         // Me aseguro de enganchar el evento cuando arranca este script
         SceneManager.sceneLoaded += OnSceneLoaded;
+        Cursor.SetCursor(null, default, CursorMode.Auto);
+
     }
 
     private void OnDestroy()
@@ -17,6 +19,7 @@ public class pasajeDeEscenaTres : MonoBehaviour
 
     public void OnBotonClick()
     {
+
         SceneManager.LoadScene("Escena 3 Radiografia");
     }
 

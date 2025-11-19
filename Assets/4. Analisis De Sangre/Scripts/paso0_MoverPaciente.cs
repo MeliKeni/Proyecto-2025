@@ -8,7 +8,7 @@ public class paso0_MoverPaciente : MonoBehaviour
     public float velocidad = 3f;
     public Camera MyCurrentCam;
     public uIManagerCuatro uiManager;
-
+    
     public Animator anim;
     Vector3 destino = Vector3.zero;
 

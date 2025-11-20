@@ -13,6 +13,7 @@ public class uIManagerCuatro : MonoBehaviour
     public TextMeshProUGUI textoSecundario;    // Texto secundario
     public TextMeshProUGUI textoIndicaciones;
     public GameObject comentarista;
+    public paso2_1_1_PonerAlcohol paso2_1_1Script;
 
     public Button boton;
 
@@ -225,30 +226,63 @@ public class uIManagerCuatro : MonoBehaviour
     float timer;
     public bool avanzarTag;
     public int numeroTag;
-    string[] tagsDeseadas = {
-    "Paciente",
-    "Armario",
-    "Guante",
-    "Brazo", 
-    "Armario",
-    "Algodon",
-    "Botella",
-    "Algodon",
-    "Brazo",
-    "Tacho",
-    "Armario",
-    "Jeringa",
-    "Brazo",
-    "Nose", //ARREGLAR
-    "Nose", //ARREGLAR
-    "Armario",
-    "Curita",
-    "Brazo",
-    };
+    
+string ObtenerTagParaPaso(PasoAnalisisDeSangre paso)
+{   
+    switch (paso)
+    {
+        case PasoAnalisisDeSangre.PacienteSilla:
+            return "Paciente";
+        case PasoAnalisisDeSangre.BrazoMovimiento:
+            return "Paciente";            
+        case PasoAnalisisDeSangre.AbrirArmario:
+            return "Armario";
+        case PasoAnalisisDeSangre.AgarrarGuante:
+            return "Guante";
+        case PasoAnalisisDeSangre.ColocarGuante:
+            return "Brazo";
+        case PasoAnalisisDeSangre.AbrirArmario2:
+            return "Armario";
+        case PasoAnalisisDeSangre.PonerAlcohol:
+            if(paso2_1_1Script.algodonParaAlcoholizar==true){
+                return "Botella";
+            }
+            else{
+                return "Algodon";
+            }
+        case PasoAnalisisDeSangre.AgarrarAlgodon1:
+            return "Algodon";
+        case PasoAnalisisDeSangre.PonerAlgodon1:
+            return "Brazo";
+        case PasoAnalisisDeSangre.TirarAlgodon:
+            return "Tacho";
+        case PasoAnalisisDeSangre.AbrirArmario2_5:
+            return "Armario";
+        case PasoAnalisisDeSangre.AgarrarJeringa:
+            return "NOSESABE";
+        case PasoAnalisisDeSangre.JeringaBrazo:
+            return "NOSESABE";
+        case PasoAnalisisDeSangre.SacarSangre:
+            return "NOSESABE";
+        case PasoAnalisisDeSangre.SangreSacada:
+            return "NOSESABE";
+        case PasoAnalisisDeSangre.AbrirArmario3:
+            return "Armario";
+        case PasoAnalisisDeSangre.GuardarSangre:
+            return "NOSESABE";
+        case PasoAnalisisDeSangre.AbrirArmario4:
+            return "Armario";
+        case PasoAnalisisDeSangre.AgarrarCurita:
+            return "Curita";
+        case PasoAnalisisDeSangre.PonerCurita:
+            return "Brazo";     
+    }
+                return "default";
+}
 
 
     void Update(){
-        gameManagerCuatro.instancia.TagDeseada = tagsDeseadas[numeroTag];
+gameManagerCuatro.instancia.TagDeseada = ObtenerTagParaPaso(gameManagerCuatro.instancia.pasoActual);
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);

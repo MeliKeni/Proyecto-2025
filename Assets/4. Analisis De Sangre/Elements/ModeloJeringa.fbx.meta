@@ -29,7 +29,27 @@ ModelImporter:
     9500000: //RootNode
     13700000: Cylinder.011
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color jeringa.001
+    second: {fileID: 2100000, guid: bd150570305634e44a73e15529db603d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.025
+    second: {fileID: 2100000, guid: ae3ae5c5d0177ac408c9043db286444b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.026
+    second: {fileID: 2100000, guid: d1aa591216211954194aaa0ee9974e3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Punta jeringa.001
+    second: {fileID: 2100000, guid: d27c9d1d65ed8134b827365bdff9a085, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -60,6 +60,10 @@ public class uIManagerCuatro : MonoBehaviour
                 textoInstruccion.text = "Haz click en el paciente para indicarle que se siente";
                 imagenes[1].enabled = true;
                 break;
+            case PasoAnalisisDeSangre.BrazoMovimiento:
+                textoInstruccion.text = "Haz click en el paciente para indicarle que se siente";
+                imagenes[1].enabled = true;
+                break;
             case PasoAnalisisDeSangre.AbrirArmario:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
                 imagenes[0].enabled = true;
@@ -167,6 +171,8 @@ public class uIManagerCuatro : MonoBehaviour
         switch (paso)
         {
             case PasoAnalisisDeSangre.PacienteSilla:
+                return "Se saca sangre sentados para estar lo mas comodos posible";
+            case PasoAnalisisDeSangre.BrazoMovimiento:
                 return "Se saca sangre sentados para estar lo mas comodos posible";
             case PasoAnalisisDeSangre.AbrirArmario:
                 return "En el carrito guardamos todo lo necesario para el procedimiento";
@@ -283,7 +289,7 @@ public class uIManagerCuatro : MonoBehaviour
 
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.TirarAlgodon)
         {
-            gameManagerCuatro.instancia.TagDeseada = tagsDeseadas[10];
+            gameManagerCuatro.instancia.TagDeseada = "Tacho";
         }
         
     }

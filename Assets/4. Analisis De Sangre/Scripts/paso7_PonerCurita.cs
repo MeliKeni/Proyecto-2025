@@ -33,9 +33,16 @@ public class paso7_PonerCurita : MonoBehaviour
                 {
 
     uiManager.avanzarTag = true;
-                    gameManagerCuatro.instancia.AvanzarPaso();
+            StartCoroutine(Esperar2());
+
                 }
             }
+            IEnumerator Esperar2()
+    {
+        yield return new WaitForSeconds(1f);
+                            gameManagerCuatro.instancia.AvanzarPaso();
+
+    }
         }
     }
 }

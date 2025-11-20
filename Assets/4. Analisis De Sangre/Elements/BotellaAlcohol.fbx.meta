@@ -18,7 +18,22 @@ ModelImporter:
     3300002: Cylinder.001
     4300000: Cylinder
     4300002: Cylinder.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Etiqueta y tapa
+    second: {fileID: 2100000, guid: 249a5e9c7d7b80b429bf73ca4835a6b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: a37f7f423e985df40a115df8efd5371d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastico
+    second: {fileID: 2100000, guid: e68a3aaffadcd864cb5d3dd1db7600a0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

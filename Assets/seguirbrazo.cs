@@ -26,7 +26,10 @@ public class seguirbrazo : MonoBehaviour
     }
 
     void Update()
-    {
+    {if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarSangre)
+        {
+            return;
+        }
         if (entrando)
             MoverConArco();
 

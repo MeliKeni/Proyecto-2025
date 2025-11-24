@@ -14,7 +14,7 @@ public class paso0_MoverPaciente : MonoBehaviour
 
     public GameObject paciente1;
 void Start(){
-                anim.SetBool("SentarseBrazo", false);
+                anim.SetBool("Sentarse", false);
                 
                 paciente1.SetActive(true);
 }
@@ -32,7 +32,7 @@ void Start(){
                 {
                     pacienteSeleccionado = hit.collider.gameObject;
                     uiManager.avanzarTag = true;
-                    anim.SetBool("SentarseBrazo", true); 
+                    anim.SetBool("Sentarse", true); 
                 StartCoroutine(EsperarYAvanzar());
                 }
                        }
@@ -40,7 +40,7 @@ void Start(){
 
           IEnumerator EsperarYAvanzar()
     {
-        anim.SetBool("SentarseBrazo", true);
+        anim.SetBool("Sentarse", true);
         yield return new WaitForSeconds(3f);
 
         gameManagerCuatro.instancia.AvanzarPaso();

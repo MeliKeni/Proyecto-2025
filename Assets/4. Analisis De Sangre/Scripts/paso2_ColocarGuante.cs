@@ -119,7 +119,14 @@ public class paso2_ColocarGuante : MonoBehaviour
     public uIManagerCuatro uiManager;
     public GameObject Brazo;
     public Camera MyCurrentCam;
+    public GameObject ligaNormal;
+    public GameObject ligaAtada;
     public bool pasoTerminado2 = false;
+
+    void Start(){
+        ligaAtada.SetActive(false);
+        ligaNormal.SetActive(true);
+    }
 
     void Update()
     {
@@ -138,6 +145,8 @@ public class paso2_ColocarGuante : MonoBehaviour
                 {
                     // Al hacer clic en la puerta, avanzar de paso
                     pasoTerminado2 = true;
+                    ligaNormal.SetActive(false);
+                    ligaAtada.SetActive(true);
                     gameManagerCuatro.instancia.AvanzarPaso();
                 }
             }

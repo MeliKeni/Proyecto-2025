@@ -5,7 +5,6 @@ using UnityEngine;
 public enum PasoAnalisisDeSangre // Los pasos a seguir
 {
     PacienteSilla,  //0
-    BrazoMovimiento,
     AbrirArmario,   //1 
     AgarrarGuante, // 
     ColocarGuante,  //2

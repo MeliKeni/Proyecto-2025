@@ -8,12 +8,14 @@ public class paso6_GuardarSangre : MonoBehaviour
     public Camera MyCurrentCam;
     public Animator animJeringa;
     public Animator animFrasco;
+    public bool CursorJeringa = false;
 
     void Start()
     {
         Jeringa.SetActive(false);
         animJeringa.SetBool("JeringaGuardar", false);
         animFrasco.SetBool("Llenar", false);
+        CursorJeringa = false;
     }
 
     // Update is called once per frame
@@ -24,10 +26,8 @@ public class paso6_GuardarSangre : MonoBehaviour
         {
             return;
         }
-        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
-        {
-            Jeringa.SetActive(true);
-        }
+        else { CursorJeringa = true; }
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -35,8 +35,10 @@ public class paso6_GuardarSangre : MonoBehaviour
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
-                if (h.collider.CompareTag("Jeringa"))
+                if (h.collider.CompareTag("Frasco"))
                 {
+                    CursorJeringa = false;
+                    Jeringa.SetActive(true);
                     animJeringa.SetBool("JeringaGuardar", false);
                     animFrasco.SetBool("Llenar", true);
                     StartCoroutine(Esperar4());

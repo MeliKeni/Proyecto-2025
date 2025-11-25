@@ -28,6 +28,8 @@ public class CursorManager : MonoBehaviour
     public paso8_AgarrarGuante paso8script;
     public Paso2_1_2_AgarrarAlgodon1 paso2_1_2script;
     public cameraController camaraController;
+    public paso7_PonerCurita paso7;
+    public paso6_GuardarSangre paso6;
 
     [Header("Objetos")]
     public GameObject guante;
@@ -40,6 +42,8 @@ public class CursorManager : MonoBehaviour
 
     void Start()
     {
+        Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
+
         hotspotGuante = new Vector2(imagenGuante.width / 2f, imagenGuante.height / 2f);
         hotspotJeringa = new Vector2(0, imagenJeringa.height); //abajo izquierda
         hotspotAlgodon = new Vector2(imagenAlgodon.width / 2f, imagenAlgodon.height / 2f);
@@ -60,8 +64,21 @@ public class CursorManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
-        
+    {
+        if (paso6.CursorJeringa ==true)
+        {
+            Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
+        }
+
+        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
+        {
+            if(paso6.CursorJeringa == false)
+            {
+                Cursor.SetCursor(null, default, CursorMode.Auto);
+
+            }
+        }
+
         if (paso8script.cursorGuante)
         {
 
@@ -108,8 +125,13 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PonerCurita)
         {
+            if (paso7.curitapuesta == true)
+            {
+                Cursor.SetCursor(null, default, CursorMode.Auto);
+            }
             Cursor.SetCursor(imagenCurita, hotspotCurita, CursorMode.Auto);
             curita.SetActive(false);
+           
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
         {

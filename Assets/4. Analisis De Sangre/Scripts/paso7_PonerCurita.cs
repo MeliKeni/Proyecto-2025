@@ -5,6 +5,7 @@ using UnityEngine;
 public class paso7_PonerCurita : MonoBehaviour
 {
         public Camera MyCurrentCam;
+    public bool curitapuesta = false;
 
     public uIManagerCuatro uiManager;
 
@@ -31,6 +32,7 @@ public class paso7_PonerCurita : MonoBehaviour
             {
                 if (h.collider.CompareTag("Brazo"))
                 {
+                    curitapuesta = true;
 
     uiManager.avanzarTag = true;
             StartCoroutine(Esperar2());

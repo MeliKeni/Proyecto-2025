@@ -118,8 +118,8 @@ public class uIManagerCuatro : MonoBehaviour
                 imagenes[10].enabled = true;
                 break;
             case PasoAnalisisDeSangre.SangreSacada:
-                textoInstruccion.text = "----------------";
-                imagenes[11].enabled = true;
+                textoInstruccion.text = "Hace click en la jeringa para agarrarla";
+                imagenes[10].enabled = true;
                 break;
             case PasoAnalisisDeSangre.GuardarSangre:
                 textoInstruccion.text = "Coloca la sangre en el recipiente";
@@ -192,15 +192,15 @@ public class uIManagerCuatro : MonoBehaviour
             case PasoAnalisisDeSangre.TirarAlgodon:
                 return "Tiramos el algodon que nos quedo al tacho de basura"; //
             case PasoAnalisisDeSangre.AgarrarJeringa:
-                return ""; //
+                return ""; //PONER ALGO
             case PasoAnalisisDeSangre.JeringaBrazo:
                 return "Colocamos la jeringa en el brazo, tranquilo que duele poquito!"; //
             case PasoAnalisisDeSangre.SacarSangre:
                 return "Esperamos unos segundos mientras sacamos la sangre";
             case PasoAnalisisDeSangre.SangreSacada:
-                return "Guardamos la sangre en frascos para luego poder analizarla";
+                return "";
             case PasoAnalisisDeSangre.GuardarSangre:
-                return ""; //
+                return "Guardamos la sangre en frascos para luego poder analizarla"; //
             case PasoAnalisisDeSangre.AgarrarCurita:
                 return "La curita sirve para tapar la herida, puede ser de personajes animados!";
             case PasoAnalisisDeSangre.PonerCurita:

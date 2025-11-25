@@ -74,11 +74,15 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(null, default, CursorMode.Auto);
             paso8script.cursorGuante = false;
         }
-
-        if (camaraController.cursorJeringa)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.SacarSangre)
         {
+
+            Cursor.SetCursor(null, default, CursorMode.Auto);
+        }
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.JeringaBrazo)
+        {
+
             Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
-            jeringa.SetActive(false);
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
         {

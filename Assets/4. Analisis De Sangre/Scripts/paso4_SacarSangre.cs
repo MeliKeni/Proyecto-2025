@@ -10,7 +10,10 @@ public class paso4_SacarSangre : MonoBehaviour
     public Animator anim;
 
     public uIManagerCuatro uiManager;
-
+    void Start()
+    {
+        anim.SetBool("SacarSangre", false);
+    }
     void Update()
     {
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarSangre)
@@ -25,7 +28,7 @@ public class paso4_SacarSangre : MonoBehaviour
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
-                if (h.collider.CompareTag("Brazo"))
+                if (h.collider.CompareTag("Jeringa"))
                 {
                     anim.SetBool("SacarSangre", true);
                     uiManager.avanzarTag = true;

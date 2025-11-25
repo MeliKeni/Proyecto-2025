@@ -22,6 +22,10 @@ public class cameraController : MonoBehaviour
 
     void Update()
     {
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.JeringaBrazo)
+        {
+            currentView = views[2];
+        }
         if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.PonerAlgodon1))
         {
             currentView = views[2];
@@ -76,7 +80,8 @@ public class cameraController : MonoBehaviour
                 // --- BRAZO ---
                 else if (hit.collider.CompareTag("Brazo"))
                 {
-                    if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.JeringaBrazo))
+       
+                        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.JeringaBrazo))
                     {
                         currentView = views[2];
                         uiManager.avanzarTag = true;

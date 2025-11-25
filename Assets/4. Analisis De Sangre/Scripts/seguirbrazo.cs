@@ -10,7 +10,7 @@ public class seguirbrazo : MonoBehaviour
 
     [Header("Arco")]
     public float curvaLateral = 0.2f;  // Ajustá para más/menos arco
-
+    public GameObject modelo;
     private bool entrando = true;
     private bool esperando = false;
     private bool saliendo = false;
@@ -26,18 +26,20 @@ public class seguirbrazo : MonoBehaviour
     }
 
     void Update()
-    {if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.SacarSangre)
+    { 
+        if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.JeringaBrazo)
         {
+            modelo.SetActive(false);
             return;
-        }
-        if (entrando)
+        } else {
+            modelo.SetActive(true);
             MoverConArco();
+        } 
 
-        else if (esperando)
-            Esperar();
+     
 
-        else if (saliendo)
-            SalirConArco();
+      /*  else if (saliendo)
+            SalirConArco();*/
     }
 
     // ---------------------------------------
@@ -64,7 +66,7 @@ public class seguirbrazo : MonoBehaviour
             esperando = true;
             timer = 0f;
         }
-    }
+    } 
 
     // ---------------------------------------
     // 2) ESPERA 3 SEGUNDOS
@@ -79,7 +81,7 @@ public class seguirbrazo : MonoBehaviour
             saliendo = true;
         }
     }
-
+/*
     // ---------------------------------------
     // 3) SALE CON EL MISMO ARCO (invertido)
     // ---------------------------------------
@@ -100,5 +102,5 @@ public class seguirbrazo : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 }

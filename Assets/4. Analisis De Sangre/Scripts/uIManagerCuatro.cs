@@ -251,17 +251,17 @@ string ObtenerTagParaPaso(PasoAnalisisDeSangre paso)
         case PasoAnalisisDeSangre.AbrirArmario2_5:
             return "Armario";
         case PasoAnalisisDeSangre.AgarrarJeringa:
-            return "NOSESABE";
+            return "Jeringa";
         case PasoAnalisisDeSangre.JeringaBrazo:
-            return "NOSESABE";
+            return "Brazo";
         case PasoAnalisisDeSangre.SacarSangre:
-            return "NOSESABE";
+            return "Jeringa";
         case PasoAnalisisDeSangre.SangreSacada:
-            return "NOSESABE";
+            return "Jeringa";
         case PasoAnalisisDeSangre.AbrirArmario3:
             return "Armario";
         case PasoAnalisisDeSangre.GuardarSangre:
-            return "NOSESABE";
+            return "Frasco";
         case PasoAnalisisDeSangre.AbrirArmario4:
             return "Armario";
         case PasoAnalisisDeSangre.AgarrarCurita:
@@ -286,6 +286,7 @@ gameManagerCuatro.instancia.TagDeseada = ObtenerTagParaPaso(gameManagerCuatro.in
                 {
                     Debug.Log("target :"+gameManagerCuatro.instancia.TagDeseada);
                     Debug.Log("Hit: "+hit.collider.gameObject.tag);
+                    Debug.Log("Hit: " + hit.collider.gameObject.name);
                     comentarista.SetActive(true);
                     textoIndicaciones.text = "mmm, creo que eso no es!";
                     timer = 3f;

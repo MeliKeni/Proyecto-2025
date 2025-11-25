@@ -123,7 +123,7 @@ public class uIManagerCuatro : MonoBehaviour
                 break;
             case PasoAnalisisDeSangre.GuardarSangre:
                 textoInstruccion.text = "Coloca la sangre en el recipiente";
-                imagenes[12].enabled = true;
+                imagenes[15].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarCurita:
                 textoInstruccion.text = "Haz click en la curita para agarrarla";

@@ -65,10 +65,7 @@ public class CursorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (paso6.CursorJeringa ==true)
-        {
-            Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
-        }
+          
 
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
         {
@@ -77,6 +74,12 @@ public class CursorManager : MonoBehaviour
                 Cursor.SetCursor(null, default, CursorMode.Auto);
 
             }
+                else
+                {
+                Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
+            }
+        
+           
         }
 
         if (paso8script.cursorGuante)

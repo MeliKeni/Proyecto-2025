@@ -15,7 +15,7 @@ public class paso6_GuardarSangre : MonoBehaviour
         Jeringa.SetActive(false);
         animJeringa.SetBool("JeringaGuardar", false);
         animFrasco.SetBool("Llenar", false);
-        CursorJeringa = false;
+        CursorJeringa = true;
     }
 
     // Update is called once per frame
@@ -26,7 +26,6 @@ public class paso6_GuardarSangre : MonoBehaviour
         {
             return;
         }
-        else { CursorJeringa = true; }
         
 
         if (Input.GetMouseButtonDown(0))
@@ -38,8 +37,9 @@ public class paso6_GuardarSangre : MonoBehaviour
                 if (h.collider.CompareTag("Frasco"))
                 {
                     CursorJeringa = false;
+                    Cursor.SetCursor(null, default, CursorMode.Auto);
                     Jeringa.SetActive(true);
-                    animJeringa.SetBool("JeringaGuardar", false);
+                    animJeringa.SetBool("JeringaGuardar", true);
                     animFrasco.SetBool("Llenar", true);
                     StartCoroutine(Esperar4());
 

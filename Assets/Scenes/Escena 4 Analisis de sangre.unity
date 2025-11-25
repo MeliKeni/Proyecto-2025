@@ -9278,6 +9278,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1621339087}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1632883639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1199114908}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_Name
+      value: BotellaAlcohol 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.20999898
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15000659
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.030008951
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.98428047
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.17661251
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -159.65501
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36921387b1a67f8419d9f4e679474fef, type: 3}
 --- !u!1 &1634130663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f7ec6a232dbc1134283160bc866bac5c,
@@ -11990,10 +12059,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1038829050}
     m_Modifications:
+    - target: {fileID: 6223707040948919786, guid: 12e1c95fb8c4fa546b803f82e61c68f3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6223707040950846248, guid: 12e1c95fb8c4fa546b803f82e61c68f3,
         type: 3}
       propertyPath: m_Name
       value: BotellaAlcohol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223707040950846252, guid: 12e1c95fb8c4fa546b803f82e61c68f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6223707040951213832, guid: 12e1c95fb8c4fa546b803f82e61c68f3,
         type: 3}

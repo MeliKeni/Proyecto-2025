@@ -39,6 +39,16 @@ public class cameraController : MonoBehaviour
         {
             currentView = views[3];
         }
+        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.GuardarSangre))
+        {
+            currentView = views[4];
+        }
+
+        if (gameManagerCuatro.instancia.EsPaso(PasoAnalisisDeSangre.SangreGuardada))
+        {
+            currentView = views[0];
+            gameManagerCuatro.instancia.AvanzarPaso();
+        }
         if (Input.GetMouseButtonDown(0)) // click izquierdo
         {
             // Lanza un rayo desde la cámara hacia la posición del mouse

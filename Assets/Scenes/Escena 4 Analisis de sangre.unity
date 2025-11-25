@@ -6408,6 +6408,7 @@ MonoBehaviour:
   animJeringa: {fileID: 1408666377}
   animFrasco: {fileID: 121266394}
   CursorJeringa: 0
+  pasoTerminado: 0
 --- !u!1 &1289329852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,6 +6898,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 936873898}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1343086245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343086246}
+  m_Layer: 0
+  m_Name: View5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343086246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343086245}
+  m_LocalRotation: {x: -0.036711242, y: 0.2023315, z: -0.010148909, w: 0.9785762}
+  m_LocalPosition: {x: 2.7301183, y: 0.0605824, z: 4.2034636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1821626216}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356853770
 GameObject:
@@ -10056,6 +10087,7 @@ Transform:
   - {fileID: 968098529}
   - {fileID: 1568025673}
   - {fileID: 1793884795}
+  - {fileID: 1343086246}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10723,6 +10755,7 @@ MonoBehaviour:
   - {fileID: 968098529}
   - {fileID: 1568025673}
   - {fileID: 1793884795}
+  - {fileID: 1343086246}
   transitionSpeed: 1
   cursorJeringa: 0
   paso2_1_2script: {fileID: 304018783}

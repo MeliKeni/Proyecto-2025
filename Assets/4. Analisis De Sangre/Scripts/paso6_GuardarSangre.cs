@@ -9,6 +9,7 @@ public class paso6_GuardarSangre : MonoBehaviour
     public Animator animJeringa;
     public Animator animFrasco;
     public bool CursorJeringa = false;
+    public bool pasoTerminado = false;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class paso6_GuardarSangre : MonoBehaviour
                     Jeringa.SetActive(true);
                     animJeringa.SetBool("JeringaGuardar", true);
                     animFrasco.SetBool("Llenar", true);
+                    pasoTerminado = true;
                     StartCoroutine(Esperar4());
 
                 }

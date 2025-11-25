@@ -261,7 +261,7 @@ string ObtenerTagParaPaso(PasoAnalisisDeSangre paso)
         case PasoAnalisisDeSangre.AbrirArmario3:
             return "Armario";
         case PasoAnalisisDeSangre.GuardarSangre:
-            return "Frasco";
+            return "Jeringa";
         case PasoAnalisisDeSangre.AbrirArmario4:
             return "Armario";
         case PasoAnalisisDeSangre.AgarrarCurita:

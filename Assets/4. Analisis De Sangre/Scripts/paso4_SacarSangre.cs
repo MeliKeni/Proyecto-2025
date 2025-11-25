@@ -32,9 +32,16 @@ public class paso4_SacarSangre : MonoBehaviour
                 {
                     anim.SetBool("SacarSangre", true);
                     uiManager.avanzarTag = true;
-                    gameManagerCuatro.instancia.AvanzarPaso();
+                    StartCoroutine(Esperar3());
+
                 }
             }
         }
+    }
+     IEnumerator Esperar3()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        gameManagerCuatro.instancia.AvanzarPaso();
     }
 }

@@ -10,7 +10,7 @@ public class cameraController : MonoBehaviour
     Transform currentView;
     public bool cursorJeringa = false;
     public Paso2_1_2_AgarrarAlgodon1 paso2_1_2script;
-
+    public GameObject Jeringa;
     public uIManagerCuatro uiManager;
 
 
@@ -18,6 +18,7 @@ public class cameraController : MonoBehaviour
     void Start()
     {
         currentView = transform;
+        Jeringa.SetActive(true);
     }
 
     void Update()
@@ -67,7 +68,7 @@ public class cameraController : MonoBehaviour
                         currentView = views[0];
                         gameManagerCuatro.instancia.AvanzarPaso();
                         uiManager.avanzarTag = true;
-
+                        Jeringa.SetActive(false);
                         cursorJeringa = true;
 
 }

@@ -4,126 +4,52 @@ using UnityEngine;
 
 public class paso6_GuardarSangre : MonoBehaviour
 {
-    [Header("Referencias")]
-    public GameObject jeringa;
-    [Tooltip("Si querés, podés dejar esto en null y buscar el paciente por tag cuando haga overlap")]
-    public GameObject frasco;
-
-    [Header("Ajustes de colocación")]
-    public float alturaSobreFrasco = 1.0f; // cuan arriba va a estar del paciente, 
-    public float overlapRadius = 1.2f;       // cucando ya detecta la colision
-    public bool autoSoltarAlTocar = true;    // si true, suelta automáticamente al tocar paciente, si false, hay que  soltar mouse
-
-    bool arrastrando = false;
-    float zFija; // para que no se mueva en el eje z
-    private GameObject frascoEnColision = null;  // esta en colision con el paciente
-
+    public GameObject Jeringa;
     public Camera MyCurrentCam;
-
-    public uIManagerCuatro uiManager;
+    public Animator animJeringa;
+    public Animator animFrasco;
 
     void Start()
     {
-
+        Jeringa.SetActive(false);
+        animJeringa.SetBool("JeringaGuardar", false);
+        animFrasco.SetBool("Llenar", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
 
-
-
-    uiManager.avanzarTag = true;
-            gameManagerCuatro.instancia.AvanzarPaso();
-        }
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.GuardarSangre)
         {
-            return; // anulamos todo si no estamos en el paso que hay que estar
+            return;
         }
-        //detecta si hace click en chaleco 
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
+        {
+            Jeringa.SetActive(true);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray r = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit h;
             if (Physics.Raycast(r, out h))
             {
-                if (h.collider != null && h.collider.gameObject == jeringa)
+                if (h.collider.CompareTag("Jeringa"))
                 {
-                    arrastrando = true; //lo esta intentando arrastrar
-                    zFija = jeringa.transform.position.z;  //guartda la posicion en z para que no se vaya para atrasc
+                    animJeringa.SetBool("JeringaGuardar", false);
+                    animFrasco.SetBool("Llenar", true);
+                    StartCoroutine(Esperar4());
+
                 }
             }
         }
 
-        // Arrastrar funcionalidad
-        if (arrastrando)
-        {
-            Vector3 mouse = Input.mousePosition;
-            // distancia desde la cámara hasta la Z fija del chaleco
-            float distanciaCam = Mathf.Abs(MyCurrentCam.transform.position.z - zFija);
-            mouse.z = distanciaCam;
-            Vector3 world = MyCurrentCam.ScreenToWorldPoint(mouse); //llama world.x, world.y y world.z a las posciones de el mouse
-
-            // seguir solo X,Y y mantener Z fijo
-            jeringa.transform.position = new Vector3(world.x, world.y, zFija); // mueve el chaleco
-
-            // se fija si ya esta tocando al paciente
-            Collider[] hits = Physics.OverlapSphere(jeringa.transform.position, overlapRadius);
-            frascoEnColision = null;
-            foreach (var c in hits)
-            {
-                if (c.gameObject == jeringa) continue;           // ignorar a sí mismo
-                if (c.CompareTag("Frasco"))
-                {
-                    frascoEnColision = c.gameObject;
-                    break;
-                }
-            }
-
-            // 4) si queremos soltar automáticamente al tocar:
-            if (autoSoltarAlTocar && frascoEnColision != null)
-            {
-                SoltarYColocar();
-            }
-        }
-        if (Input.GetMouseButtonUp(0) && arrastrando)
-        {
-            arrastrando = false;
-
-            if (frascoEnColision != null)
-            {
-                SoltarYColocar();
-            }
-        }
-
-        void SoltarYColocar()
-        {
-            if (frascoEnColision == null) return;
-
-            // Colocar sobre el paciente
-            Vector3 nuevaPos = frascoEnColision.transform.position;
-            nuevaPos.y += alturaSobreFrasco;
-            jeringa.transform.position = nuevaPos;
-
-            // Opcional: hacer al chaleco hijo del paciente para que se mueva con él
-            jeringa.transform.SetParent(frascoEnColision.transform, true);
-
-            // Avanzar paso
-            if (gameManagerCuatro.instancia != null)
-
-
-               gameManagerCuatro.instancia.AvanzarPaso();
-
-            // reset
-            frascoEnColision = null;
-            arrastrando = false;
-        }
-
-
-
-
-
+    }
+    IEnumerator Esperar4()
+    {
+        yield return new WaitForSeconds(3f);
+        Jeringa.SetActive(false);
+        gameManagerCuatro.instancia.AvanzarPaso();
     }
 }

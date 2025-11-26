@@ -12,6 +12,7 @@ public class paso4_SacarSangre : MonoBehaviour
     public uIManagerCuatro uiManager;
     void Start()
     {
+        jeringa.SetActive(false); 
         anim.SetBool("SacarSangre", false);
     }
     void Update()
@@ -20,6 +21,11 @@ public class paso4_SacarSangre : MonoBehaviour
         {
             return;
         }
+
+        if (!jeringa.activeSelf)
+    {
+        jeringa.SetActive(true);
+    }
 
         // Detectar click con el mouse
         if (Input.GetMouseButtonDown(0))
@@ -40,8 +46,7 @@ public class paso4_SacarSangre : MonoBehaviour
     }
      IEnumerator Esperar3()
     {
-        yield return new WaitForSeconds(1.5f);
-
+        yield return new WaitForSeconds(3f);
         gameManagerCuatro.instancia.AvanzarPaso();
     }
 }

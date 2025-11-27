@@ -9,10 +9,12 @@ public class paso7_PonerCurita : MonoBehaviour
 
     public uIManagerCuatro uiManager;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim.SetBool("Pararse", false);
     }
 
     // Update is called once per frame
@@ -36,15 +38,27 @@ public class paso7_PonerCurita : MonoBehaviour
 
     uiManager.avanzarTag = true;
             StartCoroutine(Esperar2());
+                    StartCoroutine(Esperar6());
+
 
                 }
             }
             IEnumerator Esperar2()
     {
-        yield return new WaitForSeconds(1f);
-                            gameManagerCuatro.instancia.AvanzarPaso();
+        yield return new WaitForSeconds(2f);
+                anim.SetBool("Pararse", true);
+               
+
 
     }
+
+            IEnumerator Esperar6()
+            {
+                yield return new WaitForSeconds(2f);
+             
+                gameManagerCuatro.instancia.AvanzarPaso();
+
+            }
         }
     }
 }

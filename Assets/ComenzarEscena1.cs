@@ -11,7 +11,7 @@ public class ComenzarEscena1 : MonoBehaviour
 #if UNITY_EDITOR
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
         }
 #endif
     }

@@ -45,7 +45,7 @@ public class paso7_PonerCurita : MonoBehaviour
             }
             IEnumerator Esperar2()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
                 anim.SetBool("Pararse", true);
                
 
@@ -54,7 +54,7 @@ public class paso7_PonerCurita : MonoBehaviour
 
             IEnumerator Esperar6()
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(8f);
              
                 gameManagerCuatro.instancia.AvanzarPaso();
 

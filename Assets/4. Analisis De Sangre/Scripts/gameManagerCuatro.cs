@@ -112,7 +112,7 @@ public class gameManagerCuatro : MonoBehaviour
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
         {
-           // panel.SetActive(true);
+            panel.SetActive(true);
         }
     }
 }

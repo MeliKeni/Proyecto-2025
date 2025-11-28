@@ -68,20 +68,7 @@ public class CursorManager : MonoBehaviour
     {
           
 
-        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
-        {
-            if(paso6.CursorJeringa == false)
-            {
-                Cursor.SetCursor(null, default, CursorMode.Auto);
-
-            }
-                else
-                {
-                Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
-            }
         
-           
-        }
 
         if (paso8script.cursorGuante)
         {
@@ -108,7 +95,26 @@ public class CursorManager : MonoBehaviour
             Cursor.visible = false;
 
         }
-        else
+        else if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
+        {
+            if (paso6.CursorJeringa == false)
+            {
+                Cursor.SetCursor(null, default, CursorMode.Auto);
+                Cursor.visible = true;
+                cursorJeringa.gameObject.SetActive(false);
+
+
+            }
+            else
+            {
+                cursorJeringa.gameObject.SetActive(true);
+                Vector3 mousePos = Input.mousePosition;
+                cursorJeringa.position = mousePos;
+                Cursor.visible = false;
+            }
+
+
+        } else
         {
             Cursor.visible = true;
             cursorJeringa.gameObject.SetActive(false);

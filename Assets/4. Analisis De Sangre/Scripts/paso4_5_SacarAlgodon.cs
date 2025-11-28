@@ -25,5 +25,5 @@ public class paso4_5_SacarAlgodon : MonoBehaviour
                 }
             }
         }
-Matrix4x4    }
+    }
 }

@@ -13,6 +13,7 @@ public class CursorManager : MonoBehaviour
     public Texture2D imagenAlgodon;
     public Texture2D imagenCurita;
     public Texture2D hoverMano;
+    public RectTransform cursorJeringa; // UI Image o sprite en canvas
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
@@ -49,13 +50,13 @@ public class CursorManager : MonoBehaviour
         hotspotAlgodon = new Vector2(imagenAlgodon.width / 2f, imagenAlgodon.height / 2f);
         hotspotCurita = new Vector2(imagenCurita.width / 2f, imagenCurita.height / 2f);
         hotspotMano = new Vector2(hoverMano.width / 2f, hoverMano.height / 2f);
-        Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto); 
+        Cursor.SetCursor(null, hotspotDefault, CursorMode.Auto);
         //La funcion SetCursor,tiene 3 parametros necesarios,
         //la imagen que voy a usar, pongo null si es la default
         //donde va a ser el lugar de interaccion, donde marca el click,
         //generalmente se usa el 0,0 que es la esquina superior izquierda, para que sea el medio hacemos lo de arriba de poner la altura y el ancho sobre 2 de la imagen,
         //y despues esta cursor mode que es algo que no voy a tocar y pones auto y unity te lo resuelve, es para animaciones mas avanzadas
-        
+        cursorJeringa.gameObject.SetActive(false);
         guante.SetActive(true);
         jeringa.SetActive(true);
         algodon.SetActive(true);
@@ -101,8 +102,17 @@ public class CursorManager : MonoBehaviour
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.JeringaBrazo)
         {
+            cursorJeringa.gameObject.SetActive(true);
+            Vector3 mousePos = Input.mousePosition;
+            cursorJeringa.position = mousePos;
+            Cursor.visible = false;
 
-            Cursor.SetCursor(imagenJeringa, hotspotJeringa, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.visible = true;
+            cursorJeringa.gameObject.SetActive(false);
+
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
         {
@@ -114,6 +124,7 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(imagenAlgodon, hotspotAlgodon, CursorMode.Auto);
             algodon.SetActive(false);
         }
+
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario2_5)
         {
 

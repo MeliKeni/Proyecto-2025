@@ -98,7 +98,7 @@ public class uIManagerCuatro : MonoBehaviour
                 imagenes[5].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerAlgodon1:
-                textoInstruccion.text = "Haz click en el brazo izquierdo del paciente para desinfectarlo";
+                textoInstruccion.text = "Mantene el click y frotale el algodon por el brazo moviendo el mouse";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.TirarAlgodon:

@@ -10,6 +10,7 @@ public class paso7_PonerCurita : MonoBehaviour
     public uIManagerCuatro uiManager;
 
     public Animator anim;
+    public GameObject liga;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +36,9 @@ public class paso7_PonerCurita : MonoBehaviour
                 if (h.collider.CompareTag("Brazo"))
                 {
                     curitapuesta = true;
+                    Cursor.SetCursor(null, default, CursorMode.Auto);
 
-    uiManager.avanzarTag = true;
+                    uiManager.avanzarTag = true;
             StartCoroutine(Esperar2());
                     StartCoroutine(Esperar6());
 
@@ -46,6 +48,7 @@ public class paso7_PonerCurita : MonoBehaviour
             IEnumerator Esperar2()
     {
         yield return new WaitForSeconds(1f);
+                liga.SetActive(false);
                 anim.SetBool("Pararse", true);
                
 

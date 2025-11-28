@@ -13,7 +13,8 @@ public class CursorManager : MonoBehaviour
     public Texture2D imagenAlgodon;
     public Texture2D imagenCurita;
     public Texture2D hoverMano;
-    public RectTransform cursorJeringa; // UI Image o sprite en canvas
+    public RectTransform cursorJeringa;
+    public RectTransform cursorJeringa2;
     public Vector2 hotspotDefault = Vector2.zero;
     public Vector2 hotspotGuante;
     public Vector2 hotspotJeringa;
@@ -57,6 +58,7 @@ public class CursorManager : MonoBehaviour
         //generalmente se usa el 0,0 que es la esquina superior izquierda, para que sea el medio hacemos lo de arriba de poner la altura y el ancho sobre 2 de la imagen,
         //y despues esta cursor mode que es algo que no voy a tocar y pones auto y unity te lo resuelve, es para animaciones mas avanzadas
         cursorJeringa.gameObject.SetActive(false);
+        cursorJeringa2.gameObject.SetActive(false);
         guante.SetActive(true);
         jeringa.SetActive(true);
         algodon.SetActive(true);
@@ -101,15 +103,15 @@ public class CursorManager : MonoBehaviour
             {
                 Cursor.SetCursor(null, default, CursorMode.Auto);
                 Cursor.visible = true;
-                cursorJeringa.gameObject.SetActive(false);
+                cursorJeringa2.gameObject.SetActive(false);
 
 
             }
             else
             {
-                cursorJeringa.gameObject.SetActive(true);
+                cursorJeringa2.gameObject.SetActive(true);
                 Vector3 mousePos = Input.mousePosition;
-                cursorJeringa.position = mousePos;
+                cursorJeringa2.position = mousePos;
                 Cursor.visible = false;
             }
 
@@ -118,6 +120,7 @@ public class CursorManager : MonoBehaviour
         {
             Cursor.visible = true;
             cursorJeringa.gameObject.SetActive(false);
+            cursorJeringa2.gameObject.SetActive(false);
 
         }
         if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.AbrirArmario3)
@@ -149,7 +152,10 @@ public class CursorManager : MonoBehaviour
             {
                 Cursor.SetCursor(null, default, CursorMode.Auto);
             }
-            Cursor.SetCursor(imagenCurita, hotspotCurita, CursorMode.Auto);
+            else
+            {
+                Cursor.SetCursor(imagenCurita, hotspotCurita, CursorMode.Auto);
+            }
             curita.SetActive(false);
            
         }

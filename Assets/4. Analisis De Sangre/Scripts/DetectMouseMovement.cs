@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectMouseMovement : MonoBehaviour
 {
@@ -6,21 +7,32 @@ public class DetectMouseMovement : MonoBehaviour
     float timer = 0f;
     float tiempoNecesario = 2f;
 
+    public Slider barraProgresoMovimiento;
     public uIManagerCuatro uiManager;
 
     void Update()
     {
+        // Si no es el paso correcto → resetear barra y no hacer nada más
         if (gameManagerCuatro.instancia.pasoActual != PasoAnalisisDeSangre.PonerAlgodon1)
         {
+            ResetearBarra();
+
+            barraProgresoMovimiento.gameObject.SetActive(false);
             return;
         }
-        //si no estas haciendo click izquierdo no te cuenta el movimiento 
+        else
+        {
+            barraProgresoMovimiento.gameObject.SetActive(true);
+        }
+
+        // Si no estás haciendo click izquierdo → resetear
         if (!Input.GetMouseButton(0))
         {
-            timer = 0f;
-            ultimaCoordenada = Vector3.zero;
+            ResetearTodo();
             return;
         }
+
+        // Primera vez: guardar coordenada
         if (ultimaCoordenada == Vector3.zero)
         {
             ultimaCoordenada = Input.mousePosition;
@@ -29,24 +41,39 @@ public class DetectMouseMovement : MonoBehaviour
 
         Vector3 mouseDelta = Input.mousePosition - ultimaCoordenada;
 
-        // Detecta el movimiento
+        // Si hay movimiento
         if (mouseDelta != Vector3.zero)
         {
             timer += Time.deltaTime;
 
+            // Actualizar barra
+            barraProgresoMovimiento.value = timer / tiempoNecesario;
+
+            // Cuando pasa el tiempo → avanzar paso
             if (timer >= tiempoNecesario)
             {
                 gameManagerCuatro.instancia.AvanzarPaso();
-
+                ResetearTodo();
             }
         }
         else
         {
-            // Si no hay movimiento se resetea
-            timer = 0f;
+            // Si el mouse no se mueve → resetear
+            ResetearTodo();
         }
 
-        // Guardar última posición del mouse
         ultimaCoordenada = Input.mousePosition;
+    }
+
+    void ResetearTodo()
+    {
+        timer = 0f;
+        ultimaCoordenada = Vector3.zero;
+        barraProgresoMovimiento.value = 0f;
+    }
+
+    void ResetearBarra()
+    {
+        barraProgresoMovimiento.value = 0f;
     }
 }

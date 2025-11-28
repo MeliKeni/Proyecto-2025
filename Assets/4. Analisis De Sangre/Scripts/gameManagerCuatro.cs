@@ -37,6 +37,9 @@ public class gameManagerCuatro : MonoBehaviour
 
     public string TagDeseada = "Paciente";
     public GameObject panel;
+    public Animator PanelController;
+
+
     private void Awake()
     {
         if (instancia == null)
@@ -108,11 +111,14 @@ public class gameManagerCuatro : MonoBehaviour
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PacienteSilla)
         {
+            PanelController.SetBool("Mostrar", false);
             panel.SetActive(false);
+            
         }
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
         {
             panel.SetActive(true);
+            PanelController.SetBool("Mostrar", true);
         }
     }
 }

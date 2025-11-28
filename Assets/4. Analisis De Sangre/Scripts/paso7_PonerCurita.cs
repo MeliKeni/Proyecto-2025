@@ -57,7 +57,7 @@ public class paso7_PonerCurita : MonoBehaviour
 
             IEnumerator Esperar6()
             {
-                yield return new WaitForSeconds(8f);
+                yield return new WaitForSeconds(6f);
              
                 gameManagerCuatro.instancia.AvanzarPaso();
 

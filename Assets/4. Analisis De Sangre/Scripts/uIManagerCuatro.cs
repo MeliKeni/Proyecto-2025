@@ -12,6 +12,7 @@ public class uIManagerCuatro : MonoBehaviour
     public TextMeshProUGUI textoInstruccion;   // Texto principal
     public TextMeshProUGUI textoSecundario;    // Texto secundario
     public TextMeshProUGUI textoIndicaciones;
+    public TextMeshProUGUI pasoNumero;
     public GameObject comentarista;
     public paso2_1_1_PonerAlcohol paso2_1_1Script;
 
@@ -59,82 +60,102 @@ public class uIManagerCuatro : MonoBehaviour
         {
             case PasoAnalisisDeSangre.PacienteSilla:
                 textoInstruccion.text = "Haz click en el paciente para indicarle que se siente";
+                pasoNumero.text = "Paso 1";
                 imagenes[1].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                pasoNumero.text = "Paso 2";
                 imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario2:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                pasoNumero.text = "Paso 5";
                 imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario2_5:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                pasoNumero.text = "Paso 10";
                 imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario3:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                pasoNumero.text = "Paso 16";
                 imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AbrirArmario4:
                 textoInstruccion.text = "Haz click en el carrito para ir a agarrar cosas";
+                pasoNumero.text = "Paso 16";
                 imagenes[0].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarGuante:
                 textoInstruccion.text = "Haz click en la liga para agarrarla";
+                pasoNumero.text = "Paso 3";
                 imagenes[3].enabled = true;
                 break;
             case PasoAnalisisDeSangre.ColocarGuante:
-                textoInstruccion.text = "Haz click en el brazo izquierdo del paciente para atarle la liga";
+                textoInstruccion.text = "Haz click en el brazo derecho del paciente para atarle la liga";
+                pasoNumero.text = "Paso 4";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerAlcohol:
                 textoInstruccion.text = "Haz click en el algodón y luego en el alcohol para mojarlo";
+                pasoNumero.text = "Paso 6";
                 imagenes[4].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarAlgodon1:
                 textoInstruccion.text = "Haz click en el algodón para agarrarlo";
+                pasoNumero.text = "Paso 7";
                 imagenes[5].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerAlgodon1:
-                textoInstruccion.text = "Mantene el click frotale el algodon por el brazo moviendo el mouse en circulos";
+                textoInstruccion.text = "Mantene el click y move el mouse en circulos para frotarle el algodon";
+                pasoNumero.text = "Paso 8";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.TirarAlgodon:
                 textoInstruccion.text = "Haz click en el tacho de basura para tirar el algodón";
+                pasoNumero.text = "Paso 9";
                 imagenes[6].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarJeringa:
                 textoInstruccion.text = "Haz click en la jeringa para agarrarla";
+                pasoNumero.text = "Paso 11";
                 imagenes[8].enabled = true;
                 break;
             case PasoAnalisisDeSangre.JeringaBrazo:
-                textoInstruccion.text = "Haz click en el brazo izquierdo del paciente para sacarle sangre";
+                textoInstruccion.text = "Haz click en el brazo derecho del paciente para sacarle sangre";
+                pasoNumero.text = "Paso 12";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.SacarSangre:
                 textoInstruccion.text = "Interactúa con la jeringa para continuar el estudio";
+                pasoNumero.text = "Paso 13";
                 imagenes[10].enabled = true;
                 break;
             case PasoAnalisisDeSangre.SangreSacada:
                 textoInstruccion.text = "Hace click en la jeringa para agarrarla";
+                pasoNumero.text = "Paso 14";
                 imagenes[10].enabled = true;
                 break;
             case PasoAnalisisDeSangre.GuardarSangre:
                 textoInstruccion.text = "Coloca la sangre en el recipiente";
+                pasoNumero.text = "Paso 15";
                 imagenes[15].enabled = true;
                 break;
             case PasoAnalisisDeSangre.AgarrarCurita:
                 textoInstruccion.text = "Haz click en la curita para agarrarla";
+                pasoNumero.text = "Paso 17";
                 imagenes[13].enabled = true;
                 break;
             case PasoAnalisisDeSangre.PonerCurita:
-                textoInstruccion.text = "Haz click en el brazo izquierdo del paciente para ponerle la curita";
+                textoInstruccion.text = "Haz click en el brazo derecho del paciente para ponerle la curita";
+                pasoNumero.text = "Paso 18";
                 imagenes[2].enabled = true;
                 break;
             case PasoAnalisisDeSangre.Completado:
                 textoInstruccion.text = "¡Terminamos! Buen trabajo";
+                pasoNumero.text = "Paso 19";
                 imagenes[15].enabled = true;
                 break;
             default:
@@ -272,35 +293,19 @@ string ObtenerTagParaPaso(PasoAnalisisDeSangre paso)
                 return "default";
 }
 
+    public void MostrarComentarista(float duracion)
+    {
+        textoIndicaciones.text = "ESTO ES UNA PRUEBA"; // TEST
 
+        comentarista.SetActive(true);
+        timer = duracion;
+    }
     void Update(){
-gameManagerCuatro.instancia.TagDeseada = ObtenerTagParaPaso(gameManagerCuatro.instancia.pasoActual);
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = MyCurrentCam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (!hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada))
-                {
-                    Debug.Log("target :"+gameManagerCuatro.instancia.TagDeseada);
-                    Debug.Log("Hit: "+hit.collider.gameObject.tag);
-                    Debug.Log("Hit: " + hit.collider.gameObject.name);
-                    comentarista.SetActive(true);
-                    textoIndicaciones.text = "mmm, creo que eso no es!";
-                    timer = 3f;
-                }
-                if(hit.collider.CompareTag(gameManagerCuatro.instancia.TagDeseada)){
-                    comentarista.SetActive(true);
-                    textoIndicaciones.text = "Buen trabajo! Hiciste el click correcto!";
-                    timer = 1.5f;
-
-                }
-            }
-        }
         if (comentarista.activeSelf)
         {
+            textoIndicaciones.text = ObtenerTextoSecundario(pasoActual);
+
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
@@ -308,11 +313,6 @@ gameManagerCuatro.instancia.TagDeseada = ObtenerTagParaPaso(gameManagerCuatro.in
             }
         }
 
-        if(avanzarTag == true)
-        {
-            numeroTag++;
-            avanzarTag = false;
-        }
 
         if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.TirarAlgodon)
         {

@@ -38,6 +38,7 @@ public class gameManagerCuatro : MonoBehaviour
     public string TagDeseada = "Paciente";
     public GameObject panel;
     public Animator PanelController;
+    public GameObject jeringa;
 
 
     private void Awake()
@@ -85,7 +86,7 @@ public class gameManagerCuatro : MonoBehaviour
             Debug.Log("El estudio ya está completado");
             return;
         }
-
+        uIManagerCuatro.instancia.MostrarComentarista(3f);
         pasoActual++;
         Debug.Log("Avanzando al paso: " + pasoActual.ToString());
 
@@ -109,16 +110,20 @@ public class gameManagerCuatro : MonoBehaviour
             gameManagerCuatro.instancia.AvanzarPaso();
 
         }
-        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PacienteSilla)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.PacienteSilla)
         {
             PanelController.SetBool("Mostrar", false);
             panel.SetActive(false);
-            
+
         }
-        if(gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.Completado)
         {
             panel.SetActive(true);
             PanelController.SetBool("Mostrar", true);
+        }
+        if (gameManagerCuatro.instancia.pasoActual == PasoAnalisisDeSangre.GuardarSangre)
+        {
+            jeringa.SetActive(false);
         }
     }
 }

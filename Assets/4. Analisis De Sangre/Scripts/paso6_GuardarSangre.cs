@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class paso6_GuardarSangre : MonoBehaviour
 {
+    public Image Jeringaimg;
     public GameObject Jeringa;
     public Camera MyCurrentCam;
     public Animator animJeringa;
@@ -12,11 +14,12 @@ public class paso6_GuardarSangre : MonoBehaviour
     public bool pasoTerminado = false;
 
     void Start()
-    {
+    {   
         Jeringa.SetActive(false);
         animJeringa.SetBool("JeringaGuardar", false);
         animFrasco.SetBool("Llenar", false);
         CursorJeringa = true;
+        Jeringaimg.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

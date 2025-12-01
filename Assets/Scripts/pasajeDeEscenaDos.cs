@@ -17,7 +17,7 @@ public class pasajeDeEscenaDos : MonoBehaviour
     {
         Cursor.SetCursor(null, default, CursorMode.Auto);
 
-        SceneManager.LoadScene("Escena 4 Analisis de sangre");
+        SceneManager.LoadScene("Escena 4 Analisis de sangre 2");
 
     }
 }

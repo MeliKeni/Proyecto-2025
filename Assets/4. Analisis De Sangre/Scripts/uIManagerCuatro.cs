@@ -213,13 +213,13 @@ public class uIManagerCuatro : MonoBehaviour
             case PasoAnalisisDeSangre.TirarAlgodon:
                 return "Tiramos el algodon que nos quedo al tacho de basura"; //
             case PasoAnalisisDeSangre.AgarrarJeringa:
-                return ""; //PONER ALGO
+                return "Hoy en dia tambien se puede hacer con una maquina"; //PONER ALGO
             case PasoAnalisisDeSangre.JeringaBrazo:
                 return "Colocamos la jeringa en el brazo, tranquilo que duele poquito!"; //
             case PasoAnalisisDeSangre.SacarSangre:
                 return "Esperamos unos segundos mientras sacamos la sangre";
             case PasoAnalisisDeSangre.SangreSacada:
-                return "";
+                return "Rapido! Guardemos la sangre!";
             case PasoAnalisisDeSangre.GuardarSangre:
                 return "Guardamos la sangre en frascos para luego poder analizarla"; //
             case PasoAnalisisDeSangre.AgarrarCurita:

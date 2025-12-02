@@ -39,6 +39,8 @@ public class gameManagerCuatro : MonoBehaviour
     public GameObject panel;
     public Animator PanelController;
     public GameObject jeringa;
+    public float tiempoCooldown = 0.2f;
+    private bool puedeAvanzar = true;
 
 
     private void Awake()
@@ -79,19 +81,36 @@ public class gameManagerCuatro : MonoBehaviour
         }
     }
 
-    public void AvanzarPaso() //avanzar de paso
+    public void AvanzarPaso()
     {
+        // 🔥 ANTI–DOBLE–CLICK
+        if (!puedeAvanzar) return;       // si está bloqueado, no avanza
+        puedeAvanzar = false;            // bloquear avances
+        StartCoroutine(ReactivarAvance()); // iniciar cooldown
+
+        // Si ya está completado, no avanza más
         if (pasoActual == PasoAnalisisDeSangre.Completado)
         {
             Debug.Log("El estudio ya está completado");
             return;
         }
-        uIManagerCuatro.instancia.MostrarComentarista(3f);
-        pasoActual++;
-        Debug.Log("Avanzando al paso: " + pasoActual.ToString());
 
+        // Mostrar comentarista (como tenías)
+        uIManagerCuatro.instancia.MostrarComentarista(3f);
+
+        // Avanzar de paso
+        pasoActual++;
+        Debug.Log("Avanzando al paso: " + pasoActual);
+
+        // Actualizar UI
         uIManagerCuatro.instancia.ActualizarInstruccion(pasoActual);
     }
+    IEnumerator ReactivarAvance()
+    {
+        yield return new WaitForSeconds(tiempoCooldown);
+        puedeAvanzar = true;
+    }
+
 
     public bool EsPaso(PasoAnalisisDeSangre paso) //es lo que van a usar otros codigos para saber si ya estan en el paso en el que realizan cierta accion
     {
